@@ -1,0 +1,690 @@
+{
+  "checks": [
+    {
+      "check": "INPUT_RECORDS",
+      "actual": "8173",
+      "expected": "8173",
+      "passed": true
+    },
+    {
+      "check": "INPUT_MINUTES",
+      "actual": "126839.00000000",
+      "expected": "126839",
+      "passed": true
+    },
+    {
+      "check": "INPUT_DAYS",
+      "actual": "28",
+      "expected": "28",
+      "passed": true
+    },
+    {
+      "check": "TRAINING_START",
+      "actual": "2026-08-04",
+      "expected": "2026-08-04",
+      "passed": true
+    },
+    {
+      "check": "TRAINING_END",
+      "actual": "2026-08-31",
+      "expected": "2026-08-31",
+      "passed": true
+    },
+    {
+      "check": "CUTOFF",
+      "actual": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "check": "ACTUAL_RECORDS",
+      "actual": "2012",
+      "expected": "2012",
+      "passed": true
+    },
+    {
+      "check": "ACTUAL_MINUTES",
+      "actual": "30443.00000000",
+      "expected": "30443",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-01_COUNT",
+      "actual": "291.8929",
+      "expected": "291.8929",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-01_MINUTES",
+      "actual": "4529.9643",
+      "expected": "4529.9643",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-02_COUNT",
+      "actual": "291.8929",
+      "expected": "291.8929",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-02_MINUTES",
+      "actual": "4529.9643",
+      "expected": "4529.9643",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-03_COUNT",
+      "actual": "291.8929",
+      "expected": "291.8929",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-03_MINUTES",
+      "actual": "4529.9643",
+      "expected": "4529.9643",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-04_COUNT",
+      "actual": "291.8929",
+      "expected": "291.8929",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-04_MINUTES",
+      "actual": "4529.9643",
+      "expected": "4529.9643",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-05_COUNT",
+      "actual": "291.8929",
+      "expected": "291.8929",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-05_MINUTES",
+      "actual": "4529.9643",
+      "expected": "4529.9643",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-06_COUNT",
+      "actual": "291.8929",
+      "expected": "291.8929",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-06_MINUTES",
+      "actual": "4529.9643",
+      "expected": "4529.9643",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-07_COUNT",
+      "actual": "291.8929",
+      "expected": "291.8929",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-07_MINUTES",
+      "actual": "4529.9643",
+      "expected": "4529.9643",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-01_COUNT",
+      "actual": "285.0000",
+      "expected": "285.0000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-01_MINUTES",
+      "actual": "4417.5000",
+      "expected": "4417.5000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-02_COUNT",
+      "actual": "293.7500",
+      "expected": "293.7500",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-02_MINUTES",
+      "actual": "4622.2500",
+      "expected": "4622.2500",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-03_COUNT",
+      "actual": "286.0000",
+      "expected": "286.0000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-03_MINUTES",
+      "actual": "4500.0000",
+      "expected": "4500.0000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-04_COUNT",
+      "actual": "299.7500",
+      "expected": "299.7500",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-04_MINUTES",
+      "actual": "4667.0000",
+      "expected": "4667.0000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-05_COUNT",
+      "actual": "295.5000",
+      "expected": "295.5000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-05_MINUTES",
+      "actual": "4448.5000",
+      "expected": "4448.5000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-06_COUNT",
+      "actual": "290.7500",
+      "expected": "290.7500",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-06_MINUTES",
+      "actual": "4507.0000",
+      "expected": "4507.0000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-07_COUNT",
+      "actual": "292.5000",
+      "expected": "292.5000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-07_MINUTES",
+      "actual": "4547.5000",
+      "expected": "4547.5000",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-01_ACTUAL_COUNT",
+      "actual": "293",
+      "expected": "293",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-01_ACTUAL_MINUTES",
+      "actual": "4412.00000000",
+      "expected": "4412.00000000",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-02_ACTUAL_COUNT",
+      "actual": "266",
+      "expected": "266",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-02_ACTUAL_MINUTES",
+      "actual": "4067.00000000",
+      "expected": "4067.00000000",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-03_ACTUAL_COUNT",
+      "actual": "279",
+      "expected": "279",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-03_ACTUAL_MINUTES",
+      "actual": "4194.00000000",
+      "expected": "4194.00000000",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-04_ACTUAL_COUNT",
+      "actual": "297",
+      "expected": "297",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-04_ACTUAL_MINUTES",
+      "actual": "4485.00000000",
+      "expected": "4485.00000000",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-05_ACTUAL_COUNT",
+      "actual": "313",
+      "expected": "313",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-05_ACTUAL_MINUTES",
+      "actual": "4981.00000000",
+      "expected": "4981.00000000",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-06_ACTUAL_COUNT",
+      "actual": "291",
+      "expected": "291",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-06_ACTUAL_MINUTES",
+      "actual": "4180.00000000",
+      "expected": "4180.00000000",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-07_ACTUAL_COUNT",
+      "actual": "273",
+      "expected": "273",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-07_ACTUAL_MINUTES",
+      "actual": "4124.00000000",
+      "expected": "4124.00000000",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_COUNT_WAPE",
+      "actual": "4.2690",
+      "expected": "4.2690",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_TIME_WAPE",
+      "actual": "7.1242",
+      "expected": "7.1242",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_COUNT_MAE",
+      "actual": "12.2704",
+      "expected": "12.2704",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_TIME_MAE",
+      "actual": "309.8316",
+      "expected": "309.8316",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-01_ACTUAL_COUNT",
+      "actual": "293",
+      "expected": "293",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-01_ACTUAL_MINUTES",
+      "actual": "4412.00000000",
+      "expected": "4412.00000000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-02_ACTUAL_COUNT",
+      "actual": "266",
+      "expected": "266",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-02_ACTUAL_MINUTES",
+      "actual": "4067.00000000",
+      "expected": "4067.00000000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-03_ACTUAL_COUNT",
+      "actual": "279",
+      "expected": "279",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-03_ACTUAL_MINUTES",
+      "actual": "4194.00000000",
+      "expected": "4194.00000000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-04_ACTUAL_COUNT",
+      "actual": "297",
+      "expected": "297",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-04_ACTUAL_MINUTES",
+      "actual": "4485.00000000",
+      "expected": "4485.00000000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-05_ACTUAL_COUNT",
+      "actual": "313",
+      "expected": "313",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-05_ACTUAL_MINUTES",
+      "actual": "4981.00000000",
+      "expected": "4981.00000000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-06_ACTUAL_COUNT",
+      "actual": "291",
+      "expected": "291",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-06_ACTUAL_MINUTES",
+      "actual": "4180.00000000",
+      "expected": "4180.00000000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-07_ACTUAL_COUNT",
+      "actual": "273",
+      "expected": "273",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-07_ACTUAL_MINUTES",
+      "actual": "4124.00000000",
+      "expected": "4124.00000000",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_COUNT_WAPE",
+      "actual": "4.1128",
+      "expected": "4.1128",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_TIME_WAPE",
+      "actual": "7.6594",
+      "expected": "7.6594",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_COUNT_MAE",
+      "actual": "11.8214",
+      "expected": "11.8214",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_TIME_MAE",
+      "actual": "333.1071",
+      "expected": "333.1071",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-01_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-01_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-01_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-02_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-02_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-02_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-03_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-03_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-03_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-04_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-04_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-04_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-05_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-05_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-05_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-06_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-06_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-06_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-07_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-07_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "RECENT_28_DAY_MEAN_2026-09-07_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-01_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-01_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-01_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-02_AVAILABLE_240_MIN",
+      "actual": "20",
+      "expected": "20",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-02_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-02_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-03_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-03_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-03_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-04_AVAILABLE_240_MIN",
+      "actual": "20",
+      "expected": "20",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-04_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-04_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-05_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-05_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-05_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-06_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-06_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-06_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-07_AVAILABLE_240_MIN",
+      "actual": "19",
+      "expected": "19",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-07_AVAILABLE_360_MIN",
+      "actual": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "check": "SAME_WEEKDAY_MEAN_2026-09-07_AVAILABLE_480_MIN",
+      "actual": "10",
+      "expected": "10",
+      "passed": true
+    }
+  ],
+  "failed_checks": 0,
+  "count": 114
+}

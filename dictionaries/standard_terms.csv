@@ -1,0 +1,190 @@
+﻿term_code,term_name_ko,word_combination,physical_names,definition,processing_rule
+ACTIVE_YN,"현재 재직 상태. 원본이 정확히 대문자 Y이면 Y, 나머지는 N",ACTIVE + YN,ACTIVE_YN,"현재 재직 상태. 원본이 정확히 대문자 Y이면 Y, 나머지는 N","원본의 정확한 대문자 Y만 Y. y, true, 공백 포함 값과 나머지 모든 값은 N. 현재 N만으로 과거 검수 격리하지 않음."
+ACTUAL_DURATION_MIN,해당 날짜의 실제 정상 최초 검수 소요시간 합계. 단위 분,ACTUAL + DURATION + MIN,actual_duration_min,해당 날짜의 실제 정상 최초 검수 소요시간 합계. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ACTUAL_INSPECTION_ROWS,해당 날짜의 실제 정상 최초 검수 건수,ACTUAL + INSPECTION + ROWS,actual_inspection_rows,해당 날짜의 실제 정상 최초 검수 건수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ACTUAL_WEEK_DURATION_MIN,평가 주간 실제 검수 소요시간 합계. 단위 분,ACTUAL + WEEK + DURATION + MIN,actual_week_duration_min,평가 주간 실제 검수 소요시간 합계. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ACTUAL_WEEK_ROWS,평가 주간 실제 검수 건수 합계,ACTUAL + WEEK + ROWS,actual_week_rows,평가 주간 실제 검수 건수 합계,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ANALYSIS_PERIOD,현재 데이터 분포에 맞춰 구분한 분석 기간,ANALYSIS + PERIOD,analysis_period,현재 데이터 분포에 맞춰 구분한 분석 기간,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ASSUMPTION_BASIS,실제 관측값과 구분하기 위한 가정 근거 표시,ASSUMPTION + BASIS,assumption_basis,실제 관측값과 구분하기 위한 가정 근거 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+AVAILABLE_MINUTES_PER_PERSON,한 명이 하루 검수에 사용할 수 있다고 가정한 분 수,AVAILABLE + MINUTES + PER + PERSON,available_minutes_per_person,한 명이 하루 검수에 사용할 수 있다고 가정한 분 수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+AVG_DURATION_MIN,검수 한 건당 평균 소요시간. 단위 분,AVG + DURATION + MIN,avg_duration_min,검수 한 건당 평균 소요시간. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+AVG_WORK_MINUTES,해당 그룹의 검수 한 건당 평균 소요시간. 단위 분,AVG + WORK + MINUTES,avg_work_minutes,해당 그룹의 검수 한 건당 평균 소요시간. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+BANNED_WORD_YN,금지 값 여부 Y 또는 N,BANNED + WORD + YN,BANNED_WORD_YN,금지 값 여부 Y 또는 N,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+BASE_RETAIL_KRW,공식 발매가. 실제 거래가와 구분,BASE + RETAIL + KRW,BASE_RETAIL_KRW,공식 발매가. 실제 거래가와 구분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+BOX_DAMAGE_HOLD_ROWS,BOX_DMG_HOLD 결과의 검수 건수,BOX + DAMAGE + HOLD + ROWS,box_damage_hold_rows,BOX_DMG_HOLD 결과의 검수 건수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+BRONZE_ROW_ID,검수 원본의 물리 행 번호,BRONZE + ROW + ID,bronze_row_id,검수 원본의 물리 행 번호,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CATEGORY_REFERENCE_ERROR_FLAG,카테고리 참조 오류 표시,CATEGORY + REFERENCE + ERROR + FLAG,category_reference_error_flag,카테고리 참조 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CATEGORY_REFERENCE_ORIGIN,카테고리 참조의 원본 또는 복구 출처 구분,CATEGORY + REFERENCE + ORIGIN,category_reference_origin,카테고리 참조의 원본 또는 복구 출처 구분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CATEGORY_REFERENCE_STATUS,카테고리 마스터 참조 검사 상태,CATEGORY + REFERENCE + STATUS,category_reference_status,카테고리 마스터 참조 검사 상태,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CAT_ID,카테고리 고유 코드,CAT + ID,CAT_ID,카테고리 고유 코드,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CAT_LEVEL,카테고리 분류 단계. TOP_LEVEL 또는 BRAND_LINE,CAT + LEVEL,CAT_LEVEL,카테고리 분류 단계. TOP_LEVEL 또는 BRAND_LINE,허용값 TOP_LEVEL 또는 BRAND_LINE. 근거 없는 1단계 변환은 하지 않음.
+CAT_NM,카테고리 이름,CAT + NM,CAT_NM,카테고리 이름,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CHECKED_AT_KST,품질 검사 결과를 기록한 KST 시각,CHECKED + AT + KST,checked_at_kst,품질 검사 결과를 기록한 KST 시각,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CHECKED_ROWS,검사 대상으로 기록한 행 수,CHECKED + ROWS,checked_rows,검사 대상으로 기록한 행 수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CHECK_DESCRIPTION,검사 내용과 미검증 또는 차이 설명,CHECK + DESCRIPTION,check_description,검사 내용과 미검증 또는 차이 설명,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CHECK_ID,품질 검사 식별자,CHECK + ID,check_id,품질 검사 식별자,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CHECK_STATUS,PASS 또는 NOT_CHECKED 또는 RECORDED_DIFFERENCE 등 검사 상태,CHECK + STATUS,check_status,PASS 또는 NOT_CHECKED 또는 RECORDED_DIFFERENCE 등 검사 상태,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CLAIM_RATE_PCT,가품 오판정 건수 나누기 검수 건수 곱하기 100,CLAIM + RATE + PCT,claim_rate_pct,가품 오판정 건수 나누기 검수 건수 곱하기 100,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+CODE_TYPE,사전 코드 유형,CODE + TYPE,CODE_TYPE,사전 코드 유형,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+COLUMN_NAME,수정 또는 검사 대상 컬럼 이름,COLUMN + NAME,column_name,수정 또는 검사 대상 컬럼 이름,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+COMPENSATION_LOSS_KRW,가품 오판정이면 거래가의 3배로 재계산한 배상금,COMPENSATION + LOSS + KRW,COMPENSATION_LOSS_KRW | compensation_loss_krw,가품 오판정이면 거래가의 3배로 재계산한 배상금,CLAIM_FAKE_PASS이면 거래가 곱하기 3. 나머지 결과는 0. CHECK로 계산 관계 보장.
+CORRECTED_VALUE,정제 후 저장한 값,CORRECTED + VALUE,corrected_value,정제 후 저장한 값,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DATETIME_MISSING_FLAG,필수 시각 해석 결과 결측 표시,DATETIME + MISSING + FLAG,datetime_missing_flag,필수 시각 해석 결과 결측 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DEPARTMENT_BASIS,부서 집계 기준. CURRENT_MASTER는 현재 마스터 기준,DEPARTMENT + BASIS,department_basis,부서 집계 기준. CURRENT_MASTER는 현재 마스터 기준,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DEPARTMENT_NAME,현재 정규 마스터에서 연결한 부서명,DEPARTMENT + NAME,department_name,현재 정규 마스터에서 연결한 부서명,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DEPARTMENT_RULE_SOURCE,부서명 정규화 또는 유지 판단의 근거 구분,DEPARTMENT + RULE + SOURCE,department_rule_source,부서명 정규화 또는 유지 판단의 근거 구분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DEPT_NM,정규화하거나 근거에 따라 유지한 부서명,DEPT + NM,DEPT_NM,정규화하거나 근거에 따라 유지한 부서명,사전 또는 다른 원본의 사번 대조로 근거 확인. 미등록 부서라고 임의 코드 생성하지 않음.
+DICTIONARY_VERSION,적용한 표준 사전 버전,DICTIONARY + VERSION,dictionary_version,적용한 표준 사전 버전,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DICT_ID,표준 사전 레코드의 고유 ID,DICT + ID,DICT_ID,표준 사전 레코드의 고유 ID,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DISPOSITION,정상 또는 격리 또는 제외 분류,DISPOSITION,disposition,정상 또는 격리 또는 제외 분류,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DONE_BEFORE_INBOUND_FLAG,검수 완료 시각이 입고보다 빠른 오류 표시,DONE + BEFORE + INBOUND + FLAG,done_before_inbound_flag,검수 완료 시각이 입고보다 빠른 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DONE_DATE_KST,KST 기준 검수 완료 날짜,DONE + DATE + KST,done_date_kst,KST 기준 검수 완료 날짜,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DONE_HOUR_KST,KST 기준 검수 완료 시간대. 0부터 23,DONE + HOUR + KST,done_hour_kst,KST 기준 검수 완료 시간대. 0부터 23,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DURATION_ABS_ERROR_MIN,소요시간 오차의 절댓값. 단위 분,DURATION + ABS + ERROR + MIN,duration_abs_error_min,소요시간 오차의 절댓값. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DURATION_ERROR_FLAG,검수 소요시간 오류 표시,DURATION + ERROR + FLAG,duration_error_flag,검수 소요시간 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DURATION_ERROR_MIN,예측 소요시간에서 실제 소요시간을 뺀 오차. 단위 분,DURATION + ERROR + MIN,duration_error_min,예측 소요시간에서 실제 소요시간을 뺀 오차. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DURATION_MAE_MIN,날짜별 소요시간 절대 오차의 평균. 단위 분,DURATION + MAE + MIN,duration_mae_min,날짜별 소요시간 절대 오차의 평균. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DURATION_MIN,예측 입력의 검수 소요시간. 단위 분,DURATION + MIN,duration_min,예측 입력의 검수 소요시간. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DURATION_MIN_CANDIDATE,분으로 환산한 소요시간 후보,DURATION + MIN + CANDIDATE,duration_min_candidate,분으로 환산한 소요시간 후보,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DURATION_STATUS,소요시간 해석 및 변환 상태,DURATION + STATUS,duration_status,소요시간 해석 및 변환 상태,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+DURATION_WAPE_PCT,소요시간 절대 오차 합계 나누기 실제 소요시간 합계 곱하기 100,DURATION + WAPE + PCT,duration_wape_pct,소요시간 절대 오차 합계 나누기 실제 소요시간 합계 곱하기 100,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+EMPLOYEE_REFERENCE_ERROR_FLAG,검수원 참조 오류 표시,EMPLOYEE + REFERENCE + ERROR + FLAG,employee_reference_error_flag,검수원 참조 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+EMPLOYEE_REFERENCE_STATUS,검수원 마스터 참조 검사 상태,EMPLOYEE + REFERENCE + STATUS,employee_reference_status,검수원 마스터 참조 검사 상태,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+EMP_NM,검수원 이름,EMP + NM,EMP_NM,검수원 이름,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+EMP_NO,검수원 고유 사번,EMP + NO,EMP_NO,검수원 고유 사번,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ESTIMATED_REQUIRED_PEOPLE,예측 소요시간 나누기 가정한 검수 가능 시간의 올림값,ESTIMATED + REQUIRED + PEOPLE,estimated_required_people,예측 소요시간 나누기 가정한 검수 가능 시간의 올림값,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+EVALUATED_DAYS,평가한 날짜 수,EVALUATED + DAYS,evaluated_days,평가한 날짜 수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+EVENT_TYPE,최초 검수 또는 재검수 작업 구분,EVENT + TYPE,event_type,최초 검수 또는 재검수 작업 구분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+EXTRACTED_AT,KST 기준 원천 데이터 추출 시각,EXTRACTED + AT,EXTRACTED_AT,KST 기준 원천 데이터 추출 시각,KST로 통일. 완료보다 빠르면 격리. 예측 입력에는 별도 기준 시각 적용.
+EXTRACTED_AT_KST,KST로 변환한 데이터 추출 시각,EXTRACTED + AT + KST,extracted_at_kst,KST로 변환한 데이터 추출 시각,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+EXTRACTED_BEFORE_DONE_FLAG,추출 시각이 완료보다 빠른 오류 표시,EXTRACTED + BEFORE + DONE + FLAG,extracted_before_done_flag,추출 시각이 완료보다 빠른 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+FAILED_ROWS,검사 실패 행 수. 미검증 또는 비교 기록에서는 NULL 가능,FAILED + ROWS,failed_rows,검사 실패 행 수. 미검증 또는 비교 기록에서는 NULL 가능,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+FAKE_PASS_CLAIM_ROWS,CLAIM_FAKE_PASS 결과의 검수 건수,FAKE + PASS + CLAIM + ROWS,fake_pass_claim_rows,CLAIM_FAKE_PASS 결과의 검수 건수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+FAKE_PENALTY_MULTIPLIER,검수 결과 등 코드에 대응하는 배상 배수,FAKE + PENALTY + MULTIPLIER,FAKE_PENALTY_MULTIPLIER,검수 결과 등 코드에 대응하는 배상 배수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+FAKE_REJECT_ROWS,FAKE_REJECT 결과의 검수 건수,FAKE + REJECT + ROWS,fake_reject_rows,FAKE_REJECT 결과의 검수 건수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+FINAL_REVISION_TYPE,현재 최종 기록이 최초 개정인지 재검수 개정인지 구분,FINAL + REVISION + TYPE,final_revision_type,현재 최종 기록이 최초 개정인지 재검수 개정인지 구분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+FIRST_DONE_KST,그룹 검수 완료 시각의 최솟값,FIRST + DONE + KST,first_done_kst,그룹 검수 완료 시각의 최솟값,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+FORECAST_DATE,예측 또는 평가 대상 날짜,FORECAST + DATE,forecast_date,예측 또는 평가 대상 날짜,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+FORECAST_METHOD,예측 방법. 최근 28일 평균 또는 같은 요일 평균,FORECAST + METHOD,forecast_method,예측 방법. 최근 28일 평균 또는 같은 요일 평균,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+HIRE_DT,입사 날짜,HIRE + DT,HIRE_DT,입사 날짜,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INBOUND_DT,KST 기준 입고 시각,INBOUND + DT,INBOUND_DT,KST 기준 입고 시각,명시된 UTC는 KST로 변환. 시간대 표기가 없으면 KST. 시각 순서 검사.
+INBOUND_DT_KST,KST로 변환한 입고 시각,INBOUND + DT + KST,inbound_dt_kst,KST로 변환한 입고 시각,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_ABS_ERROR,건수 오차의 절댓값,INSPECTION + ABS + ERROR,inspection_abs_error,건수 오차의 절댓값,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_BRONZE_ROW_ID,검수 원본 행 번호,INSPECTION + BRONZE + ROW + ID,inspection_bronze_row_id,검수 원본 행 번호,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_DATE,입력 또는 실제값의 검수 완료 날짜,INSPECTION + DATE,inspection_date,입력 또는 실제값의 검수 완료 날짜,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_ERROR,예측 건수에서 실제 건수를 뺀 오차. 양수는 과대 예측,INSPECTION + ERROR,inspection_error,예측 건수에서 실제 건수를 뺀 오차. 양수는 과대 예측,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_EVENT_ROWS,동일 중복을 제외한 유효 검수 작업 기록 수,INSPECTION + EVENT + ROWS,inspection_event_rows,동일 중복을 제외한 유효 검수 작업 기록 수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_KEY_ERROR_FLAG,검수 ID 또는 개정 번호 오류 표시,INSPECTION + KEY + ERROR + FLAG,inspection_key_error_flag,검수 ID 또는 개정 번호 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_MAE,날짜별 검수 건수 절대 오차의 평균,INSPECTION + MAE,inspection_mae,날짜별 검수 건수 절대 오차의 평균,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_ROWS,해당 집계 범위의 검수 기록 수,INSPECTION + ROWS,inspection_rows,해당 집계 범위의 검수 기록 수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTION_WAPE_PCT,건수 절대 오차 합계 나누기 실제 건수 합계 곱하기 100,INSPECTION + WAPE + PCT,inspection_wape_pct,건수 절대 오차 합계 나누기 실제 건수 합계 곱하기 100,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTOR_DEPT_NM,사번으로 재조인한 현재 마스터 부서명,INSPECTOR + DEPT + NM,INSPECTOR_DEPT_NM,사번으로 재조인한 현재 마스터 부서명,정상 검수원 마스터를 사번으로 재조인. 과거 부서 이력 재현 아님.
+INSPECTOR_EMP_NM,사번으로 재조인한 검수원 이름,INSPECTOR + EMP + NM,INSPECTOR_EMP_NM,사번으로 재조인한 검수원 이름,정상 검수원 마스터를 사번으로 재조인. 동명이인에 대한 이름 조인 금지.
+INSPECTOR_EMP_NO,검수를 수행한 직원 사번,INSPECTOR + EMP + NO,INSPECTOR_EMP_NO,검수를 수행한 직원 사번,이름이 아닌 사번으로 정상 검수원 마스터 참조. 유령·격리 마스터 참조는 격리.
+INSPECTOR_EMP_NO_CANDIDATE,정규화 또는 복구한 검수원 사번 후보,INSPECTOR + EMP + NO + CANDIDATE,inspector_emp_no_candidate,정규화 또는 복구한 검수원 사번 후보,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSPECTOR_POSITION_NM,사번으로 재조인한 직급,INSPECTOR + POSITION + NM,INSPECTOR_POSITION_NM,사번으로 재조인한 직급,정상 검수원 마스터를 사번으로 재조인.
+INSP_DONE_DT,KST 기준 검수 완료 시각,INSP + DONE + DT,INSP_DONE_DT,KST 기준 검수 완료 시각,KST로 통일. 입고보다 빠르면 격리. 예측 작업량은 완료 날짜 기준.
+INSP_DONE_DT_KST,KST로 변환한 검수 완료 시각,INSP + DONE + DT + KST,insp_done_dt_kst,KST로 변환한 검수 완료 시각,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INSP_DURATION_MIN,분 단위 검수 소요시간,INSP + DURATION + MIN,INSP_DURATION_MIN,분 단위 검수 소요시간,초 단위를 분으로 변환. -999와 필수 결측 및 비정상 수치 격리. 단위 분.
+INSP_ID,검수 식별 ID,INSP + ID,INSP_ID,검수 식별 ID,공백·전각 등 확인된 표기 차이 정규화. 현재 Silver는 ID 단독 고유키로 최종 유효 행 한 건 유지.
+INSP_MEMO,원본 검수 메모. 포함된 지시문은 실행하지 않음,INSP + MEMO,INSP_MEMO,원본 검수 메모. 포함된 지시문은 실행하지 않음,원본 메모 보존. 메모 속 지시문을 정제 규칙으로 사용하지 않음.
+INSP_RESULT,검수 판정 코드,INSP + RESULT,INSP_RESULT,검수 판정 코드,"정상 사전의 PASS, FAKE_REJECT, CLAIM_FAKE_PASS, BOX_DMG_HOLD에 대조."
+INSP_RESULT_CANDIDATE,검수 결과 코드 후보,INSP + RESULT + CANDIDATE,insp_result_candidate,검수 결과 코드 후보,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+INTEGRATED_MISSING_CHECK_FLAG,통합 검사에서 필수 검사 결과가 빠졌는지 표시. 0은 검사 누락 없음,INTEGRATED + MISSING + CHECK + FLAG,integrated_missing_check_flag,통합 검사에서 필수 검사 결과가 빠졌는지 표시. 0은 검사 누락 없음,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ITEM_NM,정제된 상품 표준명,ITEM + NM,ITEM_NM,정제된 상품 표준명,사전 표준명과 동의어로 복구. 유효 상품 코드에 근거한 이름 복구 포함. 금지 값은 규칙에 따라 격리.
+ITEM_STD_CODE,상품 표준 코드,ITEM + STD + CODE,ITEM_STD_CODE | item_std_code,상품 표준 코드,정상 상품 사전 코드에 대조. 이름 복구의 근거로 사용. DB 외래키는 설정하지 않음.
+JOIN_READY_BRONZE_ROW_ID,조인 통합 원본 행 번호,JOIN + READY + BRONZE + ROW + ID,join_ready_bronze_row_id,조인 통합 원본 행 번호,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+LAST_DONE_KST,그룹 검수 완료 시각의 최댓값,LAST + DONE + KST,last_done_kst,그룹 검수 완료 시각의 최댓값,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+LATEST_VALID_REV_NO,품질 검사 통과 후 해당 검수 ID의 최고 유효 개정 번호,LATEST + VALID + REV + NO,latest_valid_rev_no,품질 검사 통과 후 해당 검수 ID의 최고 유효 개정 번호,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+LOSS_TO_TRADE_PCT,배상금 합계 나누기 거래가 합계 곱하기 100,LOSS + TO + TRADE + PCT,loss_to_trade_pct,배상금 합계 나누기 거래가 합계 곱하기 100,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+MISSING_CHECK_FLAG,이전 검사 단계의 검사 결과 누락 표시,MISSING + CHECK + FLAG,missing_check_flag,이전 검사 단계의 검사 결과 누락 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NAME_CHECK_STATUS,상품 이름의 사전 대조 또는 코드 기반 복구 상태,NAME + CHECK + STATUS,name_check_status,상품 이름의 사전 대조 또는 코드 기반 복구 상태,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_ACTIVE_YN,정규화한 ACTIVE_YN 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + ACTIVE + YN,normalized_active_yn,정규화한 ACTIVE_YN 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_CAT_ID,정규화한 CAT_ID 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + CAT + ID,normalized_cat_id,정규화한 CAT_ID 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_CAT_LEVEL,정규화한 CAT_LEVEL 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + CAT + LEVEL,normalized_cat_level,정규화한 CAT_LEVEL 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_CAT_NAME,정규화한 CAT_NM 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + CAT + NAME,normalized_cat_name,정규화한 CAT_NM 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_DEPARTMENT,정규화한 DEPT_NM 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + DEPARTMENT,normalized_department,정규화한 DEPT_NM 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_EMP_NAME,정규화한 EMP_NM 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + EMP + NAME,normalized_emp_name,정규화한 EMP_NM 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_EMP_NO,정규화한 EMP_NO 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + EMP + NO,normalized_emp_no,정규화한 EMP_NO 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_HIRE_DATE,정규화한 HIRE_DT 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + HIRE + DATE,normalized_hire_date,정규화한 HIRE_DT 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_INSP_ID,정규화한 검수 ID 후보,NORMALIZED + INSP + ID,normalized_insp_id,정규화한 검수 ID 후보,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_POSITION,정규화한 POSITION_NM 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + POSITION,normalized_position,정규화한 POSITION_NM 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_REG_DT,정규화한 REG_DT 후보. 최종 채택 여부는 분류 결과로 판단,NORMALIZED + REG + DT,normalized_reg_dt,정규화한 REG_DT 후보. 최종 채택 여부는 분류 결과로 판단,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+NORMALIZED_REV_NO,정규화한 개정 번호 후보,NORMALIZED + REV + NO,normalized_rev_no,정규화한 개정 번호 후보,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+OBSERVATION_STATUS,정상 기록 관측 여부. NO_VALID_OBSERVATIONS는 평가 가능한 관측 없음,OBSERVATION + STATUS,observation_status,정상 기록 관측 여부. NO_VALID_OBSERVATIONS는 평가 가능한 관측 없음,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+OBSERVED_INSPECTOR_IDS,해당 그룹에서 관측한 서로 다른 검수원 사번 수. 실제 출근 인원과 구분,OBSERVED + INSPECTOR + IDS,observed_inspector_ids,해당 그룹에서 관측한 서로 다른 검수원 사번 수. 실제 출근 인원과 구분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+OCCURRENCE_NO,동일 마스터 키의 중복 처리 순번,OCCURRENCE + NO,occurrence_no,동일 마스터 키의 중복 처리 순번,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_DONE_DT,변환 전 원본 INSP_DONE_DT 값. 오류 보존과 감사에 사용,ORIGINAL + DONE + DT,original_done_dt,변환 전 원본 INSP_DONE_DT 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_DURATION,변환 전 원본 INSP_DURATION_MIN 값. 오류 보존과 감사에 사용,ORIGINAL + DURATION,original_duration,변환 전 원본 INSP_DURATION_MIN 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_EXTRACTED_AT,변환 전 원본 EXTRACTED_AT 값. 오류 보존과 감사에 사용,ORIGINAL + EXTRACTED + AT,original_extracted_at,변환 전 원본 EXTRACTED_AT 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_INBOUND_DT,변환 전 원본 INBOUND_DT 값. 오류 보존과 감사에 사용,ORIGINAL + INBOUND + DT,original_inbound_dt,변환 전 원본 INBOUND_DT 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_INSPECTOR_EMP_NO,변환 전 원본 INSPECTOR_EMP_NO 값. 오류 보존과 감사에 사용,ORIGINAL + INSPECTOR + EMP + NO,original_inspector_emp_no,변환 전 원본 INSPECTOR_EMP_NO 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_INSP_ID,변환 전 원본 INSP_ID 값. 오류 보존과 감사에 사용,ORIGINAL + INSP + ID,original_insp_id,변환 전 원본 INSP_ID 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_INSP_RESULT,변환 전 원본 INSP_RESULT 값. 오류 보존과 감사에 사용,ORIGINAL + INSP + RESULT,original_insp_result,변환 전 원본 INSP_RESULT 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_ITEM_NAME,변환 전 원본 ITEM_NM 값. 오류 보존과 감사에 사용,ORIGINAL + ITEM + NAME,original_item_name,변환 전 원본 ITEM_NM 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_ITEM_STD_CODE,변환 전 원본 ITEM_STD_CODE 값. 오류 보존과 감사에 사용,ORIGINAL + ITEM + STD + CODE,original_item_std_code,변환 전 원본 ITEM_STD_CODE 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_MEMO,변환 전 원본 INSP_MEMO 값. 오류 보존과 감사에 사용,ORIGINAL + MEMO,original_memo,변환 전 원본 INSP_MEMO 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_PARENT_CAT_ID,변환 전 원본 PARENT_CAT_ID 값. 오류 보존과 감사에 사용,ORIGINAL + PARENT + CAT + ID,original_parent_cat_id,변환 전 원본 PARENT_CAT_ID 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_REV_NO,변환 전 원본 REV_NO 값. 오류 보존과 감사에 사용,ORIGINAL + REV + NO,original_rev_no,변환 전 원본 REV_NO 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_TRADE_PRICE,변환 전 원본 TRADE_PRICE_KRW 값. 오류 보존과 감사에 사용,ORIGINAL + TRADE + PRICE,original_trade_price,변환 전 원본 TRADE_PRICE_KRW 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+ORIGINAL_VALUE,수정 전 원본 값,ORIGINAL + VALUE,original_value,수정 전 원본 값,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PARENT_CAT_ID,원천에서 제공한 상위 카테고리 참조 코드,PARENT + CAT + ID,PARENT_CAT_ID,원천에서 제공한 상위 카테고리 참조 코드,정상 카테고리 마스터 참조 검사. 근거 있는 상품 매핑으로 복구하되 격리 마스터로의 복구는 정상 채택하지 않음.
+PARENT_CAT_ID_CANDIDATE,정규화 또는 근거로 복구한 카테고리 참조 후보,PARENT + CAT + ID + CANDIDATE,parent_cat_id_candidate,정규화 또는 근거로 복구한 카테고리 참조 후보,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PARENT_CAT_NM,정규 카테고리 마스터에서 가져온 이름,PARENT + CAT + NM,PARENT_CAT_NM,정규 카테고리 마스터에서 가져온 이름,정상 카테고리 마스터를 코드로 재조인.
+PASS_ROWS,PASS 결과의 검수 건수,PASS + ROWS,pass_rows,PASS 결과의 검수 건수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PAYLOAD_OCCURRENCE_NO,동일 내용의 원본 행 사이에서 부여한 대응 순번,PAYLOAD + OCCURRENCE + NO,payload_occurrence_no,동일 내용의 원본 행 사이에서 부여한 대응 순번,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PAYLOAD_SHA256,공유 원본 컬럼 내용으로 계산한 SHA-256 해시,PAYLOAD + SHA256,payload_sha256,공유 원본 컬럼 내용으로 계산한 SHA-256 해시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PENALTY_MULTIPLIER_CANDIDATE,검수 결과에 따른 배상 배수 후보,PENALTY + MULTIPLIER + CANDIDATE,penalty_multiplier_candidate,검수 결과에 따른 배상 배수 후보,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+POSITION_NM,검수원 직급,POSITION + NM,POSITION_NM,검수원 직급,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PREDICTED_DURATION_MIN,예측 검수 소요시간 합계. 단위 분,PREDICTED + DURATION + MIN,predicted_duration_min,예측 검수 소요시간 합계. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PREDICTED_INSPECTION_ROWS,예측 검수 건수. 평균에 따른 소수 보존,PREDICTED + INSPECTION + ROWS,predicted_inspection_rows,예측 검수 건수. 평균에 따른 소수 보존,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PREDICTED_WEEK_DURATION_MIN,평가 주간 예측 검수 소요시간 합계. 단위 분,PREDICTED + WEEK + DURATION + MIN,predicted_week_duration_min,평가 주간 예측 검수 소요시간 합계. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PREDICTED_WEEK_ROWS,평가 주간 예측 검수 건수 합계,PREDICTED + WEEK + ROWS,predicted_week_rows,평가 주간 예측 검수 건수 합계,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PREDICTION_CUTOFF_KST,예측 입력에 적용한 기준 시각. 2026-08-31 23:59:59 KST,PREDICTION + CUTOFF + KST,prediction_cutoff_kst,예측 입력에 적용한 기준 시각. 2026-08-31 23:59:59 KST,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PRICE_ERROR_FLAG,거래가 오류 표시,PRICE + ERROR + FLAG,price_error_flag,거래가 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PRICE_KRW_CANDIDATE,원화로 환산한 거래가 후보,PRICE + KRW + CANDIDATE,price_krw_candidate,원화로 환산한 거래가 후보,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PRICE_STATUS,거래가 해석 및 변환 상태,PRICE + STATUS,price_status,거래가 해석 및 변환 상태,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PRIMARY_REASON,대표 분류 사유. 모든 오류 사유의 합계가 아님,PRIMARY + REASON,primary_reason,대표 분류 사유. 모든 오류 사유의 합계가 아님,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PRODUCT_NAME_ERROR_FLAG,상품 이름 또는 상품 사전 대조 오류 표시,PRODUCT + NAME + ERROR + FLAG,product_name_error_flag,상품 이름 또는 상품 사전 대조 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+PRODUCT_NAME_RULE_SOURCE,원래 이름 검사 또는 상품 코드 기반 복구 등의 판단 근거,PRODUCT + NAME + RULE + SOURCE,product_name_rule_source,원래 이름 검사 또는 상품 코드 기반 복구 등의 판단 근거,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_ACTIVE_STATUS,원본 재직 값의 상태 분류. 원본 전체 문자열과 구분,RAW + ACTIVE + STATUS,raw_active_status,원본 재직 값의 상태 분류. 원본 전체 문자열과 구분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_ACTIVE_YN,변환 전 원본 ACTIVE_YN 값. 오류 보존과 감사에 사용,RAW + ACTIVE + YN,raw_active_yn,변환 전 원본 ACTIVE_YN 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_CAT_ID,변환 전 원본 CAT_ID 값. 오류 보존과 감사에 사용,RAW + CAT + ID,raw_cat_id,변환 전 원본 CAT_ID 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_CAT_LEVEL,변환 전 원본 CAT_LEVEL 값. 오류 보존과 감사에 사용,RAW + CAT + LEVEL,raw_cat_level,변환 전 원본 CAT_LEVEL 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_CAT_NAME,변환 전 원본 CAT_NM 값. 오류 보존과 감사에 사용,RAW + CAT + NAME,raw_cat_name,변환 전 원본 CAT_NM 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_DEPARTMENT,변환 전 원본 DEPT_NM 값. 오류 보존과 감사에 사용,RAW + DEPARTMENT,raw_department,변환 전 원본 DEPT_NM 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_EMP_NAME,변환 전 원본 EMP_NM 값. 오류 보존과 감사에 사용,RAW + EMP + NAME,raw_emp_name,변환 전 원본 EMP_NM 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_EMP_NO,변환 전 원본 EMP_NO 값. 오류 보존과 감사에 사용,RAW + EMP + NO,raw_emp_no,변환 전 원본 EMP_NO 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_HIRE_DT,변환 전 원본 HIRE_DT 값. 오류 보존과 감사에 사용,RAW + HIRE + DT,raw_hire_dt,변환 전 원본 HIRE_DT 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_INSP_RESULT,변환 전 원본 INSP_RESULT 값. 오류 보존과 감사에 사용,RAW + INSP + RESULT,raw_insp_result,변환 전 원본 INSP_RESULT 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_POSITION,변환 전 원본 POSITION_NM 값. 오류 보존과 감사에 사용,RAW + POSITION,raw_position,변환 전 원본 POSITION_NM 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RAW_REG_DT,변환 전 원본 REG_DT 값. 오류 보존과 감사에 사용,RAW + REG + DT,raw_reg_dt,변환 전 원본 REG_DT 값. 오류 보존과 감사에 사용,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RECORD_ERROR_FLAG,통합 품질 오류 표시. 0은 해당 단계 오류 없음,RECORD + ERROR + FLAG,record_error_flag,통합 품질 오류 표시. 0은 해당 단계 오류 없음,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+REG_DT,카테고리 등록 시각,REG + DT,REG_DT,카테고리 등록 시각,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+REQUIRED_VALUE_MISSING_FLAG,필수 값 누락 표시,REQUIRED + VALUE + MISSING + FLAG,required_value_missing_flag,필수 값 누락 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RESULT_CHECK_STATUS,검수 결과 코드의 검사 상태,RESULT + CHECK + STATUS,result_check_status,검수 결과 코드의 검사 상태,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RESULT_ERROR_FLAG,검수 결과 코드 오류 표시,RESULT + ERROR + FLAG,result_error_flag,검수 결과 코드 오류 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+REVISION_CONFLICT_FLAG,동일 ID와 개정에서 원본 내용이 충돌하는 표시,REVISION + CONFLICT + FLAG,revision_conflict_flag,동일 ID와 개정에서 원본 내용이 충돌하는 표시,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+REVISION_GROUP_ROWS,동일 검수 ID와 개정 번호 그룹의 행 수,REVISION + GROUP + ROWS,revision_group_rows,동일 검수 ID와 개정 번호 그룹의 행 수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+REVISION_PAYLOAD_VERSIONS,동일 개정 그룹의 서로 다른 원본 내용 수,REVISION + PAYLOAD + VERSIONS,revision_payload_versions,동일 개정 그룹의 서로 다른 원본 내용 수,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+REV_NO,검수 개정 번호,REV + NO,REV_NO,검수 개정 번호,검사 통과한 행 중 최고 유효 개정 채택. 동일 개정 충돌은 양쪽 격리. EXTRACTED_AT으로 개정 선택하지 않음.
+RULE_ID,수정에 적용한 규칙 식별자,RULE + ID,rule_id,수정에 적용한 규칙 식별자,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+RULE_VERSION,적용한 처리 또는 분석 규칙 버전,RULE + VERSION,rule_version,적용한 처리 또는 분석 규칙 버전,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+SCENARIO_NAME,검수 가능 시간 가정의 시나리오 이름,SCENARIO + NAME,scenario_name,검수 가능 시간 가정의 시나리오 이름,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+SOURCE_BRONZE_ROW_ID,해당 원본 테이블의 물리 행 번호,SOURCE + BRONZE + ROW + ID,source_bronze_row_id,해당 원본 테이블의 물리 행 번호,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+SOURCE_FILE,원본 파일 이름,SOURCE + FILE,source_file,원본 파일 이름,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+SOURCE_NAME,원본 종류 구분,SOURCE + NAME,source_name,원본 종류 구분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+STANDARD_ITEM_NAME,공식 상품 표준명,STANDARD + ITEM + NAME,standard_item_name,공식 상품 표준명,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+STD_CODE,사전의 표준 코드. 단독 고유키는 설정되지 않음,STD + CODE,STD_CODE,사전의 표준 코드. 단독 고유키는 설정되지 않음,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+STD_KOR_NM,사전의 공식 한글 표준명,STD + KOR + NM,STD_KOR_NM,사전의 공식 한글 표준명,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+SYNONYM_LIST,쉼표로 구분한 동의어 목록,SYNONYM + LIST,SYNONYM_LIST,쉼표로 구분한 동의어 목록,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+TARGET_TABLE,검사 대상 테이블,TARGET + TABLE,target_table,검사 대상 테이블,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+TOTAL_DURATION_MIN,해당 날짜의 검수 소요시간 합계. 단위 분,TOTAL + DURATION + MIN,total_duration_min,해당 날짜의 검수 소요시간 합계. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+TOTAL_TRADE_PRICE_KRW,그룹 거래가 합계. 단위 원,TOTAL + TRADE + PRICE + KRW,total_trade_price_krw,그룹 거래가 합계. 단위 원,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+TOTAL_WORK_MINUTES,해당 유효 검수 작업의 소요시간 합계. 단위 분,TOTAL + WORK + MINUTES,total_work_minutes,해당 유효 검수 작업의 소요시간 합계. 단위 분,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+TRADE_PRICE_KRW,원화 환산 거래 체결가,TRADE + PRICE + KRW,TRADE_PRICE_KRW,원화 환산 거래 체결가,"금액 단위 해석 후 원화 변환. USD 환율 1,350원 고정. 음수·필수 결측 격리. 소수 보존."
+TRAINING_DAYS,"예측 계산에 사용한 날짜 수. 전체 평균 28일, 같은 요일 평균 4일",TRAINING + DAYS,training_days,"예측 계산에 사용한 날짜 수. 전체 평균 28일, 같은 요일 평균 4일",컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+TRAINING_END_DATE,전체 입력 범위 종료 날짜,TRAINING + END + DATE,training_end_date,전체 입력 범위 종료 날짜,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+TRAINING_START_DATE,전체 입력 범위 시작 날짜,TRAINING + START + DATE,training_start_date,전체 입력 범위 시작 날짜,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+VALID_OCCURRENCE_NO,유효한 동일 개정의 중복 제거를 위한 순번,VALID + OCCURRENCE + NO,valid_occurrence_no,유효한 동일 개정의 중복 제거를 위한 순번,컬럼별 물리 타입과 허용값 및 테이블 역할 적용
+WORKLOAD_SCOPE,인력 계산의 작업 범위. FIRST_INSPECTION_ONLY는 최초 검수만 포함,WORKLOAD + SCOPE,workload_scope,인력 계산의 작업 범위. FIRST_INSPECTION_ONLY는 최초 검수만 포함,컬럼별 물리 타입과 허용값 및 테이블 역할 적용

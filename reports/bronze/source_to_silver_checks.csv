@@ -1,0 +1,14 @@
+﻿check,checked_rows,failed_rows,status,definition
+AUDIT_ORIGINAL_PAYLOAD,821769,0,PASS,격리·제외의 원본 13개 필드와 공급 CSV 대조. CSV NULL의 SQL NULL 적재 표현은 별도 계수
+PRICE_FROM_SOURCE,271787,0,PASS,원본 물리 행에서 확정한 금액·분 단위·KST 시각 변환과 정상 결과 대조
+DURATION_FROM_SOURCE,271787,0,PASS,원본 물리 행에서 확정한 금액·분 단위·KST 시각 변환과 정상 결과 대조
+TIME_FROM_SOURCE,815361,0,PASS,원본 물리 행에서 확정한 금액·분 단위·KST 시각 변환과 정상 결과 대조
+SOURCE_PARTITION,335000,0,PASS,"원본 335,000행이 정상·격리·제외 중 정확히 한 곳에 존재"
+CONFLICT_ALL_QUARANTINED,4800,0,PASS,동일 검수 ID·개정의 내용 충돌은 양쪽 모두 격리
+TIME_ERRORS_QUARANTINED,6056,0,PASS,해석 불가·시간 역전 행 모두 격리
+ACTIVE_POLICY_FROM_RAW,2960,0,PASS,"원본이 정확히 대문자 Y이면 Y, 나머지는 N"
+NUMERIC_ERRORS_QUARANTINED,2400,0,PASS,금액 결측·음수·해석 실패 또는 소요시간 오류 행은 모두 격리
+LATEST_VALID_REVISION,271787,0,PASS,격리 행을 제거한 뒤 검수 ID별 최고 유효 개정 채택
+RAW_SOURCE_PAIRING,335000,0,PASS,원천·조인 통합본의 13개 공유 필드가 대응 행끼리 같고 원본 물리 행 번호가 일대일인지 확인
+MASTER_PARTITION_EMP_NO,3150,0,PASS,원본 마스터의 모든 물리 행이 정상·격리·제외 중 정확히 한 곳에 존재
+MASTER_PARTITION_CAT_ID,1050,0,PASS,원본 마스터의 모든 물리 행이 정상·격리·제외 중 정확히 한 곳에 존재

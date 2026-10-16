@@ -1,0 +1,197 @@
+{
+  "original_sha256": "7090c12f55612646d85ff5511fbf96145ee5acc6609837b41c5564ce98227541",
+  "repro_sha256": "4d8cac9b11135209fd8e2406fd815d00c52d2af505a1f39ced3c08bfe69a4b95",
+  "csv_count": 29,
+  "byte_identical_count": 27,
+  "differences": [
+    {
+      "file": "data_quality_check_results_v1.csv",
+      "changed_columns": [
+        "checked_at_kst"
+      ]
+    },
+    {
+      "file": "export_manifest_v1.csv",
+      "changed_columns": [
+        "output_file_name",
+        "captured_at_kst"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "file": "asis_inspection_join_row_pair_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "8b45633165462f675b12085dfb5f08b1cd6d324a2738cc306101663a90458203",
+      "repro_sha256": "8b45633165462f675b12085dfb5f08b1cd6d324a2738cc306101663a90458203"
+    },
+    {
+      "file": "asis_join_ready_disposition_snapshot_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "2e80c90f65cf4813169fa7c79fc911dbaea9c9a7049da4666626480c720b6c28",
+      "repro_sha256": "2e80c90f65cf4813169fa7c79fc911dbaea9c9a7049da4666626480c720b6c28"
+    },
+    {
+      "file": "data_quality_check_results_v1.csv",
+      "byte_identical": false,
+      "original_sha256": "c5baae93046acb1e276a5b0e247ed98a1c9abad96964bd1ae86bb53003013518",
+      "repro_sha256": "187fc5261948f67b371f5e030f0a84104139bcd9fea59f3cace99abc899f8428"
+    },
+    {
+      "file": "excluded_category_parent_lookup.csv",
+      "byte_identical": true,
+      "original_sha256": "33581958870b67891633172b7bb38ffbd144f2784df041405a665cdece83c0e8",
+      "repro_sha256": "33581958870b67891633172b7bb38ffbd144f2784df041405a665cdece83c0e8"
+    },
+    {
+      "file": "excluded_inspection.csv",
+      "byte_identical": true,
+      "original_sha256": "aa66932e557f5de01b21609c7677a94ab15684e37310ffe5c8675983da2bae56",
+      "repro_sha256": "aa66932e557f5de01b21609c7677a94ab15684e37310ffe5c8675983da2bae56"
+    },
+    {
+      "file": "excluded_inspector_master.csv",
+      "byte_identical": true,
+      "original_sha256": "e104dbd1c75f1b0a0f051f83a1abae85971218e8f11cf2d4c561a954e615f356",
+      "repro_sha256": "e104dbd1c75f1b0a0f051f83a1abae85971218e8f11cf2d4c561a954e615f356"
+    },
+    {
+      "file": "export_manifest_v1.csv",
+      "byte_identical": false,
+      "original_sha256": "5840fa5687b54a23aa20896fb55aae2e4587cd368d446b0a9344924c4063049c",
+      "repro_sha256": "7234ec9a4c88e6fca7e2c95d5f13b197cde18c76e68bace9d67c109c9cee93e1"
+    },
+    {
+      "file": "gold_department_risk_summary_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "c25ef3e5cb401cc65194f5285befb9a8c8690691c975c15d34ca65821c10b819",
+      "repro_sha256": "c25ef3e5cb401cc65194f5285befb9a8c8690691c975c15d34ca65821c10b819"
+    },
+    {
+      "file": "gold_inspection_result_daily_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "e00d001a7e67201dbf8a7c83d00c1c345eb48f7c75ffdaf039e7decd3eb69813",
+      "repro_sha256": "e00d001a7e67201dbf8a7c83d00c1c345eb48f7c75ffdaf039e7decd3eb69813"
+    },
+    {
+      "file": "gold_inspection_workload_daily_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "e7bb96bdd34648403f945ecc0cc143b9cd35dafd868e3d629a440fba31237695",
+      "repro_sha256": "e7bb96bdd34648403f945ecc0cc143b9cd35dafd868e3d629a440fba31237695"
+    },
+    {
+      "file": "gold_inspection_workload_hourly_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "061b322edbda6bbcf1847984cc8162b4cbe5d9fe1fe9a75e7a63f90effe66443",
+      "repro_sha256": "061b322edbda6bbcf1847984cc8162b4cbe5d9fe1fe9a75e7a63f90effe66443"
+    },
+    {
+      "file": "gold_prediction_actual_daily_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "47c7e265129cfadee7713af3e669a64d866f0f6eadd6bcf844d99df7a915d041",
+      "repro_sha256": "47c7e265129cfadee7713af3e669a64d866f0f6eadd6bcf844d99df7a915d041"
+    },
+    {
+      "file": "gold_prediction_input_daily_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "9638b57b328ec82ac4ce803b41023bf4996b3a21d52de4002f4a50904c762234",
+      "repro_sha256": "9638b57b328ec82ac4ce803b41023bf4996b3a21d52de4002f4a50904c762234"
+    },
+    {
+      "file": "gold_prediction_input_record_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "20e81d74e3fb1551aec78aa5f555117683decb9900e18e0ccb5b1b1d29b8d2c7",
+      "repro_sha256": "20e81d74e3fb1551aec78aa5f555117683decb9900e18e0ccb5b1b1d29b8d2c7"
+    },
+    {
+      "file": "gold_product_risk_summary_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "6d06dbaf061ae193a6555243e9a324c130dfbefcfa0fa5344254f62453518c0e",
+      "repro_sha256": "6d06dbaf061ae193a6555243e9a324c130dfbefcfa0fa5344254f62453518c0e"
+    },
+    {
+      "file": "gold_risk_cross_summary_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "1f1b6969f736f9bebe4577aea302200ef5cfcd540a5a4eed2fcdd87e544cb951",
+      "repro_sha256": "1f1b6969f736f9bebe4577aea302200ef5cfcd540a5a4eed2fcdd87e544cb951"
+    },
+    {
+      "file": "gold_staffing_scenario_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "f9ab8c0bd94e1ccf4a13291db5f8c38a43f50031c71bfd01233f631d24229bb2",
+      "repro_sha256": "f9ab8c0bd94e1ccf4a13291db5f8c38a43f50031c71bfd01233f631d24229bb2"
+    },
+    {
+      "file": "gold_workload_forecast_evaluation_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "95811484b6675ac07d42f839a84aa797bdc32ca1fe686d7da2462edf5c6d4ac6",
+      "repro_sha256": "95811484b6675ac07d42f839a84aa797bdc32ca1fe686d7da2462edf5c6d4ac6"
+    },
+    {
+      "file": "gold_workload_forecast_summary_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "7c223a78ebb239820f11656671aa4be77fc9a64a2078cb5b2fa8995dd1e43c48",
+      "repro_sha256": "7c223a78ebb239820f11656671aa4be77fc9a64a2078cb5b2fa8995dd1e43c48"
+    },
+    {
+      "file": "gold_workload_forecast_v1.csv",
+      "byte_identical": true,
+      "original_sha256": "50b8f582772833293af03eced7c51561a55215aee4915aea34c75052228acb9a",
+      "repro_sha256": "50b8f582772833293af03eced7c51561a55215aee4915aea34c75052228acb9a"
+    },
+    {
+      "file": "quarantine_category_parent_lookup.csv",
+      "byte_identical": true,
+      "original_sha256": "99c225264fe696d31f12a3cb6aca12b78936f37d8db3a5dbd3fea679e81c8b8f",
+      "repro_sha256": "99c225264fe696d31f12a3cb6aca12b78936f37d8db3a5dbd3fea679e81c8b8f"
+    },
+    {
+      "file": "quarantine_inspection.csv",
+      "byte_identical": true,
+      "original_sha256": "9ab691928b96a3892d790167b312668a19fe84355b2ad3fd2363b36d5757d99a",
+      "repro_sha256": "9ab691928b96a3892d790167b312668a19fe84355b2ad3fd2363b36d5757d99a"
+    },
+    {
+      "file": "quarantine_inspector_master.csv",
+      "byte_identical": true,
+      "original_sha256": "f9aff5e425c325b4d0a0e1da51f6c728cae7d0e3335b6c3086e9de5859d06589",
+      "repro_sha256": "f9aff5e425c325b4d0a0e1da51f6c728cae7d0e3335b6c3086e9de5859d06589"
+    },
+    {
+      "file": "silver_category_parent_lookup.csv",
+      "byte_identical": true,
+      "original_sha256": "675ee8ca1d60e80937d94b7e73cf9a32f2ffc690401531f649eff6fa093f4a29",
+      "repro_sha256": "675ee8ca1d60e80937d94b7e73cf9a32f2ffc690401531f649eff6fa093f4a29"
+    },
+    {
+      "file": "silver_inspection.csv",
+      "byte_identical": true,
+      "original_sha256": "559a0349cc7092c18d5dedd8ea15f5d6da0ae74aeca38c1377f118eebb1f8bf4",
+      "repro_sha256": "559a0349cc7092c18d5dedd8ea15f5d6da0ae74aeca38c1377f118eebb1f8bf4"
+    },
+    {
+      "file": "silver_inspection_correction_log.csv",
+      "byte_identical": true,
+      "original_sha256": "77173e6a94b44840d3b219745fce9f789d026dedccbe5a04587ebfe80f463cff",
+      "repro_sha256": "77173e6a94b44840d3b219745fce9f789d026dedccbe5a04587ebfe80f463cff"
+    },
+    {
+      "file": "silver_inspection_join_ready.csv",
+      "byte_identical": true,
+      "original_sha256": "4fbcd3008b67edd8de837bad3cae7fd9ff98d21766ad9d916d7307a1444f56b2",
+      "repro_sha256": "4fbcd3008b67edd8de837bad3cae7fd9ff98d21766ad9d916d7307a1444f56b2"
+    },
+    {
+      "file": "silver_inspector_master.csv",
+      "byte_identical": true,
+      "original_sha256": "31cd5c7684a46e1d4852b77561ce7d6b26029228b2408c99d0d638ab19848c07",
+      "repro_sha256": "31cd5c7684a46e1d4852b77561ce7d6b26029228b2408c99d0d638ab19848c07"
+    },
+    {
+      "file": "silver_product_std_dict.csv",
+      "byte_identical": true,
+      "original_sha256": "fe20766643f4f0d643fadfb428d4c7cd597550e050240a77df2a859f40257f66",
+      "repro_sha256": "fe20766643f4f0d643fadfb428d4c7cd597550e050240a77df2a859f40257f66"
+    }
+  ]
+}

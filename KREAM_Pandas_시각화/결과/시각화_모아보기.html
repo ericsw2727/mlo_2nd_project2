@@ -1,0 +1,51 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KREAM · Pandas 발표 시각화</title><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#edf2f7;color:#172b44;font-family:'Malgun Gothic',sans-serif}
+header{background:#172b44;color:white;padding:64px max(5vw,24px) 48px}header small{letter-spacing:3px;color:#8bcdcf}h1{font-size:42px;margin:18px 0}
+header p{color:#c1cedd;line-height:1.8;max-width:850px}.metrics{display:flex;gap:18px;flex-wrap:wrap;margin-top:32px}.metric{padding:18px 24px;border:1px solid #476078;border-radius:12px;min-width:175px}.metric b{display:block;font-size:28px}.metric span{color:#bdcddd;font-size:13px}
+main{max-width:1440px;margin:auto;padding:28px 24px}nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}a{color:#3265ad;text-decoration:none}nav a{background:white;padding:10px 14px;border-radius:6px;font-size:13px}
+section{background:white;border:1px solid #dfe7ef;border-radius:16px;margin:24px 0;padding:28px;scroll-margin-top:20px}.eyebrow{font-size:12px;letter-spacing:2px;color:#158c88}h2{margin:12px 0;font-size:27px}section p{color:#62748a;line-height:1.8}img{display:block;width:100%;height:auto;border:1px solid #edf2f7}.downloads{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:13px}.downloads a{font-weight:bold}.downloads span{color:#62748a}footer{padding:24px 0 48px;font-size:13px;color:#62748a;line-height:1.9}
+@media(max-width:700px){h1{font-size:30px}section{padding:14px}main{padding:15px}.metric{min-width:135px}h2{font-size:22px}}
+</style><header><small>KREAM / PANDAS VISUAL REPORT</small><h1>검수 운영을 데이터로 읽다</h1>
+<p>보내주신 Pandas 분석 10개를 현재 최종 데이터에 연결한 발표용 시각화입니다. 기존 데이터를 유지하고, 이 폴더 안의 데이터 사본과 실행용 코드로 실행합니다. 합성 데이터 분석이며 실제 기업의 운영 실적이 아닙니다.</p>
+<div class="metrics"><div class="metric"><b>243,454</b><span>최초 개정 분석 대상</span></div><div class="metric"><b>21,656</b><span>2차 재검수 대상</span></div><div class="metric"><b>2,960</b><span>마스터 등록 검수원</span></div><div class="metric"><b>10</b><span>발표용 그래프</span></div></div></header><main><nav><a href="#chart1">01 외주팀 품질 위험</a><a href="#chart2">02 검수 소요시간 비교</a><a href="#chart3">03 스니커즈팀 재검수 부담</a><a href="#chart4">04 최신 상태와 누적 작업량</a><a href="#chart5">05 팀별 품목 구성</a><a href="#chart6">06 상품별 오판정률</a><a href="#chart7">07 팀별 인원과 직급</a><a href="#chart8">08 팀별 직급 구성비</a><a href="#chart9">09 상품별 검수 대상 건수</a><a href="#chart10">10 팀 내 상품 구성비</a></nav><section id="chart1"><div class="eyebrow">과제 · 01</div>
+<h2>외주팀 품질 위험</h2><p>외주야간검수팀: 배상 위험액 59.20억 원, 오판정률 2.28%. 위험액은 실제 지급액이 아닙니다.</p>
+<a href="그래프/01_외주팀_품질_위험.png" target="_blank"><img loading="lazy" src="그래프/01_외주팀_품질_위험.png" alt="외주팀 품질 위험"></a>
+<div class="downloads"><a href="그래프/01_외주팀_품질_위험.png" download>PNG 저장</a><a href="그래프/01_외주팀_품질_위험.svg" download>SVG 저장</a>
+<span>최종 유효 검수 중 REV_NO=1 · 2022.01–2026.08 · 243,454건</span></div></section><section id="chart2"><div class="eyebrow">과제 · 02</div>
+<h2>검수 소요시간 비교</h2><p>10분 미만 비중: 외주야간검수팀 93.65%, 타 부서 전체 28.78%. 소요시간만으로 원인을 단정하지 않습니다.</p>
+<a href="그래프/02_검수_소요시간_비교.png" target="_blank"><img loading="lazy" src="그래프/02_검수_소요시간_비교.png" alt="검수 소요시간 비교"></a>
+<div class="downloads"><a href="그래프/02_검수_소요시간_비교.png" download>PNG 저장</a><a href="그래프/02_검수_소요시간_비교.svg" download>SVG 저장</a>
+<span>최종 유효 검수 중 REV_NO=1 · 2022.01–2026.08 · 243,454건</span></div></section><section id="chart3"><div class="eyebrow">과제 · 03</div>
+<h2>스니커즈팀 재검수 부담</h2><p>스니커즈검수1팀 298.88억 원, 2팀 223.50억 원. 재검수 대상으로 선택된 집단의 수치입니다.</p>
+<a href="그래프/03_스니커즈팀_재검수_부담.png" target="_blank"><img loading="lazy" src="그래프/03_스니커즈팀_재검수_부담.png" alt="스니커즈팀 재검수 부담"></a>
+<div class="downloads"><a href="그래프/03_스니커즈팀_재검수_부담.png" download>PNG 저장</a><a href="그래프/03_스니커즈팀_재검수_부담.svg" download>SVG 저장</a>
+<span>최종 유효 검수 중 REV_NO=2 · 21,656건 · 선택된 재검수 집단</span></div></section><section id="chart4"><div class="eyebrow">과제 · 04</div>
+<h2>최신 상태와 누적 작업량</h2><p>대상별 최신 상태와 실제 누적 작업은 분모가 다릅니다. 누적 작업에는 유효 이전 개정 작업을 포함합니다.</p>
+<a href="그래프/04_최신_상태와_누적_작업량.png" target="_blank"><img loading="lazy" src="그래프/04_최신_상태와_누적_작업량.png" alt="최신 상태와 누적 작업량"></a>
+<div class="downloads"><a href="그래프/04_최신_상태와_누적_작업량.png" download>PNG 저장</a><a href="그래프/04_최신_상태와_누적_작업량.svg" download>SVG 저장</a>
+<span>최신 상태 271,787건 / 유효 작업 이력 291,548건 · 서로 다른 분모</span></div></section><section id="chart5"><div class="eyebrow">과제 · 05</div>
+<h2>팀별 품목 구성</h2><p>각 팀에서 검수한 상품 비중을 동일 축으로 비교합니다. 모든 팀에서 19개 상품이 관측됩니다.</p>
+<a href="그래프/05_팀별_품목_구성.png" target="_blank"><img loading="lazy" src="그래프/05_팀별_품목_구성.png" alt="팀별 품목 구성"></a>
+<div class="downloads"><a href="그래프/05_팀별_품목_구성.png" download>PNG 저장</a><a href="그래프/05_팀별_품목_구성.svg" download>SVG 저장</a>
+<span>최종 유효 검수 중 REV_NO=1 · 2022.01–2026.08 · 243,454건</span></div></section><section id="chart6"><div class="eyebrow">부록 · 06</div>
+<h2>상품별 오판정률</h2><p>셀 값은 상품·부서별 CLAIM_FAKE_PASS 건수 ÷ 해당 검수 건수 × 100입니다.</p>
+<a href="그래프/06_상품별_오판정률.png" target="_blank"><img loading="lazy" src="그래프/06_상품별_오판정률.png" alt="상품별 오판정률"></a>
+<div class="downloads"><a href="그래프/06_상품별_오판정률.png" download>PNG 저장</a><a href="그래프/06_상품별_오판정률.svg" download>SVG 저장</a>
+<span>최종 유효 검수 중 REV_NO=1 · 2022.01–2026.08 · 243,454건</span></div></section><section id="chart7"><div class="eyebrow">부록 · 07</div>
+<h2>팀별 인원과 직급</h2><p>검수원 마스터의 사번으로 집계합니다. 재직·비재직을 모두 포함하므로 가용 인력 수와 다릅니다.</p>
+<a href="그래프/07_팀별_인원과_직급.png" target="_blank"><img loading="lazy" src="그래프/07_팀별_인원과_직급.png" alt="팀별 인원과 직급"></a>
+<div class="downloads"><a href="그래프/07_팀별_인원과_직급.png" download>PNG 저장</a><a href="그래프/07_팀별_인원과_직급.svg" download>SVG 저장</a>
+<span>정상 검수원 마스터 2,960명 · 재직·비재직 포함 · 현재 소속 기준</span></div></section><section id="chart8"><div class="eyebrow">부록 · 08</div>
+<h2>팀별 직급 구성비</h2><p>직급별 인원을 팀 전체 등록 인원으로 나눈 비율입니다. 반올림으로 합계에 미세한 차이가 날 수 있습니다.</p>
+<a href="그래프/08_팀별_직급_구성비.png" target="_blank"><img loading="lazy" src="그래프/08_팀별_직급_구성비.png" alt="팀별 직급 구성비"></a>
+<div class="downloads"><a href="그래프/08_팀별_직급_구성비.png" download>PNG 저장</a><a href="그래프/08_팀별_직급_구성비.svg" download>SVG 저장</a>
+<span>정상 검수원 마스터 2,960명 · 부서별 구성비 합계 100%</span></div></section><section id="chart9"><div class="eyebrow">부록 · 09</div>
+<h2>상품별 검수 대상 건수</h2><p>최초 개정 분석 대상 243,454건을 상품·부서로 나눕니다. 원자료의 중복 행을 합산하지 않습니다.</p>
+<a href="그래프/09_상품별_검수_대상_건수.png" target="_blank"><img loading="lazy" src="그래프/09_상품별_검수_대상_건수.png" alt="상품별 검수 대상 건수"></a>
+<div class="downloads"><a href="그래프/09_상품별_검수_대상_건수.png" download>PNG 저장</a><a href="그래프/09_상품별_검수_대상_건수.svg" download>SVG 저장</a>
+<span>최종 유효 검수 중 REV_NO=1 · 2022.01–2026.08 · 243,454건</span></div></section><section id="chart10"><div class="eyebrow">부록 · 10</div>
+<h2>팀 내 상품 구성비</h2><p>각 부서 열의 합계가 약 100%가 되도록 계산합니다. 상품별 전체 시장 점유율과는 다릅니다.</p>
+<a href="그래프/10_팀_내_상품_구성비.png" target="_blank"><img loading="lazy" src="그래프/10_팀_내_상품_구성비.png" alt="팀 내 상품 구성비"></a>
+<div class="downloads"><a href="그래프/10_팀_내_상품_구성비.png" download>PNG 저장</a><a href="그래프/10_팀_내_상품_구성비.svg" download>SVG 저장</a>
+<span>최종 유효 검수 중 REV_NO=1 · 2022.01–2026.08 · 243,454건 · 각 부서(열) 합계 100%</span></div></section><footer>검증 36개 통과 · 실패 0개. 그림을 클릭하면 원본 PNG를 크게 볼 수 있습니다.<br>통계표 CSV는 결과/통계표, 분석 실행 출력은 결과/실행로그에 있습니다. 기간·분모가 다른 최초 검수와 재검수를 단순 비교하여 인과관계로 해석하지 않습니다.<br>인원·작업량 연결 변경과 출처는 데이터/출처_및_연결기록.json 및 안내문을 참고하세요.</footer></main></html>

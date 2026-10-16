@@ -1,0 +1,21 @@
+{
+  "pdf_sha256": "aa20aca4fe3ea2e4aa988078eb5c7e24e4815610648e4c27aacdfe32f6494c85",
+  "image_zip_sha256": "cc50a5913de83f17ee984bc83aa8d72a25e9ef6de8c7575c6adfeebd967c25e4",
+  "provided_images": 10,
+  "dictionary_counts": {
+    "standard_words.csv": 149,
+    "standard_terms.csv": 189,
+    "standard_domains.csv": 43,
+    "standard_codes.csv": 32,
+    "column_standard_mapping.csv": 393
+  },
+  "pandas_checks": 482,
+  "source_checks": 13,
+  "sql_comparison_metrics": 8,
+  "team_analysis_checks": 68,
+  "forecast_checks": 114,
+  "verification_source_sha256": "4d8cac9b11135209fd8e2406fd815d00c52d2af505a1f39ced3c08bfe69a4b95",
+  "team_analysis_source_sha256": "7090c12f55612646d85ff5511fbf96145ee5acc6609837b41c5564ce98227541",
+  "exports_business_identical": 27,
+  "failed_checks_in_rechecks": 0
+}

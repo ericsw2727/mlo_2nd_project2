@@ -1,0 +1,623 @@
+[
+  {
+    "file": "00_environment_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "01_create_bronze_dictionary.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "02_load_bronze_dictionary.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "03_create_and_load_bronze_category.sql",
+    "included": true,
+    "changes": [
+      "중복 LOAD DATA를 피하도록 03-5 이후 당시 재적재 이력을 기본 실행에서 분리",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "04_create_and_load_bronze_inspector.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "05_create_and_load_bronze_inspection.sql",
+    "included": true,
+    "changes": [
+      "12번에서 확인된 문자열 NULL 보존을 최초 적재에 적용. 원본 재적재·이름 전환 대신 같은 원문을 한 번 적재",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "06_create_and_load_bronze_inspection_join_ready.sql",
+    "included": true,
+    "changes": [
+      "12번에서 확인된 문자열 NULL 보존을 최초 적재에 적용. 원본 재적재·이름 전환 대신 같은 원문을 한 번 적재",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "07_bronze_load_validation.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "08_asis_dictionary_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "09_asis_category_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "10_asis_inspector_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "11_asis_inspection_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "12_bronze_import_recovery.sql",
+    "included": false,
+    "changes": [
+      "조건부 적재 복구 이력"
+    ]
+  },
+  {
+    "file": "13_asis_inspection_revision_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "14_silver_inspection_unit_stage.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "15_silver_inspection_disposition_stage.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "16_asis_column_catalog_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "17_asis_inspection_required_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "18_asis_declared_length_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "19_asis_dictionary_numeric_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "20_asis_active_policy_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "21_asis_identifier_pattern_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "22_asis_identifier_other_samples.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "23_asis_identifier_normalization_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "24_asis_master_normalized_key_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "25_asis_inspection_reference_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "26_asis_reference_check_fast.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "27_asis_product_code_reference_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "28_asis_product_name_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "29_asis_product_name_mapping_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "30_asis_product_name_and_category_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "31_asis_category_mapping_fast.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "32_asis_parent_category_recovery_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "33_asis_inspector_department_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "34_asis_inspector_position_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "35_asis_department_crosscheck.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "36_asis_master_date_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "37_asis_normalized_inspection_key_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "38_asis_inspection_numeric_conversion_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "39_create_and_load_silver_product_dictionary.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "40_prepare_silver_inspector_master.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "41_create_and_load_silver_inspector_master.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "42_asis_category_level_rule_check.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "43_asis_category_level_name_crosscheck.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "44_prepare_silver_category_master.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "45_create_and_load_silver_category_master.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "46_asis_reference_to_silver_master.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "47_save_final_reference_checks.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "48_save_numeric_checks.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "49_save_datetime_checks.sql",
+    "included": true,
+    "changes": [
+      "실제 정의와 확인된 기존 처리로 빠진 구간 복원",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "50_save_revision_conflict_checks.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "51_save_product_name_checks.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "52_build_inspection_validation_stage.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "53_check_inspection_result_and_required_values.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "54_build_inspection_disposition_stage.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "54A_diagnose_classification_gap.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "54B_verify_code_based_name_recovery.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "54C_rebuild_disposition_with_product_code.sql",
+    "included": true,
+    "changes": [
+      "54C-1~54C-13 유지, 뒤 복구용 확인·재삽입 이력은 원본 폴더에 보관",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "54D_check_remaining_quarantine_reasons.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "54E_verify_department_dictionary.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "55_create_and_load_silver_inspection_v2.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "56_save_quarantine_and_excluded_inspection.sql",
+    "included": true,
+    "changes": [
+      "수정된 56-7 유지, 뒤의 수정 전 WITH stored 조회는 원본 폴더에 보관",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "57_create_silver_inspection_join_ready.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "58_compare_raw_inspection_payloads.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "59_pair_and_verify_raw_inspection_rows.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "60_check_join_ready_extra_columns.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "61_compare_compensation_and_join_labels.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "62_verify_department_aliases_and_corrected_values.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "63_save_inspection_correction_log.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "64_verify_all_source_dispositions.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "65_save_final_quality_checks.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "66_check_gold_analysis_scope.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "67_create_gold_daily_analysis.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "68_create_gold_hourly_department_workload.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "69_check_prediction_time_scope.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "70_create_gold_product_department_risk.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "71_create_gold_risk_cross_analysis.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "72_create_gold_prediction_input.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "73_create_gold_workload_forecast.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "74_evaluate_gold_workload_forecast.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "75_create_gold_forecast_summary_and_staffing.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "76_check_final_schema_and_relationships.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "77_create_documentation_catalog.sql",
+    "included": true,
+    "changes": [
+      "실제 정의와 확인된 기존 처리로 빠진 구간 복원",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경"
+    ]
+  },
+  {
+    "file": "78_export_documentation_catalog.sql",
+    "included": true,
+    "changes": [
+      "실제 정의와 확인된 기존 처리로 빠진 구간 복원",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경",
+      "문서 CSV 출력 이름에 kream_repro_ 접두어 적용"
+    ]
+  },
+  {
+    "file": "79_create_export_manifest.sql",
+    "included": true,
+    "changes": [
+      "실제 정의와 확인된 기존 처리로 빠진 구간 복원",
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경",
+      "재현 목록의 기본 출력 이름을 kream_repro_ 접두어로 구분"
+    ]
+  },
+  {
+    "file": "80_export_final_data.sql",
+    "included": false,
+    "changes": [
+      "불완전한 최초 내보내기 이력"
+    ]
+  },
+  {
+    "file": "81_export_final_data_full.sql",
+    "included": true,
+    "changes": [
+      "업무 스키마 식별자와 정보 조회 조건을 kream_project_repro로 변경",
+      "데이터 출력 파일과 목록의 이름을 kream_repro_full_ 접두어로 구분"
+    ]
+  }
+]

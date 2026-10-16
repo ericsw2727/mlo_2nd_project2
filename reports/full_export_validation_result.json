@@ -1,0 +1,486 @@
+{
+  "zip": "KREAM_Final_Data_Full_20261015.zip",
+  "file_count": 29,
+  "total_uncompressed_bytes": 392462253,
+  "file_results": [
+    {
+      "table": "silver_product_std_dict",
+      "file": "kream_full_silver_product_std_dict.csv",
+      "rows": 32,
+      "expected_rows": 32,
+      "columns": 10,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "silver_inspector_master",
+      "file": "kream_full_silver_inspector_master.csv",
+      "rows": 2960,
+      "expected_rows": 2960,
+      "columns": 10,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "silver_category_parent_lookup",
+      "file": "kream_full_silver_category_parent_lookup.csv",
+      "rows": 970,
+      "expected_rows": 970,
+      "columns": 6,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "silver_inspection",
+      "file": "kream_full_silver_inspection.csv",
+      "rows": 271787,
+      "expected_rows": 271787,
+      "columns": 16,
+      "null_cells": 0,
+      "errors": {
+        "DATETIME_ORDER": 0,
+        "NEGATIVE_NUMERIC": 0,
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "silver_inspection_join_ready",
+      "file": "kream_full_silver_inspection_join_ready.csv",
+      "rows": 271787,
+      "expected_rows": 271787,
+      "columns": 21,
+      "null_cells": 0,
+      "errors": {
+        "FACT_JOIN_DIFFERENT": 0,
+        "EMPLOYEE_JOIN": 0,
+        "CATEGORY_JOIN": 0,
+        "COMPENSATION_FORMULA": 0,
+        "PRODUCT_CODE": 0,
+        "PRODUCT_NAME": 0,
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "asis_inspection_join_row_pair_v1",
+      "file": "kream_full_asis_inspection_join_row_pair_v1.csv",
+      "rows": 335000,
+      "expected_rows": 335000,
+      "columns": 4,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "asis_join_ready_disposition_snapshot_v1",
+      "file": "kream_full_asis_join_ready_disposition_snapshot_v1.csv",
+      "rows": 335000,
+      "expected_rows": 335000,
+      "columns": 5,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "data_quality_check_results_v1",
+      "file": "kream_full_data_quality_check_results_v1.csv",
+      "rows": 16,
+      "expected_rows": 16,
+      "columns": 8,
+      "null_cells": 2,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "excluded_category_parent_lookup",
+      "file": "kream_full_excluded_category_parent_lookup.csv",
+      "rows": 50,
+      "expected_rows": 50,
+      "columns": 13,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "excluded_inspection",
+      "file": "kream_full_excluded_inspection.csv",
+      "rows": 29359,
+      "expected_rows": 29359,
+      "columns": 58,
+      "null_cells": 0,
+      "errors": {
+        "CLASSIFICATION_OVERLAP": 0,
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "excluded_inspector_master",
+      "file": "kream_full_excluded_inspector_master.csv",
+      "rows": 147,
+      "expected_rows": 147,
+      "columns": 19,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_department_risk_summary_v1",
+      "file": "kream_full_gold_department_risk_summary_v1.csv",
+      "rows": 8,
+      "expected_rows": 8,
+      "columns": 12,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_inspection_result_daily_v1",
+      "file": "kream_full_gold_inspection_result_daily_v1.csv",
+      "rows": 1729,
+      "expected_rows": 1729,
+      "columns": 10,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_inspection_workload_daily_v1",
+      "file": "kream_full_gold_inspection_workload_daily_v1.csv",
+      "rows": 1729,
+      "expected_rows": 1729,
+      "columns": 8,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_inspection_workload_hourly_v1",
+      "file": "kream_full_gold_inspection_workload_hourly_v1.csv",
+      "rows": 167859,
+      "expected_rows": 167859,
+      "columns": 11,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_prediction_actual_daily_v1",
+      "file": "kream_full_gold_prediction_actual_daily_v1.csv",
+      "rows": 7,
+      "expected_rows": 7,
+      "columns": 4,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_prediction_input_daily_v1",
+      "file": "kream_full_gold_prediction_input_daily_v1.csv",
+      "rows": 28,
+      "expected_rows": 28,
+      "columns": 6,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_prediction_input_record_v1",
+      "file": "kream_full_gold_prediction_input_record_v1.csv",
+      "rows": 8173,
+      "expected_rows": 8173,
+      "columns": 6,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_product_risk_summary_v1",
+      "file": "kream_full_gold_product_risk_summary_v1.csv",
+      "rows": 20,
+      "expected_rows": 20,
+      "columns": 12,
+      "null_cells": 4,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_risk_cross_summary_v1",
+      "file": "kream_full_gold_risk_cross_summary_v1.csv",
+      "rows": 604,
+      "expected_rows": 604,
+      "columns": 14,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_staffing_scenario_v1",
+      "file": "kream_full_gold_staffing_scenario_v1.csv",
+      "rows": 42,
+      "expected_rows": 42,
+      "columns": 10,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_workload_forecast_evaluation_v1",
+      "file": "kream_full_gold_workload_forecast_evaluation_v1.csv",
+      "rows": 14,
+      "expected_rows": 14,
+      "columns": 12,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_workload_forecast_summary_v1",
+      "file": "kream_full_gold_workload_forecast_summary_v1.csv",
+      "rows": 2,
+      "expected_rows": 2,
+      "columns": 11,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "gold_workload_forecast_v1",
+      "file": "kream_full_gold_workload_forecast_v1.csv",
+      "rows": 14,
+      "expected_rows": 14,
+      "columns": 9,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "quarantine_category_parent_lookup",
+      "file": "kream_full_quarantine_category_parent_lookup.csv",
+      "rows": 30,
+      "expected_rows": 30,
+      "columns": 13,
+      "null_cells": 0,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "quarantine_inspection",
+      "file": "kream_full_quarantine_inspection.csv",
+      "rows": 33854,
+      "expected_rows": 33854,
+      "columns": 58,
+      "null_cells": 72656,
+      "errors": {
+        "CLASSIFICATION_OVERLAP": 0,
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "quarantine_inspector_master",
+      "file": "kream_full_quarantine_inspector_master.csv",
+      "rows": 43,
+      "expected_rows": 43,
+      "columns": 19,
+      "null_cells": 43,
+      "errors": {
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "table": "silver_inspection_correction_log",
+      "file": "kream_full_silver_inspection_correction_log.csv",
+      "rows": 880611,
+      "expected_rows": 880611,
+      "columns": 8,
+      "null_cells": 0,
+      "errors": {
+        "CORRECTION_SOURCE": 0,
+        "CORRECTION_NO_CHANGE": 0,
+        "ROW_COUNT": 0
+      },
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "check": "FILE_INVENTORY",
+      "failed": 0,
+      "status": "PASS",
+      "description": "데이터 28개와 기준 목록 1개, 파일 누락·추가 없음"
+    },
+    {
+      "check": "FILE_ROWS_AND_TYPES",
+      "failed": 0,
+      "status": "PASS",
+      "description": "전체 파일의 행 수·컬럼 수·NULL·수치·날짜·키와 주요 값 검사"
+    },
+    {
+      "check": "INSPECTION_COMPLETE_PARTITION",
+      "failed": 0,
+      "status": "PASS",
+      "description": "원본 행 번호 1~335000을 정상·격리·제외가 중복 없이 배분"
+    },
+    {
+      "check": "RAW_PAIR_COVERAGE",
+      "failed": 0,
+      "status": "PASS",
+      "description": "검수 원본과 조인 원본의 행 대응 범위"
+    },
+    {
+      "check": "JOIN_DISPOSITION_MATCH",
+      "failed": 0,
+      "status": "PASS",
+      "description": "조인 원본 분류가 검수 원본 분류와 일치"
+    },
+    {
+      "check": "ROLLUP_PRODUCT",
+      "failed": 0,
+      "status": "PASS",
+      "description": "정상 조인 상세를 다시 집계해 gold_product_risk_summary_v1와 대조"
+    },
+    {
+      "check": "ROLLUP_DEPARTMENT",
+      "failed": 0,
+      "status": "PASS",
+      "description": "정상 조인 상세를 다시 집계해 gold_department_risk_summary_v1와 대조"
+    },
+    {
+      "check": "ROLLUP_DAILY",
+      "failed": 0,
+      "status": "PASS",
+      "description": "정상 조인 상세를 다시 집계해 gold_inspection_result_daily_v1와 대조"
+    },
+    {
+      "check": "WORKLOAD_HOURLY_DAILY",
+      "failed": 0,
+      "status": "PASS",
+      "description": "시간대별 작업량을 날짜·유형별로 다시 합해 날짜별 집계와 대조"
+    },
+    {
+      "check": "CROSS_TOTAL",
+      "failed": 0,
+      "status": "PASS",
+      "description": "교차 집계와 정상 상세 전체 합계 대조"
+    },
+    {
+      "check": "PREDICTION_INPUT_TIME",
+      "failed": 0,
+      "status": "PASS",
+      "description": "예측 입력 상세의 완료 기간과 추출 시각 조건 검사"
+    },
+    {
+      "check": "PREDICTION_INPUT_ROLLUP",
+      "failed": 0,
+      "status": "PASS",
+      "description": "예측 입력 상세를 날짜별로 재집계하여 일별 입력과 대조"
+    },
+    {
+      "check": "FORECAST_RECALCULATION",
+      "failed": 0,
+      "status": "PASS",
+      "description": "업로드된 28일 입력으로 두 예측 방법을 독립 재계산"
+    },
+    {
+      "check": "EVALUATION_RECALCULATION",
+      "failed": 0,
+      "status": "PASS",
+      "description": "예측과 실제값을 다시 연결해 날짜별 오차 재계산"
+    },
+    {
+      "check": "METRICS_RECALCULATION",
+      "failed": 0,
+      "status": "PASS",
+      "description": "MAE와 WAPE를 날짜별 평가값에서 독립 재계산"
+    },
+    {
+      "check": "STAFFING_RECALCULATION",
+      "failed": 0,
+      "status": "PASS",
+      "description": "예측 소요시간과 가정한 검수 가능 시간으로 필요 인원 재계산"
+    }
+  ],
+  "error_counts": {
+    "ROW_COUNT": 0,
+    "DATETIME_ORDER": 0,
+    "NEGATIVE_NUMERIC": 0,
+    "FACT_JOIN_DIFFERENT": 0,
+    "EMPLOYEE_JOIN": 0,
+    "CATEGORY_JOIN": 0,
+    "COMPENSATION_FORMULA": 0,
+    "PRODUCT_CODE": 0,
+    "PRODUCT_NAME": 0,
+    "CLASSIFICATION_OVERLAP": 0,
+    "CORRECTION_SOURCE": 0,
+    "CORRECTION_NO_CHANGE": 0
+  },
+  "silver_totals": [
+    "271787",
+    "19414",
+    "731563841932.5000",
+    "154502066956.5000"
+  ],
+  "workload_rows": 291548,
+  "workload_minutes": "4620775.00000000",
+  "quality_status": {
+    "PASS": 14,
+    "NOT_CHECKED": 1,
+    "RECORDED_DIFFERENCE": 1
+  },
+  "limits": [
+    "DB에 직접 접속해 전체 원본과 바이트 단위로 대조한 검증은 아님",
+    "격리·제외 원본 텍스트는 현재 ZIP 안에서 형식과 보존 컬럼을 검사했으며 최초 Bronze 파일과 전수 대조하지 않음",
+    "현재 마스터의 Y 판정을 원본으로 재검증하지 않음. 원본 ACTIVE_YN 전체가 이번 ZIP에 포함되지 않음",
+    "예측 평가 실제값을 이전 실행 화면의 합계와 대조하지만 이번 ZIP에는 원천 검사 단계 전체가 없음"
+  ]
+}

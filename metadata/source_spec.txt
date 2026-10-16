@@ -1,0 +1,341 @@
+      MLOps 엔지니어 양성 과정 · 데이터 표준화 실습 명세서
+
+
+     📋 KREAM 데이터베이스 테이블 정의서 및 컬럼 명세서
+     시스템: 한정판 리셀 플랫폼(KREAM 스타일) 정품/가품 검수 데이터 | 대상: PostgreSQL (Schema: public)
+
+
+
+
+    👟 [데이터셋 주제 및 비즈니스 배경]
+    주제: 한정판 리셀 플랫폼(KREAM 스타일) 검수 실적 및 가품 오판정(300% 배상) 리스크 관리 데이터
+    • 도메인 배경: 한정판 스니커즈, 명품백, 롤렉스 시계 등의 C2C 거래에서 플랫폼 감정사가 정품/가품을 판정하는 원천 로그입니
+    다. 가품(짝퉁)을 정품(PASS)으로 잘못 오판정해 출고(CLAIM_FAKE_PASS)할 경우, 구매자에게 체결가의 300%(3배)를 배상해야 하
+    는 비즈니스 손익 직결 데이터입니다.
+    • 데이터셋 구성 (5종): 마스터 2종(검수원 인사, 카테고리 계층) + 표준 사전 1종(모델명·은어·금칙어) + 원천 팩트(335,000건) +
+    조인 통합본
+
+
+
+
+[1.1] KREAM_INSPECTOR_MASTER                                                    검수원 인사 마스터 테이블 (3,150건)
+
+[컬럼 명세]
+
+no    column name      컬럼명         type          length   PK   NN     Default    정의 / 설명          비고
+
+                                                               NOT               검수원 고유 사번        전각/공백 정
+1     EMP_NO           검수원 사번      VARCHAR       20       PK
+                                                               NULL              (예: KRM000123)   규화
+
+                                                               NOT               검수원 한글 성명 (동
+2     EMP_NM           검수원 성명      VARCHAR       50                                               동명이인 주의
+                                                               NULL              명이인 존재)
+
+                                                                                 소속 검수팀명 (스니
+                                                               NOT                                영문 혼재 정
+3     DEPT_NM          소속 부서명      VARCHAR       100                             커즈검수1팀, 외주야
+                                                               NULL                               규화
+                                                                                 간검수팀 등)
+
+                                                                                 직급 (주니어검수원,
+                                                               NOT
+4     POSITION_NM      직급          VARCHAR       50                              시니어감정사, 수석감
+                                                               NULL
+                                                                                 정사)
+
+                                                               NOT               검수원 입사일자
+5     HIRE_DT          입사일         DATE
+                                                               NULL              (YYYY-MM-DD)
+
+                                                                                 현재 재직 여부 (Y: 재
+                                                               NOT                                비표준값(퇴
+6     ACTIVE_YN        재직 여부       CHAR          1                    'Y'        직 / N: 퇴사·계약만
+                                                               NULL                               사, 0) 표준화
+                                                                                 료)
+
+[인덱스 명세]
+
+no     Index name                   Index type            Unique            구성 컬럼
+
+1      PK_KREAM_INSPECTOR_MASTER    PK                    Unique            EMP_NO
+[1.2] KREAM_CATEGORY_LOOKUP                                                    카테고리 계층 마스터 테이블 (1,050건)
+
+[컬럼 명세]
+
+no   column name    컬럼명          type         length   PK     NN     Default             정의 / 설명       비고
+
+                                                                                         카테고리 식
+                                                              NOT
+1    CAT_ID         카테고리 ID      VARCHAR      20       PK                                별자 (예:        전각 정규화
+                                                              NULL
+                                                                                         CAT_00001)
+
+                                                                                         카테고리 및
+                                                                                         브랜드 라인
+                                                              NOT
+2    CAT_NM         카테고리명        VARCHAR      100                                        명 (나이키 스
+                                                              NULL
+                                                                                         니커즈, 롤렉
+                                                                                         스 시계)
+
+                                                                                         분류 레벨
+                                                                                         (TOP_LEVEL:
+                                                              NOT
+3    CAT_LEVEL      계층 레벨        VARCHAR      20                                         대분류,
+                                                              NULL
+                                                                                         BRAND_LINE:
+                                                                                         브랜드라인)
+
+                                                                                         카테고리 등
+                                                                                         록 일시
+                    최초 등록 일                                   NOT                                      슬래시 포맷
+4    REG_DT                      DATETIME                            CURRENT_TIMESTAMP   (YYYY-MM-
+                    시                                         NULL                                     정규화
+                                                                                         DD
+                                                                                         HH:MM:SS)
+
+[인덱스 명세]
+
+no    Index name                        Index type          Unique         구성 컬럼
+
+1     PK_KREAM_CATEGORY_LOOKUP          PK                  Unique         CAT_ID
+[1.3] KREAM_PRODUCT_STD_DICT                                                              표준 사전 관리 테이블 (32건)
+
+[컬럼 명세]
+
+no   column name               컬럼명             type      length    PK   NN      Default   정의 / 설명            비고
+
+                                                                        NOT               사전 등록 고유
+1    DICT_ID                   사전 식별 ID        VARCHAR   20        PK
+                                                                        NULL              ID (예: DICT_001)
+
+                                                                                          코드 유형
+                                                                        NOT               (ITEM_MODEL,
+2    CODE_TYPE                 코드 유형           VARCHAR   20
+                                                                        NULL              BANNED_WORD,
+                                                                                          DEPT_STD)
+
+                                                                                          표준 식별 코드
+                               표준 식별 코                                  NOT
+3    STD_CODE                                  VARCHAR   50                               (DUNK_LOW_BW,      조인 기준 키
+                               드                                        NULL
+                                                                                          BAD_REPLICA 등)
+
+                                                                        NOT               공식 표준 한글           복구 목표 표
+4    STD_KOR_NM                표준 한글명          VARCHAR   150
+                                                                        NULL              모델/부서명             준값
+
+                                                                                          은어·영문명·동
+                               동의어/은어                                                     물/인물 패러디           정규화 매핑
+5    SYNONYM_LIST                              VARCHAR   1000
+                               목록                                                         오타 목록 (콤마          표
+                                                                                          구분)
+
+                                                                                          가품 사칭 암어           격리
+                                                                        NOT
+6    BANNED_WORD_YN            금칙어 여부          CHAR      1                      'N'       및 위조 금칙어           (Quarantine)
+                                                                        NULL
+                                                                                          여부 (Y/N)           기준
+
+                                                                        NOT               브랜드 공식 발매
+7    BASE_RETAIL_KRW           공식 발매가          INT                              0
+                                                                        NULL              정가 (원)
+
+                                                                                          가품 오판정 시
+                                                                        NOT                                  배상 산술 기
+8    FAKE_PENALTY_MULTIPLIER   배상 배수           NUMERIC   3,1                    3.0       구매자 배상 배수
+                                                                        NULL                                 준
+                                                                                          (3.0배 = 300%)
+
+[인덱스 명세]
+
+no    Index name                          Index type           Unique          구성 컬럼
+
+1     PK_KREAM_PRODUCT_STD_DICT           PK                   Unique          DICT_ID
+[1.4] KREAM_INSPECTION_FACT                          한정판 리셀 검수 원천 팩트 테이블 (335,000건 / 경량 67,000건)
+
+[컬럼 명세]
+
+                         컬럼
+no   column name              type       PK   NN     Default   정의 / 설명           참조테이블                    비고
+                         명
+
+                         검수                                    검수 트랜잭션 고                                  전각/
+                                              NOT
+1    INSP_ID             식별   VARCHAR    PK                    유 ID (예:                                   공백
+                                              NULL
+                         ID                                    INSP_001234)                               정규화
+
+                                                               검수 판정 차수 (1:                               최고개
+                         개정                   NOT
+2    REV_NO                   INT        PK          1         1차 검수 / 2: 재검                              정본
+                         번호                   NULL
+                                                               수)                                         채택
+
+                         상품                                                                               사전
+                                              NOT              상품 표준 식별 코
+3    ITEM_STD_CODE       표준   VARCHAR                                            KREAM_PRODUCT_STD_DICT   조인
+                                              NULL             드
+                         코드                                                                               키
+
+                                                               거래 상품명 (은어·                                표준명
+                         상품                   NOT
+4    ITEM_NM                  VARCHAR                          영문·패러디 오타                                  치환
+                         명                    NULL
+                                                               포함)                                        복구
+
+                         상위
+                                                               상위 분류 카테고                                  FK 무
+                         카테
+5    PARENT_CAT_ID            VARCHAR                          리 ID (최상위 루       KREAM_CATEGORY_LOOKUP    결성
+                         고리
+                                                               트는 빈값)                                     검증
+                         ID
+
+                         거래                                    실제 거래 체결 금                                 원화
+                                              NOT
+6    TRADE_PRICE_KRW     체결   VARCHAR                          액 (만원/$ 단위                                 환산
+                                              NULL
+                         가                                     혼재)                                        정규화
+
+                                                                                                          분통
+                         검수                                    검수 진행 시간
+                                              NOT                                                         일&
+7    INSP_DURATION_MIN   소요   VARCHAR                          (초/분 단위 및
+                                              NULL                                                        -999
+                         시간                                    -999 결측)
+                                                                                                          격리
+
+                                                               PASS(정품) /
+                         검수
+                                              NOT              FAKE_REJECT(가
+8    INSP_RESULT         판정   VARCHAR
+                                              NULL             품) /
+                         결과
+                                                               CLAIM_FAKE_PASS
+
+                         검수                                                                               유령사
+                                              NOT              검수 집행 감정사
+9    INSPECTOR_EMP_NO    원사   VARCHAR                                            KREAM_INSPECTOR_MASTER   번격
+                                              NULL             사번
+                         번                                                                                리
+
+                                                               상품 물류센터 입                                  +9시
+                         입고                   NOT
+10   INBOUND_DT               DATETIME                         고 일시 (UTC/KST                              간 KST
+                         일시                   NULL
+                                                               혼재)                                        변환
+
+                         검수                                                                               시간역
+                                              NOT              검수 및 판정 완료
+11   INSP_DONE_DT        완료   DATETIME                                                                    전격
+                                              NULL             일시
+                         일시                                                                               리
+
+                         데이                                                                               추출시
+                         터추                   NOT                                                         각함
+12   EXTRACTED_AT             DATETIME                         DW 추출 시각
+                         출일                   NULL                                                        정방
+                         시                                                                                어
+
+                         검수
+                                                               검수관 자유 기술
+                         관비                                                                               지시문
+13   INSP_MEMO                TEXT                             메모 (지시문 함정
+                         고메                                                                               무시
+                                                               포함)
+                         모
+
+[인덱스 명세]
+no   Index name                 Index type   Unique       구성 컬럼
+
+1    PK_KREAM_INSPECTION_FACT   PK           Unique       INSP_ID, REV_NO
+
+2    IX_KREAM_INSP_EMP          NON-UNIQUE   Non-Unique   INSPECTOR_EMP_NO
+[1.5] KREAM_INSPECTION_JOIN_READY                            검수 조인 통합 분석 테이블 (335,000건 / 경량 67,000건)
+
+[컬럼 명세 (총 18개 컬럼)]
+
+no   column name              컬럼명            type       PK    NN     Default   정의 / 설명                비고
+
+                                                              NOT
+1    INSP_ID                  검수 식별 ID       VARCHAR    PK                     검수 트랜잭션 고유 ID          정규화 대상
+                                                              NULL
+
+                                                              NOT
+2    REV_NO                   개정 번호          INT        PK           1         검수 판정 차수               최신본 채택
+                                                              NULL
+
+                                                              NOT
+3    ITEM_STD_CODE            상품 표준 코드       VARCHAR                           상품 표준 식별 코드            사전 조인 키
+                                                              NULL
+
+                                                              NOT
+4    ITEM_NM                  상품명            VARCHAR                           거래 상품명                 표준명 복구
+                                                              NULL
+
+                              상위 카테고리
+5    PARENT_CAT_ID                           VARCHAR                           상위 분류 카테고리 ID          FK 무결성
+                              ID
+
+                                                              NOT              상위 브랜드/라인 한글
+6    PARENT_CAT_NM            상위 카테고리명       VARCHAR                                                  마스터 재조인
+                                                              NULL             명
+
+                                                              NOT
+7    TRADE_PRICE_KRW          거래 체결가         VARCHAR                           실제 거래 체결 금액            원화 환산
+                                                              NULL
+
+                                                              NOT
+8    INSP_DURATION_MIN        검수 소요 시간       VARCHAR                           검수 진행 시간               분 환산
+                                                              NULL
+
+                                                              NOT              PASS / FAKE_REJECT /
+9    INSP_RESULT              검수 판정 결과       VARCHAR
+                                                              NULL             CLAIM_FAKE_PASS
+
+                              300% 배상 손실                      NOT              가품 오판정 출고 시 3          거래가×3 재
+10   COMPENSATION_LOSS_KRW                   VARCHAR                 0
+                              액                               NULL             배 배상금                  계산
+
+                                                              NOT
+11   INSPECTOR_EMP_NO         검수원 사번         VARCHAR                           감정사 사번                 정규화 대상
+                                                              NULL
+
+                                                              NOT
+12   INSPECTOR_EMP_NM         검수원 성명         VARCHAR                           검수원 한글 성명              동명이인 복구
+                                                              NULL
+
+                                                              NOT                                     표준 부서명
+13   INSPECTOR_DEPT_NM        소속 부서명         VARCHAR                           소속 검수팀명
+                                                              NULL                                    복구
+
+                                                              NOT
+14   INSPECTOR_POSITION_NM    직급             VARCHAR                           감정사 직급                 마스터 재조인
+                                                              NULL
+
+                                                              NOT              상품 물류센터 입고 일
+15   INBOUND_DT               입고 일시          DATETIME                                                 KST 변환
+                                                              NULL             시
+
+                                                              NOT
+16   INSP_DONE_DT             검수 완료 일시       DATETIME                          검수 완료 일시               시간역전 격리
+                                                              NULL
+
+                              데이터 추출 일                        NOT
+17   EXTRACTED_AT                            DATETIME                          DW 추출 시각
+                              시                               NULL
+
+                              검수관 비고 메
+18   INSP_MEMO                               TEXT                              검수관 비고 메모              지시문 무시
+                              모
+
+[인덱스 명세]
+
+no    Index name                       Index type       Unique           구성 컬럼
+
+1     PK_KREAM_INSPECTION_JOIN_READY   PK               Unique           INSP_ID, REV_NO
+
+2     IX_KREAM_JOIN_DEPT               NON-UNIQUE       Non-Unique       INSPECTOR_DEPT_NM
+

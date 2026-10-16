@@ -1,0 +1,17 @@
+﻿check_id,target_table,checked_rows,failed_rows,check_status,check_description,rule_version,checked_at_kst
+CATEGORY_STANDARD_VALUES,silver_category_parent_lookup,970,0,PASS,"카테고리 ID, 이름과 허용 계층 값 확인",20261014_v2,2026-10-14 19:58:42
+DICTIONARY_PENALTY_RULE,silver_product_std_dict,32,0,PASS,검수 결과별 배상 배수 확인,20261014_v2,2026-10-14 19:58:42
+DICTIONARY_STANDARD_VALUES,silver_product_std_dict,32,0,PASS,"사전 필수값, 코드 유형, 금지 여부와 수치 범위 확인",20261014_v2,2026-10-14 19:58:42
+INSPECTION_CATEGORY_REFERENCE,silver_inspection,271787,0,PASS,값이 있는 카테고리의 정상 마스터 참조 확인,20261014_v2,2026-10-14 19:58:42
+INSPECTION_DATETIME_ORDER,silver_inspection,271787,0,PASS,"입고, 검수 완료, 추출 시각의 순서 확인",20261014_v2,2026-10-14 19:58:42
+INSPECTION_EMPLOYEE_REFERENCE,silver_inspection,271787,0,PASS,정상 검수원 마스터 참조 확인,20261014_v2,2026-10-14 19:58:42
+INSPECTION_KEY_AND_REQUIRED_VALUES,silver_inspection,271787,0,PASS,검수 키 형식과 필수 문자값 확인,20261014_v2,2026-10-14 19:58:42
+INSPECTION_NONNEGATIVE_NUMBERS,silver_inspection,271787,0,PASS,음수 거래가와 음수 검수 시간 확인,20261014_v2,2026-10-14 19:58:42
+INSPECTION_UNIQUE_ID,silver_inspection,271787,0,PASS,검수 ID마다 현재 정상 상태가 한 행인지 확인,20261014_v2,2026-10-14 19:58:42
+INSPECTOR_ACTIVE_POLICY,silver_inspector_master,2960,0,PASS,원본이 정확히 대문자 Y인 경우만 재직 처리 확인,20261014_v2,2026-10-14 19:58:42
+INSPECTOR_SOURCE_LINK,silver_inspector_master,2960,0,PASS,검수원 원본 출처 연결 확인,20261014_v2,2026-10-14 19:58:42
+INSPECTOR_STANDARD_VALUES,silver_inspector_master,2960,0,PASS,사번 형식과 필수 문자값 확인,20261014_v2,2026-10-14 19:58:42
+JOIN_COMPENSATION_FORMULA,silver_inspection_join_ready,271787,0,PASS,"가품 오판정은 거래가의 3배, 그 외는 0 확인",20261014_v2,2026-10-14 19:58:42
+JOIN_MASTER_VALUES,silver_inspection_join_ready,271787,0,PASS,"정규 마스터의 이름, 부서, 직급과 카테고리명 확인",20261014_v2,2026-10-14 19:58:42
+MAINTENANCE_WINDOW_RULE,silver_inspection,0,,NOT_CHECKED,점검 구간의 기간과 판정 조건이 제공되지 않아 미검증. 추후 개선 항목.,20261014_v2,2026-10-14 19:58:42
+SUPPLIER_COUNT_COMPARISON,silver_inspection,335000,,RECORDED_DIFFERENCE,"현재 정상 271787, 제외 29359, 격리 33854. 상대팀 기준 정상 280800, 제외 32600, 격리 21600과 차이가 있으며 개선 항목으로 기록.",20261014_v2,2026-10-14 19:58:42

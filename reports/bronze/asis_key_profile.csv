@@ -1,0 +1,6 @@
+﻿file,key_column,raw_distinct_keys,normalized_distinct_keys,normalization_changed_rows
+kream_product_std_dict.csv,DICT_ID,32,32,0
+kream_category_parent_lookup.csv,CAT_ID,1000,1000,54
+kream_inspector_master.csv,EMP_NO,3000,3000,205
+kream_inspection_300000.csv,INSP_ID,300000,300000,6000
+kream_inspection_join_ready.csv,INSP_ID,300000,300000,6000

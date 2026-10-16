@@ -1,0 +1,394 @@
+﻿table_name,column_name,term_code,domain_id,mysql_type,is_nullable,column_key,standard_check_scope,definition
+asis_inspection_join_row_pair_v1,inspection_bronze_row_id,INSPECTION_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,검수 원본 행 번호
+asis_inspection_join_row_pair_v1,join_ready_bronze_row_id,JOIN_READY_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,UNI,AUDIT_OR_METADATA,조인 통합 원본 행 번호
+asis_inspection_join_row_pair_v1,payload_sha256,PAYLOAD_SHA256,DOM_004,char(64),NO,,AUDIT_OR_METADATA,공유 원본 컬럼 내용으로 계산한 SHA-256 해시
+asis_inspection_join_row_pair_v1,payload_occurrence_no,PAYLOAD_OCCURRENCE_NO,DOM_002,bigint unsigned,NO,,AUDIT_OR_METADATA,동일 내용의 원본 행 사이에서 부여한 대응 순번
+asis_join_ready_disposition_snapshot_v1,join_ready_bronze_row_id,JOIN_READY_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,조인 통합 원본 행 번호
+asis_join_ready_disposition_snapshot_v1,inspection_bronze_row_id,INSPECTION_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,UNI,AUDIT_OR_METADATA,검수 원본 행 번호
+asis_join_ready_disposition_snapshot_v1,disposition,DISPOSITION,DOM_040,varchar(32),NO,,AUDIT_OR_METADATA,정상 또는 격리 또는 제외 분류
+asis_join_ready_disposition_snapshot_v1,primary_reason,PRIMARY_REASON,DOM_043,varchar(64),NO,,AUDIT_OR_METADATA,대표 분류 사유. 모든 오류 사유의 합계가 아님
+asis_join_ready_disposition_snapshot_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,AUDIT_OR_METADATA,적용한 처리 또는 분석 규칙 버전
+data_quality_check_results_v1,check_id,CHECK_ID,DOM_043,varchar(64),NO,PRI,AUDIT_OR_METADATA,품질 검사 식별자
+data_quality_check_results_v1,target_table,TARGET_TABLE,DOM_043,varchar(64),NO,,AUDIT_OR_METADATA,검사 대상 테이블
+data_quality_check_results_v1,checked_rows,CHECKED_ROWS,DOM_002,bigint unsigned,NO,,AUDIT_OR_METADATA,검사 대상으로 기록한 행 수
+data_quality_check_results_v1,failed_rows,FAILED_ROWS,DOM_002,bigint unsigned,YES,,AUDIT_OR_METADATA,검사 실패 행 수. 미검증 또는 비교 기록에서는 NULL 가능
+data_quality_check_results_v1,check_status,CHECK_STATUS,DOM_040,varchar(32),NO,,AUDIT_OR_METADATA,PASS 또는 NOT_CHECKED 또는 RECORDED_DIFFERENCE 등 검사 상태
+data_quality_check_results_v1,check_description,CHECK_DESCRIPTION,DOM_023,text,NO,,AUDIT_OR_METADATA,검사 내용과 미검증 또는 차이 설명
+data_quality_check_results_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,AUDIT_OR_METADATA,적용한 처리 또는 분석 규칙 버전
+data_quality_check_results_v1,checked_at_kst,CHECKED_AT_KST,DOM_006,datetime,NO,,AUDIT_OR_METADATA,품질 검사 결과를 기록한 KST 시각
+excluded_category_parent_lookup,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,해당 원본 테이블의 물리 행 번호
+excluded_category_parent_lookup,source_file,SOURCE_FILE,DOM_036,varchar(255),NO,,AUDIT_OR_METADATA,원본 파일 이름
+excluded_category_parent_lookup,raw_cat_id,RAW_CAT_ID,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 CAT_ID 값. 오류 보존과 감사에 사용
+excluded_category_parent_lookup,raw_cat_name,RAW_CAT_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 CAT_NM 값. 오류 보존과 감사에 사용
+excluded_category_parent_lookup,raw_cat_level,RAW_CAT_LEVEL,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 CAT_LEVEL 값. 오류 보존과 감사에 사용
+excluded_category_parent_lookup,raw_reg_dt,RAW_REG_DT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 REG_DT 값. 오류 보존과 감사에 사용
+excluded_category_parent_lookup,normalized_cat_id,NORMALIZED_CAT_ID,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화한 CAT_ID 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_category_parent_lookup,normalized_cat_name,NORMALIZED_CAT_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,정규화한 CAT_NM 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_category_parent_lookup,normalized_cat_level,NORMALIZED_CAT_LEVEL,DOM_022,mediumtext,YES,,AUDIT_OR_METADATA,정규화한 CAT_LEVEL 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_category_parent_lookup,normalized_reg_dt,NORMALIZED_REG_DT,DOM_006,datetime,YES,,AUDIT_OR_METADATA,정규화한 REG_DT 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_category_parent_lookup,occurrence_no,OCCURRENCE_NO,DOM_002,bigint unsigned,NO,,AUDIT_OR_METADATA,동일 마스터 키의 중복 처리 순번
+excluded_category_parent_lookup,primary_reason,PRIMARY_REASON,DOM_040,varchar(32),NO,,AUDIT_OR_METADATA,대표 분류 사유. 모든 오류 사유의 합계가 아님
+excluded_category_parent_lookup,disposition,DISPOSITION,DOM_032,varchar(20),NO,,AUDIT_OR_METADATA,정상 또는 격리 또는 제외 분류
+excluded_inspection,bronze_row_id,BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,검수 원본의 물리 행 번호
+excluded_inspection,normalized_insp_id,NORMALIZED_INSP_ID,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화한 검수 ID 후보
+excluded_inspection,normalized_rev_no,NORMALIZED_REV_NO,DOM_019,int,YES,,AUDIT_OR_METADATA,정규화한 개정 번호 후보
+excluded_inspection,price_krw_candidate,PRICE_KRW_CANDIDATE,DOM_016,"decimal(29,4)",YES,,AUDIT_OR_METADATA,원화로 환산한 거래가 후보
+excluded_inspection,duration_min_candidate,DURATION_MIN_CANDIDATE,DOM_015,"decimal(24,8)",YES,,AUDIT_OR_METADATA,분으로 환산한 소요시간 후보
+excluded_inspection,price_status,PRICE_STATUS,DOM_037,varchar(28),YES,,AUDIT_OR_METADATA,거래가 해석 및 변환 상태
+excluded_inspection,duration_status,DURATION_STATUS,DOM_039,varchar(31),YES,,AUDIT_OR_METADATA,소요시간 해석 및 변환 상태
+excluded_inspection,inbound_dt_kst,INBOUND_DT_KST,DOM_006,datetime,YES,,AUDIT_OR_METADATA,KST로 변환한 입고 시각
+excluded_inspection,insp_done_dt_kst,INSP_DONE_DT_KST,DOM_006,datetime,YES,,AUDIT_OR_METADATA,KST로 변환한 검수 완료 시각
+excluded_inspection,extracted_at_kst,EXTRACTED_AT_KST,DOM_006,datetime,YES,,AUDIT_OR_METADATA,KST로 변환한 데이터 추출 시각
+excluded_inspection,inspector_emp_no_candidate,INSPECTOR_EMP_NO_CANDIDATE,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화 또는 복구한 검수원 사번 후보
+excluded_inspection,employee_reference_status,EMPLOYEE_REFERENCE_STATUS,DOM_040,varchar(32),YES,,AUDIT_OR_METADATA,검수원 마스터 참조 검사 상태
+excluded_inspection,parent_cat_id_candidate,PARENT_CAT_ID_CANDIDATE,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화 또는 근거로 복구한 카테고리 참조 후보
+excluded_inspection,category_reference_origin,CATEGORY_REFERENCE_ORIGIN,DOM_040,varchar(32),YES,,AUDIT_OR_METADATA,카테고리 참조의 원본 또는 복구 출처 구분
+excluded_inspection,category_reference_status,CATEGORY_REFERENCE_STATUS,DOM_040,varchar(32),YES,,AUDIT_OR_METADATA,카테고리 마스터 참조 검사 상태
+excluded_inspection,standard_item_name,STANDARD_ITEM_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,공식 상품 표준명
+excluded_inspection,name_check_status,NAME_CHECK_STATUS,DOM_038,varchar(30),YES,,AUDIT_OR_METADATA,상품 이름의 사전 대조 또는 코드 기반 복구 상태
+excluded_inspection,revision_group_rows,REVISION_GROUP_ROWS,DOM_002,bigint unsigned,YES,,AUDIT_OR_METADATA,동일 검수 ID와 개정 번호 그룹의 행 수
+excluded_inspection,revision_payload_versions,REVISION_PAYLOAD_VERSIONS,DOM_002,bigint unsigned,YES,,AUDIT_OR_METADATA,동일 개정 그룹의 서로 다른 원본 내용 수
+excluded_inspection,missing_check_flag,MISSING_CHECK_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,이전 검사 단계의 검사 결과 누락 표시
+excluded_inspection,price_error_flag,PRICE_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,거래가 오류 표시
+excluded_inspection,duration_error_flag,DURATION_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,검수 소요시간 오류 표시
+excluded_inspection,datetime_missing_flag,DATETIME_MISSING_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,필수 시각 해석 결과 결측 표시
+excluded_inspection,done_before_inbound_flag,DONE_BEFORE_INBOUND_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,검수 완료 시각이 입고보다 빠른 오류 표시
+excluded_inspection,extracted_before_done_flag,EXTRACTED_BEFORE_DONE_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,추출 시각이 완료보다 빠른 오류 표시
+excluded_inspection,employee_reference_error_flag,EMPLOYEE_REFERENCE_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,검수원 참조 오류 표시
+excluded_inspection,category_reference_error_flag,CATEGORY_REFERENCE_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,카테고리 참조 오류 표시
+excluded_inspection,product_name_error_flag,PRODUCT_NAME_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,상품 이름 또는 상품 사전 대조 오류 표시
+excluded_inspection,revision_conflict_flag,REVISION_CONFLICT_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,동일 ID와 개정에서 원본 내용이 충돌하는 표시
+excluded_inspection,raw_insp_result,RAW_INSP_RESULT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_RESULT 값. 오류 보존과 감사에 사용
+excluded_inspection,insp_result_candidate,INSP_RESULT_CANDIDATE,DOM_042,varchar(50),YES,,AUDIT_OR_METADATA,검수 결과 코드 후보
+excluded_inspection,penalty_multiplier_candidate,PENALTY_MULTIPLIER_CANDIDATE,DOM_017,"decimal(3,1)",YES,,AUDIT_OR_METADATA,검수 결과에 따른 배상 배수 후보
+excluded_inspection,result_check_status,RESULT_CHECK_STATUS,DOM_034,varchar(24),YES,,AUDIT_OR_METADATA,검수 결과 코드의 검사 상태
+excluded_inspection,result_error_flag,RESULT_ERROR_FLAG,DOM_019,int,YES,,AUDIT_OR_METADATA,검수 결과 코드 오류 표시
+excluded_inspection,required_value_missing_flag,REQUIRED_VALUE_MISSING_FLAG,DOM_019,int,YES,,AUDIT_OR_METADATA,필수 값 누락 표시
+excluded_inspection,integrated_missing_check_flag,INTEGRATED_MISSING_CHECK_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,통합 검사에서 필수 검사 결과가 빠졌는지 표시. 0은 검사 누락 없음
+excluded_inspection,inspection_key_error_flag,INSPECTION_KEY_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,검수 ID 또는 개정 번호 오류 표시
+excluded_inspection,record_error_flag,RECORD_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,통합 품질 오류 표시. 0은 해당 단계 오류 없음
+excluded_inspection,valid_occurrence_no,VALID_OCCURRENCE_NO,DOM_002,bigint unsigned,YES,,AUDIT_OR_METADATA,유효한 동일 개정의 중복 제거를 위한 순번
+excluded_inspection,latest_valid_rev_no,LATEST_VALID_REV_NO,DOM_001,bigint,YES,,AUDIT_OR_METADATA,품질 검사 통과 후 해당 검수 ID의 최고 유효 개정 번호
+excluded_inspection,disposition,DISPOSITION,DOM_030,varchar(16),NO,,AUDIT_OR_METADATA,정상 또는 격리 또는 제외 분류
+excluded_inspection,primary_reason,PRIMARY_REASON,DOM_035,varchar(25),NO,,AUDIT_OR_METADATA,대표 분류 사유. 모든 오류 사유의 합계가 아님
+excluded_inspection,rule_version,RULE_VERSION,DOM_028,varchar(11),NO,,AUDIT_OR_METADATA,적용한 처리 또는 분석 규칙 버전
+excluded_inspection,product_name_rule_source,PRODUCT_NAME_RULE_SOURCE,DOM_041,varchar(40),NO,,AUDIT_OR_METADATA,원래 이름 검사 또는 상품 코드 기반 복구 등의 판단 근거
+excluded_inspection,source_file,SOURCE_FILE,DOM_036,varchar(255),NO,,AUDIT_OR_METADATA,원본 파일 이름
+excluded_inspection,original_insp_id,ORIGINAL_INSP_ID,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_ID 값. 오류 보존과 감사에 사용
+excluded_inspection,original_rev_no,ORIGINAL_REV_NO,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 REV_NO 값. 오류 보존과 감사에 사용
+excluded_inspection,original_item_std_code,ORIGINAL_ITEM_STD_CODE,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 ITEM_STD_CODE 값. 오류 보존과 감사에 사용
+excluded_inspection,original_item_name,ORIGINAL_ITEM_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 ITEM_NM 값. 오류 보존과 감사에 사용
+excluded_inspection,original_parent_cat_id,ORIGINAL_PARENT_CAT_ID,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 PARENT_CAT_ID 값. 오류 보존과 감사에 사용
+excluded_inspection,original_trade_price,ORIGINAL_TRADE_PRICE,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 TRADE_PRICE_KRW 값. 오류 보존과 감사에 사용
+excluded_inspection,original_duration,ORIGINAL_DURATION,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_DURATION_MIN 값. 오류 보존과 감사에 사용
+excluded_inspection,original_insp_result,ORIGINAL_INSP_RESULT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_RESULT 값. 오류 보존과 감사에 사용
+excluded_inspection,original_inspector_emp_no,ORIGINAL_INSPECTOR_EMP_NO,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSPECTOR_EMP_NO 값. 오류 보존과 감사에 사용
+excluded_inspection,original_inbound_dt,ORIGINAL_INBOUND_DT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INBOUND_DT 값. 오류 보존과 감사에 사용
+excluded_inspection,original_done_dt,ORIGINAL_DONE_DT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_DONE_DT 값. 오류 보존과 감사에 사용
+excluded_inspection,original_extracted_at,ORIGINAL_EXTRACTED_AT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 EXTRACTED_AT 값. 오류 보존과 감사에 사용
+excluded_inspection,original_memo,ORIGINAL_MEMO,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_MEMO 값. 오류 보존과 감사에 사용
+excluded_inspector_master,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,해당 원본 테이블의 물리 행 번호
+excluded_inspector_master,source_file,SOURCE_FILE,DOM_036,varchar(255),NO,,AUDIT_OR_METADATA,원본 파일 이름
+excluded_inspector_master,raw_emp_no,RAW_EMP_NO,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 EMP_NO 값. 오류 보존과 감사에 사용
+excluded_inspector_master,raw_emp_name,RAW_EMP_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 EMP_NM 값. 오류 보존과 감사에 사용
+excluded_inspector_master,raw_department,RAW_DEPARTMENT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 DEPT_NM 값. 오류 보존과 감사에 사용
+excluded_inspector_master,raw_position,RAW_POSITION,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 POSITION_NM 값. 오류 보존과 감사에 사용
+excluded_inspector_master,raw_hire_dt,RAW_HIRE_DT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 HIRE_DT 값. 오류 보존과 감사에 사용
+excluded_inspector_master,raw_active_yn,RAW_ACTIVE_YN,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 ACTIVE_YN 값. 오류 보존과 감사에 사용
+excluded_inspector_master,normalized_emp_no,NORMALIZED_EMP_NO,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화한 EMP_NO 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_inspector_master,normalized_emp_name,NORMALIZED_EMP_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,정규화한 EMP_NM 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_inspector_master,normalized_position,NORMALIZED_POSITION,DOM_023,text,YES,,AUDIT_OR_METADATA,정규화한 POSITION_NM 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_inspector_master,normalized_hire_date,NORMALIZED_HIRE_DATE,DOM_005,date,YES,,AUDIT_OR_METADATA,정규화한 HIRE_DT 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_inspector_master,normalized_active_yn,NORMALIZED_ACTIVE_YN,DOM_025,varchar(1),NO,,AUDIT_OR_METADATA,정규화한 ACTIVE_YN 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_inspector_master,raw_active_status,RAW_ACTIVE_STATUS,DOM_028,varchar(11),NO,,AUDIT_OR_METADATA,원본 재직 값의 상태 분류. 원본 전체 문자열과 구분
+excluded_inspector_master,normalized_department,NORMALIZED_DEPARTMENT,DOM_021,longtext,YES,,AUDIT_OR_METADATA,정규화한 DEPT_NM 후보. 최종 채택 여부는 분류 결과로 판단
+excluded_inspector_master,department_rule_source,DEPARTMENT_RULE_SOURCE,DOM_031,varchar(17),NO,,AUDIT_OR_METADATA,부서명 정규화 또는 유지 판단의 근거 구분
+excluded_inspector_master,occurrence_no,OCCURRENCE_NO,DOM_002,bigint unsigned,NO,,AUDIT_OR_METADATA,동일 마스터 키의 중복 처리 순번
+excluded_inspector_master,disposition,DISPOSITION,DOM_032,varchar(20),NO,,AUDIT_OR_METADATA,정상 또는 격리 또는 제외 분류
+excluded_inspector_master,primary_reason,PRIMARY_REASON,DOM_033,varchar(23),NO,,AUDIT_OR_METADATA,대표 분류 사유. 모든 오류 사유의 합계가 아님
+gold_department_risk_summary_v1,department_name,DEPARTMENT_NAME,DOM_026,varchar(100),NO,PRI,NORMAL_SILVER_GOLD,현재 정규 마스터에서 연결한 부서명
+gold_department_risk_summary_v1,inspection_rows,INSPECTION_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 집계 범위의 검수 기록 수
+gold_department_risk_summary_v1,fake_pass_claim_rows,FAKE_PASS_CLAIM_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,CLAIM_FAKE_PASS 결과의 검수 건수
+gold_department_risk_summary_v1,total_trade_price_krw,TOTAL_TRADE_PRICE_KRW,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,그룹 거래가 합계. 단위 원
+gold_department_risk_summary_v1,compensation_loss_krw,COMPENSATION_LOSS_KRW,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,그룹 재계산 배상금 합계. 단위 원
+gold_department_risk_summary_v1,claim_rate_pct,CLAIM_RATE_PCT,DOM_018,"decimal(9,4)",YES,,NORMAL_SILVER_GOLD,가품 오판정 건수 나누기 검수 건수 곱하기 100
+gold_department_risk_summary_v1,loss_to_trade_pct,LOSS_TO_TRADE_PCT,DOM_018,"decimal(9,4)",YES,,NORMAL_SILVER_GOLD,배상금 합계 나누기 거래가 합계 곱하기 100
+gold_department_risk_summary_v1,observation_status,OBSERVATION_STATUS,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,정상 기록 관측 여부. NO_VALID_OBSERVATIONS는 평가 가능한 관측 없음
+gold_department_risk_summary_v1,first_done_kst,FIRST_DONE_KST,DOM_006,datetime,YES,,NORMAL_SILVER_GOLD,그룹 검수 완료 시각의 최솟값
+gold_department_risk_summary_v1,last_done_kst,LAST_DONE_KST,DOM_006,datetime,YES,,NORMAL_SILVER_GOLD,그룹 검수 완료 시각의 최댓값
+gold_department_risk_summary_v1,department_basis,DEPARTMENT_BASIS,DOM_041,varchar(40),NO,,NORMAL_SILVER_GOLD,부서 집계 기준. CURRENT_MASTER는 현재 마스터 기준
+gold_department_risk_summary_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_inspection_result_daily_v1,done_date_kst,DONE_DATE_KST,DOM_005,date,NO,PRI,NORMAL_SILVER_GOLD,KST 기준 검수 완료 날짜
+gold_inspection_result_daily_v1,analysis_period,ANALYSIS_PERIOD,DOM_041,varchar(40),NO,,NORMAL_SILVER_GOLD,현재 데이터 분포에 맞춰 구분한 분석 기간
+gold_inspection_result_daily_v1,inspection_rows,INSPECTION_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 집계 범위의 검수 기록 수
+gold_inspection_result_daily_v1,pass_rows,PASS_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,PASS 결과의 검수 건수
+gold_inspection_result_daily_v1,fake_reject_rows,FAKE_REJECT_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,FAKE_REJECT 결과의 검수 건수
+gold_inspection_result_daily_v1,box_damage_hold_rows,BOX_DAMAGE_HOLD_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,BOX_DMG_HOLD 결과의 검수 건수
+gold_inspection_result_daily_v1,fake_pass_claim_rows,FAKE_PASS_CLAIM_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,CLAIM_FAKE_PASS 결과의 검수 건수
+gold_inspection_result_daily_v1,total_trade_price_krw,TOTAL_TRADE_PRICE_KRW,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,그룹 거래가 합계. 단위 원
+gold_inspection_result_daily_v1,compensation_loss_krw,COMPENSATION_LOSS_KRW,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,그룹 재계산 배상금 합계. 단위 원
+gold_inspection_result_daily_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_inspection_workload_daily_v1,done_date_kst,DONE_DATE_KST,DOM_005,date,NO,PRI,NORMAL_SILVER_GOLD,KST 기준 검수 완료 날짜
+gold_inspection_workload_daily_v1,event_type,EVENT_TYPE,DOM_032,varchar(20),NO,PRI,NORMAL_SILVER_GOLD,최초 검수 또는 재검수 작업 구분
+gold_inspection_workload_daily_v1,analysis_period,ANALYSIS_PERIOD,DOM_041,varchar(40),NO,,NORMAL_SILVER_GOLD,현재 데이터 분포에 맞춰 구분한 분석 기간
+gold_inspection_workload_daily_v1,inspection_event_rows,INSPECTION_EVENT_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,동일 중복을 제외한 유효 검수 작업 기록 수
+gold_inspection_workload_daily_v1,observed_inspector_ids,OBSERVED_INSPECTOR_IDS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 그룹에서 관측한 서로 다른 검수원 사번 수. 실제 출근 인원과 구분
+gold_inspection_workload_daily_v1,total_work_minutes,TOTAL_WORK_MINUTES,DOM_013,"decimal(20,8)",NO,,NORMAL_SILVER_GOLD,해당 유효 검수 작업의 소요시간 합계. 단위 분
+gold_inspection_workload_daily_v1,avg_work_minutes,AVG_WORK_MINUTES,DOM_007,"decimal(12,4)",NO,,NORMAL_SILVER_GOLD,해당 그룹의 검수 한 건당 평균 소요시간. 단위 분
+gold_inspection_workload_daily_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_inspection_workload_hourly_v1,done_date_kst,DONE_DATE_KST,DOM_005,date,NO,PRI,NORMAL_SILVER_GOLD,KST 기준 검수 완료 날짜
+gold_inspection_workload_hourly_v1,done_hour_kst,DONE_HOUR_KST,DOM_024,tinyint unsigned,NO,PRI,NORMAL_SILVER_GOLD,KST 기준 검수 완료 시간대. 0부터 23
+gold_inspection_workload_hourly_v1,department_name,DEPARTMENT_NAME,DOM_026,varchar(100),NO,PRI,NORMAL_SILVER_GOLD,현재 정규 마스터에서 연결한 부서명
+gold_inspection_workload_hourly_v1,event_type,EVENT_TYPE,DOM_032,varchar(20),NO,PRI,NORMAL_SILVER_GOLD,최초 검수 또는 재검수 작업 구분
+gold_inspection_workload_hourly_v1,analysis_period,ANALYSIS_PERIOD,DOM_041,varchar(40),NO,,NORMAL_SILVER_GOLD,현재 데이터 분포에 맞춰 구분한 분석 기간
+gold_inspection_workload_hourly_v1,inspection_event_rows,INSPECTION_EVENT_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,동일 중복을 제외한 유효 검수 작업 기록 수
+gold_inspection_workload_hourly_v1,observed_inspector_ids,OBSERVED_INSPECTOR_IDS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 그룹에서 관측한 서로 다른 검수원 사번 수. 실제 출근 인원과 구분
+gold_inspection_workload_hourly_v1,total_work_minutes,TOTAL_WORK_MINUTES,DOM_013,"decimal(20,8)",NO,,NORMAL_SILVER_GOLD,해당 유효 검수 작업의 소요시간 합계. 단위 분
+gold_inspection_workload_hourly_v1,avg_work_minutes,AVG_WORK_MINUTES,DOM_007,"decimal(12,4)",NO,,NORMAL_SILVER_GOLD,해당 그룹의 검수 한 건당 평균 소요시간. 단위 분
+gold_inspection_workload_hourly_v1,department_basis,DEPARTMENT_BASIS,DOM_041,varchar(40),NO,,NORMAL_SILVER_GOLD,부서 집계 기준. CURRENT_MASTER는 현재 마스터 기준
+gold_inspection_workload_hourly_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_prediction_actual_daily_v1,inspection_date,INSPECTION_DATE,DOM_005,date,NO,PRI,NORMAL_SILVER_GOLD,입력 또는 실제값의 검수 완료 날짜
+gold_prediction_actual_daily_v1,actual_inspection_rows,ACTUAL_INSPECTION_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 날짜의 실제 정상 최초 검수 건수
+gold_prediction_actual_daily_v1,actual_duration_min,ACTUAL_DURATION_MIN,DOM_013,"decimal(20,8)",NO,,NORMAL_SILVER_GOLD,해당 날짜의 실제 정상 최초 검수 소요시간 합계. 단위 분
+gold_prediction_actual_daily_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_prediction_input_daily_v1,inspection_date,INSPECTION_DATE,DOM_005,date,NO,PRI,NORMAL_SILVER_GOLD,입력 또는 실제값의 검수 완료 날짜
+gold_prediction_input_daily_v1,inspection_rows,INSPECTION_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 집계 범위의 검수 기록 수
+gold_prediction_input_daily_v1,total_duration_min,TOTAL_DURATION_MIN,DOM_013,"decimal(20,8)",NO,,NORMAL_SILVER_GOLD,해당 날짜의 검수 소요시간 합계. 단위 분
+gold_prediction_input_daily_v1,avg_duration_min,AVG_DURATION_MIN,DOM_007,"decimal(12,4)",NO,,NORMAL_SILVER_GOLD,검수 한 건당 평균 소요시간. 단위 분
+gold_prediction_input_daily_v1,prediction_cutoff_kst,PREDICTION_CUTOFF_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,예측 입력에 적용한 기준 시각. 2026-08-31 23:59:59 KST
+gold_prediction_input_daily_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_prediction_input_record_v1,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,NORMAL_SILVER_GOLD,해당 원본 테이블의 물리 행 번호
+gold_prediction_input_record_v1,insp_done_dt_kst,INSP_DONE_DT_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,KST로 변환한 검수 완료 시각
+gold_prediction_input_record_v1,extracted_at_kst,EXTRACTED_AT_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,KST로 변환한 데이터 추출 시각
+gold_prediction_input_record_v1,duration_min,DURATION_MIN,DOM_008,"decimal(12,8)",NO,,NORMAL_SILVER_GOLD,예측 입력의 검수 소요시간. 단위 분
+gold_prediction_input_record_v1,prediction_cutoff_kst,PREDICTION_CUTOFF_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,예측 입력에 적용한 기준 시각. 2026-08-31 23:59:59 KST
+gold_prediction_input_record_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_product_risk_summary_v1,item_std_code,ITEM_STD_CODE,DOM_042,varchar(50),NO,PRI,NORMAL_SILVER_GOLD,상품 표준 코드
+gold_product_risk_summary_v1,standard_item_name,STANDARD_ITEM_NAME,DOM_029,varchar(150),NO,,NORMAL_SILVER_GOLD,공식 상품 표준명
+gold_product_risk_summary_v1,inspection_rows,INSPECTION_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 집계 범위의 검수 기록 수
+gold_product_risk_summary_v1,fake_pass_claim_rows,FAKE_PASS_CLAIM_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,CLAIM_FAKE_PASS 결과의 검수 건수
+gold_product_risk_summary_v1,total_trade_price_krw,TOTAL_TRADE_PRICE_KRW,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,그룹 거래가 합계. 단위 원
+gold_product_risk_summary_v1,compensation_loss_krw,COMPENSATION_LOSS_KRW,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,그룹 재계산 배상금 합계. 단위 원
+gold_product_risk_summary_v1,claim_rate_pct,CLAIM_RATE_PCT,DOM_018,"decimal(9,4)",YES,,NORMAL_SILVER_GOLD,가품 오판정 건수 나누기 검수 건수 곱하기 100
+gold_product_risk_summary_v1,loss_to_trade_pct,LOSS_TO_TRADE_PCT,DOM_018,"decimal(9,4)",YES,,NORMAL_SILVER_GOLD,배상금 합계 나누기 거래가 합계 곱하기 100
+gold_product_risk_summary_v1,observation_status,OBSERVATION_STATUS,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,정상 기록 관측 여부. NO_VALID_OBSERVATIONS는 평가 가능한 관측 없음
+gold_product_risk_summary_v1,first_done_kst,FIRST_DONE_KST,DOM_006,datetime,YES,,NORMAL_SILVER_GOLD,그룹 검수 완료 시각의 최솟값
+gold_product_risk_summary_v1,last_done_kst,LAST_DONE_KST,DOM_006,datetime,YES,,NORMAL_SILVER_GOLD,그룹 검수 완료 시각의 최댓값
+gold_product_risk_summary_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_risk_cross_summary_v1,item_std_code,ITEM_STD_CODE,DOM_042,varchar(50),NO,PRI,NORMAL_SILVER_GOLD,상품 표준 코드
+gold_risk_cross_summary_v1,standard_item_name,STANDARD_ITEM_NAME,DOM_029,varchar(150),NO,,NORMAL_SILVER_GOLD,공식 상품 표준명
+gold_risk_cross_summary_v1,department_name,DEPARTMENT_NAME,DOM_026,varchar(100),NO,PRI,NORMAL_SILVER_GOLD,현재 정규 마스터에서 연결한 부서명
+gold_risk_cross_summary_v1,final_revision_type,FINAL_REVISION_TYPE,DOM_040,varchar(32),NO,PRI,NORMAL_SILVER_GOLD,현재 최종 기록이 최초 개정인지 재검수 개정인지 구분
+gold_risk_cross_summary_v1,analysis_period,ANALYSIS_PERIOD,DOM_041,varchar(40),NO,PRI,NORMAL_SILVER_GOLD,현재 데이터 분포에 맞춰 구분한 분석 기간
+gold_risk_cross_summary_v1,inspection_rows,INSPECTION_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 집계 범위의 검수 기록 수
+gold_risk_cross_summary_v1,fake_pass_claim_rows,FAKE_PASS_CLAIM_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,CLAIM_FAKE_PASS 결과의 검수 건수
+gold_risk_cross_summary_v1,total_trade_price_krw,TOTAL_TRADE_PRICE_KRW,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,그룹 거래가 합계. 단위 원
+gold_risk_cross_summary_v1,compensation_loss_krw,COMPENSATION_LOSS_KRW,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,그룹 재계산 배상금 합계. 단위 원
+gold_risk_cross_summary_v1,claim_rate_pct,CLAIM_RATE_PCT,DOM_018,"decimal(9,4)",NO,,NORMAL_SILVER_GOLD,가품 오판정 건수 나누기 검수 건수 곱하기 100
+gold_risk_cross_summary_v1,loss_to_trade_pct,LOSS_TO_TRADE_PCT,DOM_018,"decimal(9,4)",YES,,NORMAL_SILVER_GOLD,배상금 합계 나누기 거래가 합계 곱하기 100
+gold_risk_cross_summary_v1,first_done_kst,FIRST_DONE_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,그룹 검수 완료 시각의 최솟값
+gold_risk_cross_summary_v1,last_done_kst,LAST_DONE_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,그룹 검수 완료 시각의 최댓값
+gold_risk_cross_summary_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_staffing_scenario_v1,forecast_method,FORECAST_METHOD,DOM_040,varchar(32),NO,PRI,NORMAL_SILVER_GOLD,예측 방법. 최근 28일 평균 또는 같은 요일 평균
+gold_staffing_scenario_v1,forecast_date,FORECAST_DATE,DOM_005,date,NO,PRI,NORMAL_SILVER_GOLD,예측 또는 평가 대상 날짜
+gold_staffing_scenario_v1,scenario_name,SCENARIO_NAME,DOM_040,varchar(32),NO,PRI,NORMAL_SILVER_GOLD,검수 가능 시간 가정의 시나리오 이름
+gold_staffing_scenario_v1,available_minutes_per_person,AVAILABLE_MINUTES_PER_PERSON,DOM_020,int unsigned,NO,,NORMAL_SILVER_GOLD,한 명이 하루 검수에 사용할 수 있다고 가정한 분 수
+gold_staffing_scenario_v1,predicted_duration_min,PREDICTED_DURATION_MIN,DOM_012,"decimal(20,4)",NO,,NORMAL_SILVER_GOLD,예측 검수 소요시간 합계. 단위 분
+gold_staffing_scenario_v1,estimated_required_people,ESTIMATED_REQUIRED_PEOPLE,DOM_020,int unsigned,NO,,NORMAL_SILVER_GOLD,예측 소요시간 나누기 가정한 검수 가능 시간의 올림값
+gold_staffing_scenario_v1,prediction_cutoff_kst,PREDICTION_CUTOFF_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,예측 입력에 적용한 기준 시각. 2026-08-31 23:59:59 KST
+gold_staffing_scenario_v1,workload_scope,WORKLOAD_SCOPE,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,인력 계산의 작업 범위. FIRST_INSPECTION_ONLY는 최초 검수만 포함
+gold_staffing_scenario_v1,assumption_basis,ASSUMPTION_BASIS,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,실제 관측값과 구분하기 위한 가정 근거 표시
+gold_staffing_scenario_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_workload_forecast_evaluation_v1,forecast_method,FORECAST_METHOD,DOM_040,varchar(32),NO,PRI,NORMAL_SILVER_GOLD,예측 방법. 최근 28일 평균 또는 같은 요일 평균
+gold_workload_forecast_evaluation_v1,forecast_date,FORECAST_DATE,DOM_005,date,NO,PRI,NORMAL_SILVER_GOLD,예측 또는 평가 대상 날짜
+gold_workload_forecast_evaluation_v1,predicted_inspection_rows,PREDICTED_INSPECTION_ROWS,DOM_009,"decimal(16,4)",NO,,NORMAL_SILVER_GOLD,예측 검수 건수. 평균에 따른 소수 보존
+gold_workload_forecast_evaluation_v1,actual_inspection_rows,ACTUAL_INSPECTION_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,해당 날짜의 실제 정상 최초 검수 건수
+gold_workload_forecast_evaluation_v1,inspection_error,INSPECTION_ERROR,DOM_009,"decimal(16,4)",NO,,NORMAL_SILVER_GOLD,예측 건수에서 실제 건수를 뺀 오차. 양수는 과대 예측
+gold_workload_forecast_evaluation_v1,inspection_abs_error,INSPECTION_ABS_ERROR,DOM_009,"decimal(16,4)",NO,,NORMAL_SILVER_GOLD,건수 오차의 절댓값
+gold_workload_forecast_evaluation_v1,predicted_duration_min,PREDICTED_DURATION_MIN,DOM_012,"decimal(20,4)",NO,,NORMAL_SILVER_GOLD,예측 검수 소요시간 합계. 단위 분
+gold_workload_forecast_evaluation_v1,actual_duration_min,ACTUAL_DURATION_MIN,DOM_013,"decimal(20,8)",NO,,NORMAL_SILVER_GOLD,해당 날짜의 실제 정상 최초 검수 소요시간 합계. 단위 분
+gold_workload_forecast_evaluation_v1,duration_error_min,DURATION_ERROR_MIN,DOM_013,"decimal(20,8)",NO,,NORMAL_SILVER_GOLD,예측 소요시간에서 실제 소요시간을 뺀 오차. 단위 분
+gold_workload_forecast_evaluation_v1,duration_abs_error_min,DURATION_ABS_ERROR_MIN,DOM_013,"decimal(20,8)",NO,,NORMAL_SILVER_GOLD,소요시간 오차의 절댓값. 단위 분
+gold_workload_forecast_evaluation_v1,prediction_cutoff_kst,PREDICTION_CUTOFF_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,예측 입력에 적용한 기준 시각. 2026-08-31 23:59:59 KST
+gold_workload_forecast_evaluation_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_workload_forecast_summary_v1,forecast_method,FORECAST_METHOD,DOM_040,varchar(32),NO,PRI,NORMAL_SILVER_GOLD,예측 방법. 최근 28일 평균 또는 같은 요일 평균
+gold_workload_forecast_summary_v1,evaluated_days,EVALUATED_DAYS,DOM_020,int unsigned,NO,,NORMAL_SILVER_GOLD,평가한 날짜 수
+gold_workload_forecast_summary_v1,actual_week_rows,ACTUAL_WEEK_ROWS,DOM_002,bigint unsigned,NO,,NORMAL_SILVER_GOLD,평가 주간 실제 검수 건수 합계
+gold_workload_forecast_summary_v1,predicted_week_rows,PREDICTED_WEEK_ROWS,DOM_012,"decimal(20,4)",NO,,NORMAL_SILVER_GOLD,평가 주간 예측 검수 건수 합계
+gold_workload_forecast_summary_v1,inspection_mae,INSPECTION_MAE,DOM_012,"decimal(20,4)",NO,,NORMAL_SILVER_GOLD,날짜별 검수 건수 절대 오차의 평균
+gold_workload_forecast_summary_v1,inspection_wape_pct,INSPECTION_WAPE_PCT,DOM_012,"decimal(20,4)",YES,,NORMAL_SILVER_GOLD,건수 절대 오차 합계 나누기 실제 건수 합계 곱하기 100
+gold_workload_forecast_summary_v1,actual_week_duration_min,ACTUAL_WEEK_DURATION_MIN,DOM_015,"decimal(24,8)",NO,,NORMAL_SILVER_GOLD,평가 주간 실제 검수 소요시간 합계. 단위 분
+gold_workload_forecast_summary_v1,predicted_week_duration_min,PREDICTED_WEEK_DURATION_MIN,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,평가 주간 예측 검수 소요시간 합계. 단위 분
+gold_workload_forecast_summary_v1,duration_mae_min,DURATION_MAE_MIN,DOM_014,"decimal(24,4)",NO,,NORMAL_SILVER_GOLD,날짜별 소요시간 절대 오차의 평균. 단위 분
+gold_workload_forecast_summary_v1,duration_wape_pct,DURATION_WAPE_PCT,DOM_012,"decimal(20,4)",YES,,NORMAL_SILVER_GOLD,소요시간 절대 오차 합계 나누기 실제 소요시간 합계 곱하기 100
+gold_workload_forecast_summary_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+gold_workload_forecast_v1,forecast_method,FORECAST_METHOD,DOM_040,varchar(32),NO,PRI,NORMAL_SILVER_GOLD,예측 방법. 최근 28일 평균 또는 같은 요일 평균
+gold_workload_forecast_v1,forecast_date,FORECAST_DATE,DOM_005,date,NO,PRI,NORMAL_SILVER_GOLD,예측 또는 평가 대상 날짜
+gold_workload_forecast_v1,predicted_inspection_rows,PREDICTED_INSPECTION_ROWS,DOM_009,"decimal(16,4)",NO,,NORMAL_SILVER_GOLD,예측 검수 건수. 평균에 따른 소수 보존
+gold_workload_forecast_v1,predicted_duration_min,PREDICTED_DURATION_MIN,DOM_012,"decimal(20,4)",NO,,NORMAL_SILVER_GOLD,예측 검수 소요시간 합계. 단위 분
+gold_workload_forecast_v1,training_days,TRAINING_DAYS,DOM_020,int unsigned,NO,,NORMAL_SILVER_GOLD,"예측 계산에 사용한 날짜 수. 전체 평균 28일, 같은 요일 평균 4일"
+gold_workload_forecast_v1,training_start_date,TRAINING_START_DATE,DOM_005,date,NO,,NORMAL_SILVER_GOLD,전체 입력 범위 시작 날짜
+gold_workload_forecast_v1,training_end_date,TRAINING_END_DATE,DOM_005,date,NO,,NORMAL_SILVER_GOLD,전체 입력 범위 종료 날짜
+gold_workload_forecast_v1,prediction_cutoff_kst,PREDICTION_CUTOFF_KST,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,예측 입력에 적용한 기준 시각. 2026-08-31 23:59:59 KST
+gold_workload_forecast_v1,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+quarantine_category_parent_lookup,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,해당 원본 테이블의 물리 행 번호
+quarantine_category_parent_lookup,source_file,SOURCE_FILE,DOM_036,varchar(255),NO,,AUDIT_OR_METADATA,원본 파일 이름
+quarantine_category_parent_lookup,raw_cat_id,RAW_CAT_ID,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 CAT_ID 값. 오류 보존과 감사에 사용
+quarantine_category_parent_lookup,raw_cat_name,RAW_CAT_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 CAT_NM 값. 오류 보존과 감사에 사용
+quarantine_category_parent_lookup,raw_cat_level,RAW_CAT_LEVEL,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 CAT_LEVEL 값. 오류 보존과 감사에 사용
+quarantine_category_parent_lookup,raw_reg_dt,RAW_REG_DT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 REG_DT 값. 오류 보존과 감사에 사용
+quarantine_category_parent_lookup,normalized_cat_id,NORMALIZED_CAT_ID,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화한 CAT_ID 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_category_parent_lookup,normalized_cat_name,NORMALIZED_CAT_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,정규화한 CAT_NM 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_category_parent_lookup,normalized_cat_level,NORMALIZED_CAT_LEVEL,DOM_022,mediumtext,YES,,AUDIT_OR_METADATA,정규화한 CAT_LEVEL 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_category_parent_lookup,normalized_reg_dt,NORMALIZED_REG_DT,DOM_006,datetime,YES,,AUDIT_OR_METADATA,정규화한 REG_DT 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_category_parent_lookup,occurrence_no,OCCURRENCE_NO,DOM_002,bigint unsigned,NO,,AUDIT_OR_METADATA,동일 마스터 키의 중복 처리 순번
+quarantine_category_parent_lookup,primary_reason,PRIMARY_REASON,DOM_040,varchar(32),NO,,AUDIT_OR_METADATA,대표 분류 사유. 모든 오류 사유의 합계가 아님
+quarantine_category_parent_lookup,disposition,DISPOSITION,DOM_032,varchar(20),NO,,AUDIT_OR_METADATA,정상 또는 격리 또는 제외 분류
+quarantine_inspection,bronze_row_id,BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,검수 원본의 물리 행 번호
+quarantine_inspection,normalized_insp_id,NORMALIZED_INSP_ID,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화한 검수 ID 후보
+quarantine_inspection,normalized_rev_no,NORMALIZED_REV_NO,DOM_019,int,YES,,AUDIT_OR_METADATA,정규화한 개정 번호 후보
+quarantine_inspection,price_krw_candidate,PRICE_KRW_CANDIDATE,DOM_016,"decimal(29,4)",YES,,AUDIT_OR_METADATA,원화로 환산한 거래가 후보
+quarantine_inspection,duration_min_candidate,DURATION_MIN_CANDIDATE,DOM_015,"decimal(24,8)",YES,,AUDIT_OR_METADATA,분으로 환산한 소요시간 후보
+quarantine_inspection,price_status,PRICE_STATUS,DOM_037,varchar(28),YES,,AUDIT_OR_METADATA,거래가 해석 및 변환 상태
+quarantine_inspection,duration_status,DURATION_STATUS,DOM_039,varchar(31),YES,,AUDIT_OR_METADATA,소요시간 해석 및 변환 상태
+quarantine_inspection,inbound_dt_kst,INBOUND_DT_KST,DOM_006,datetime,YES,,AUDIT_OR_METADATA,KST로 변환한 입고 시각
+quarantine_inspection,insp_done_dt_kst,INSP_DONE_DT_KST,DOM_006,datetime,YES,,AUDIT_OR_METADATA,KST로 변환한 검수 완료 시각
+quarantine_inspection,extracted_at_kst,EXTRACTED_AT_KST,DOM_006,datetime,YES,,AUDIT_OR_METADATA,KST로 변환한 데이터 추출 시각
+quarantine_inspection,inspector_emp_no_candidate,INSPECTOR_EMP_NO_CANDIDATE,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화 또는 복구한 검수원 사번 후보
+quarantine_inspection,employee_reference_status,EMPLOYEE_REFERENCE_STATUS,DOM_040,varchar(32),YES,,AUDIT_OR_METADATA,검수원 마스터 참조 검사 상태
+quarantine_inspection,parent_cat_id_candidate,PARENT_CAT_ID_CANDIDATE,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화 또는 근거로 복구한 카테고리 참조 후보
+quarantine_inspection,category_reference_origin,CATEGORY_REFERENCE_ORIGIN,DOM_040,varchar(32),YES,,AUDIT_OR_METADATA,카테고리 참조의 원본 또는 복구 출처 구분
+quarantine_inspection,category_reference_status,CATEGORY_REFERENCE_STATUS,DOM_040,varchar(32),YES,,AUDIT_OR_METADATA,카테고리 마스터 참조 검사 상태
+quarantine_inspection,standard_item_name,STANDARD_ITEM_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,공식 상품 표준명
+quarantine_inspection,name_check_status,NAME_CHECK_STATUS,DOM_038,varchar(30),YES,,AUDIT_OR_METADATA,상품 이름의 사전 대조 또는 코드 기반 복구 상태
+quarantine_inspection,revision_group_rows,REVISION_GROUP_ROWS,DOM_002,bigint unsigned,YES,,AUDIT_OR_METADATA,동일 검수 ID와 개정 번호 그룹의 행 수
+quarantine_inspection,revision_payload_versions,REVISION_PAYLOAD_VERSIONS,DOM_002,bigint unsigned,YES,,AUDIT_OR_METADATA,동일 개정 그룹의 서로 다른 원본 내용 수
+quarantine_inspection,missing_check_flag,MISSING_CHECK_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,이전 검사 단계의 검사 결과 누락 표시
+quarantine_inspection,price_error_flag,PRICE_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,거래가 오류 표시
+quarantine_inspection,duration_error_flag,DURATION_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,검수 소요시간 오류 표시
+quarantine_inspection,datetime_missing_flag,DATETIME_MISSING_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,필수 시각 해석 결과 결측 표시
+quarantine_inspection,done_before_inbound_flag,DONE_BEFORE_INBOUND_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,검수 완료 시각이 입고보다 빠른 오류 표시
+quarantine_inspection,extracted_before_done_flag,EXTRACTED_BEFORE_DONE_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,추출 시각이 완료보다 빠른 오류 표시
+quarantine_inspection,employee_reference_error_flag,EMPLOYEE_REFERENCE_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,검수원 참조 오류 표시
+quarantine_inspection,category_reference_error_flag,CATEGORY_REFERENCE_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,카테고리 참조 오류 표시
+quarantine_inspection,product_name_error_flag,PRODUCT_NAME_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,상품 이름 또는 상품 사전 대조 오류 표시
+quarantine_inspection,revision_conflict_flag,REVISION_CONFLICT_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,동일 ID와 개정에서 원본 내용이 충돌하는 표시
+quarantine_inspection,raw_insp_result,RAW_INSP_RESULT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_RESULT 값. 오류 보존과 감사에 사용
+quarantine_inspection,insp_result_candidate,INSP_RESULT_CANDIDATE,DOM_042,varchar(50),YES,,AUDIT_OR_METADATA,검수 결과 코드 후보
+quarantine_inspection,penalty_multiplier_candidate,PENALTY_MULTIPLIER_CANDIDATE,DOM_017,"decimal(3,1)",YES,,AUDIT_OR_METADATA,검수 결과에 따른 배상 배수 후보
+quarantine_inspection,result_check_status,RESULT_CHECK_STATUS,DOM_034,varchar(24),YES,,AUDIT_OR_METADATA,검수 결과 코드의 검사 상태
+quarantine_inspection,result_error_flag,RESULT_ERROR_FLAG,DOM_019,int,YES,,AUDIT_OR_METADATA,검수 결과 코드 오류 표시
+quarantine_inspection,required_value_missing_flag,REQUIRED_VALUE_MISSING_FLAG,DOM_019,int,YES,,AUDIT_OR_METADATA,필수 값 누락 표시
+quarantine_inspection,integrated_missing_check_flag,INTEGRATED_MISSING_CHECK_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,통합 검사에서 필수 검사 결과가 빠졌는지 표시. 0은 검사 누락 없음
+quarantine_inspection,inspection_key_error_flag,INSPECTION_KEY_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,검수 ID 또는 개정 번호 오류 표시
+quarantine_inspection,record_error_flag,RECORD_ERROR_FLAG,DOM_019,int,NO,,AUDIT_OR_METADATA,통합 품질 오류 표시. 0은 해당 단계 오류 없음
+quarantine_inspection,valid_occurrence_no,VALID_OCCURRENCE_NO,DOM_002,bigint unsigned,YES,,AUDIT_OR_METADATA,유효한 동일 개정의 중복 제거를 위한 순번
+quarantine_inspection,latest_valid_rev_no,LATEST_VALID_REV_NO,DOM_001,bigint,YES,,AUDIT_OR_METADATA,품질 검사 통과 후 해당 검수 ID의 최고 유효 개정 번호
+quarantine_inspection,disposition,DISPOSITION,DOM_030,varchar(16),NO,,AUDIT_OR_METADATA,정상 또는 격리 또는 제외 분류
+quarantine_inspection,primary_reason,PRIMARY_REASON,DOM_035,varchar(25),NO,,AUDIT_OR_METADATA,대표 분류 사유. 모든 오류 사유의 합계가 아님
+quarantine_inspection,rule_version,RULE_VERSION,DOM_028,varchar(11),NO,,AUDIT_OR_METADATA,적용한 처리 또는 분석 규칙 버전
+quarantine_inspection,product_name_rule_source,PRODUCT_NAME_RULE_SOURCE,DOM_041,varchar(40),NO,,AUDIT_OR_METADATA,원래 이름 검사 또는 상품 코드 기반 복구 등의 판단 근거
+quarantine_inspection,source_file,SOURCE_FILE,DOM_036,varchar(255),NO,,AUDIT_OR_METADATA,원본 파일 이름
+quarantine_inspection,original_insp_id,ORIGINAL_INSP_ID,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_ID 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_rev_no,ORIGINAL_REV_NO,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 REV_NO 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_item_std_code,ORIGINAL_ITEM_STD_CODE,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 ITEM_STD_CODE 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_item_name,ORIGINAL_ITEM_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 ITEM_NM 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_parent_cat_id,ORIGINAL_PARENT_CAT_ID,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 PARENT_CAT_ID 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_trade_price,ORIGINAL_TRADE_PRICE,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 TRADE_PRICE_KRW 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_duration,ORIGINAL_DURATION,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_DURATION_MIN 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_insp_result,ORIGINAL_INSP_RESULT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_RESULT 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_inspector_emp_no,ORIGINAL_INSPECTOR_EMP_NO,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSPECTOR_EMP_NO 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_inbound_dt,ORIGINAL_INBOUND_DT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INBOUND_DT 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_done_dt,ORIGINAL_DONE_DT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_DONE_DT 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_extracted_at,ORIGINAL_EXTRACTED_AT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 EXTRACTED_AT 값. 오류 보존과 감사에 사용
+quarantine_inspection,original_memo,ORIGINAL_MEMO,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 INSP_MEMO 값. 오류 보존과 감사에 사용
+quarantine_inspector_master,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,해당 원본 테이블의 물리 행 번호
+quarantine_inspector_master,source_file,SOURCE_FILE,DOM_036,varchar(255),NO,,AUDIT_OR_METADATA,원본 파일 이름
+quarantine_inspector_master,raw_emp_no,RAW_EMP_NO,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 EMP_NO 값. 오류 보존과 감사에 사용
+quarantine_inspector_master,raw_emp_name,RAW_EMP_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 EMP_NM 값. 오류 보존과 감사에 사용
+quarantine_inspector_master,raw_department,RAW_DEPARTMENT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 DEPT_NM 값. 오류 보존과 감사에 사용
+quarantine_inspector_master,raw_position,RAW_POSITION,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 POSITION_NM 값. 오류 보존과 감사에 사용
+quarantine_inspector_master,raw_hire_dt,RAW_HIRE_DT,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 HIRE_DT 값. 오류 보존과 감사에 사용
+quarantine_inspector_master,raw_active_yn,RAW_ACTIVE_YN,DOM_023,text,YES,,AUDIT_OR_METADATA,변환 전 원본 ACTIVE_YN 값. 오류 보존과 감사에 사용
+quarantine_inspector_master,normalized_emp_no,NORMALIZED_EMP_NO,DOM_032,varchar(20),YES,,AUDIT_OR_METADATA,정규화한 EMP_NO 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_inspector_master,normalized_emp_name,NORMALIZED_EMP_NAME,DOM_023,text,YES,,AUDIT_OR_METADATA,정규화한 EMP_NM 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_inspector_master,normalized_position,NORMALIZED_POSITION,DOM_023,text,YES,,AUDIT_OR_METADATA,정규화한 POSITION_NM 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_inspector_master,normalized_hire_date,NORMALIZED_HIRE_DATE,DOM_005,date,YES,,AUDIT_OR_METADATA,정규화한 HIRE_DT 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_inspector_master,normalized_active_yn,NORMALIZED_ACTIVE_YN,DOM_025,varchar(1),NO,,AUDIT_OR_METADATA,정규화한 ACTIVE_YN 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_inspector_master,raw_active_status,RAW_ACTIVE_STATUS,DOM_028,varchar(11),NO,,AUDIT_OR_METADATA,원본 재직 값의 상태 분류. 원본 전체 문자열과 구분
+quarantine_inspector_master,normalized_department,NORMALIZED_DEPARTMENT,DOM_021,longtext,YES,,AUDIT_OR_METADATA,정규화한 DEPT_NM 후보. 최종 채택 여부는 분류 결과로 판단
+quarantine_inspector_master,department_rule_source,DEPARTMENT_RULE_SOURCE,DOM_031,varchar(17),NO,,AUDIT_OR_METADATA,부서명 정규화 또는 유지 판단의 근거 구분
+quarantine_inspector_master,occurrence_no,OCCURRENCE_NO,DOM_002,bigint unsigned,NO,,AUDIT_OR_METADATA,동일 마스터 키의 중복 처리 순번
+quarantine_inspector_master,disposition,DISPOSITION,DOM_032,varchar(20),NO,,AUDIT_OR_METADATA,정상 또는 격리 또는 제외 분류
+quarantine_inspector_master,primary_reason,PRIMARY_REASON,DOM_033,varchar(23),NO,,AUDIT_OR_METADATA,대표 분류 사유. 모든 오류 사유의 합계가 아님
+silver_category_parent_lookup,CAT_ID,CAT_ID,DOM_032,varchar(20),NO,PRI,NORMAL_SILVER_GOLD,카테고리 고유 코드
+silver_category_parent_lookup,CAT_NM,CAT_NM,DOM_026,varchar(100),NO,,NORMAL_SILVER_GOLD,카테고리 이름
+silver_category_parent_lookup,CAT_LEVEL,CAT_LEVEL,DOM_032,varchar(20),NO,,NORMAL_SILVER_GOLD,카테고리 분류 단계. TOP_LEVEL 또는 BRAND_LINE
+silver_category_parent_lookup,REG_DT,REG_DT,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,카테고리 등록 시각
+silver_category_parent_lookup,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,UNI,NORMAL_SILVER_GOLD,해당 원본 테이블의 물리 행 번호
+silver_category_parent_lookup,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+silver_inspection,INSP_ID,INSP_ID,DOM_032,varchar(20),NO,PRI,NORMAL_SILVER_GOLD,검수 식별 ID
+silver_inspection,REV_NO,REV_NO,DOM_019,int,NO,PRI,NORMAL_SILVER_GOLD,검수 개정 번호
+silver_inspection,ITEM_STD_CODE,ITEM_STD_CODE,DOM_042,varchar(50),NO,MUL,NORMAL_SILVER_GOLD,상품 표준 코드
+silver_inspection,ITEM_NM,ITEM_NM,DOM_029,varchar(150),NO,,NORMAL_SILVER_GOLD,정제된 상품 표준명
+silver_inspection,PARENT_CAT_ID,PARENT_CAT_ID,DOM_032,varchar(20),YES,MUL,NORMAL_SILVER_GOLD,원천에서 제공한 상위 카테고리 참조 코드
+silver_inspection,TRADE_PRICE_KRW,TRADE_PRICE_KRW,DOM_010,"decimal(18,4)",NO,,NORMAL_SILVER_GOLD,원화 환산 거래 체결가
+silver_inspection,INSP_DURATION_MIN,INSP_DURATION_MIN,DOM_008,"decimal(12,8)",NO,,NORMAL_SILVER_GOLD,분 단위 검수 소요시간
+silver_inspection,INSP_RESULT,INSP_RESULT,DOM_042,varchar(50),NO,,NORMAL_SILVER_GOLD,검수 판정 코드
+silver_inspection,INSPECTOR_EMP_NO,INSPECTOR_EMP_NO,DOM_032,varchar(20),NO,MUL,NORMAL_SILVER_GOLD,검수를 수행한 직원 사번
+silver_inspection,INBOUND_DT,INBOUND_DT,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,KST 기준 입고 시각
+silver_inspection,INSP_DONE_DT,INSP_DONE_DT,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,KST 기준 검수 완료 시각
+silver_inspection,EXTRACTED_AT,EXTRACTED_AT,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,KST 기준 원천 데이터 추출 시각
+silver_inspection,INSP_MEMO,INSP_MEMO,DOM_023,text,YES,,NORMAL_SILVER_GOLD,원본 검수 메모. 포함된 지시문은 실행하지 않음
+silver_inspection,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,UNI,NORMAL_SILVER_GOLD,해당 원본 테이블의 물리 행 번호
+silver_inspection,source_file,SOURCE_FILE,DOM_036,varchar(255),NO,,NORMAL_SILVER_GOLD,원본 파일 이름
+silver_inspection,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+silver_inspection_correction_log,source_name,SOURCE_NAME,DOM_040,varchar(32),NO,PRI,AUDIT_OR_METADATA,원본 종류 구분
+silver_inspection_correction_log,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,PRI,AUDIT_OR_METADATA,해당 원본 테이블의 물리 행 번호
+silver_inspection_correction_log,inspection_bronze_row_id,INSPECTION_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,MUL,AUDIT_OR_METADATA,검수 원본 행 번호
+silver_inspection_correction_log,column_name,COLUMN_NAME,DOM_040,varchar(32),NO,PRI,AUDIT_OR_METADATA,수정 또는 검사 대상 컬럼 이름
+silver_inspection_correction_log,original_value,ORIGINAL_VALUE,DOM_023,text,YES,,AUDIT_OR_METADATA,수정 전 원본 값
+silver_inspection_correction_log,corrected_value,CORRECTED_VALUE,DOM_023,text,YES,,AUDIT_OR_METADATA,정제 후 저장한 값
+silver_inspection_correction_log,rule_id,RULE_ID,DOM_043,varchar(64),NO,,AUDIT_OR_METADATA,수정에 적용한 규칙 식별자
+silver_inspection_correction_log,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,AUDIT_OR_METADATA,적용한 처리 또는 분석 규칙 버전
+silver_inspection_join_ready,INSP_ID,INSP_ID,DOM_032,varchar(20),NO,PRI,NORMAL_SILVER_GOLD,검수 식별 ID
+silver_inspection_join_ready,REV_NO,REV_NO,DOM_019,int,NO,PRI,NORMAL_SILVER_GOLD,검수 개정 번호
+silver_inspection_join_ready,ITEM_STD_CODE,ITEM_STD_CODE,DOM_042,varchar(50),NO,,NORMAL_SILVER_GOLD,상품 표준 코드
+silver_inspection_join_ready,ITEM_NM,ITEM_NM,DOM_029,varchar(150),NO,,NORMAL_SILVER_GOLD,정제된 상품 표준명
+silver_inspection_join_ready,PARENT_CAT_ID,PARENT_CAT_ID,DOM_032,varchar(20),YES,,NORMAL_SILVER_GOLD,원천에서 제공한 상위 카테고리 참조 코드
+silver_inspection_join_ready,PARENT_CAT_NM,PARENT_CAT_NM,DOM_026,varchar(100),NO,,NORMAL_SILVER_GOLD,정규 카테고리 마스터에서 가져온 이름
+silver_inspection_join_ready,TRADE_PRICE_KRW,TRADE_PRICE_KRW,DOM_010,"decimal(18,4)",NO,,NORMAL_SILVER_GOLD,원화 환산 거래 체결가
+silver_inspection_join_ready,INSP_DURATION_MIN,INSP_DURATION_MIN,DOM_008,"decimal(12,8)",NO,,NORMAL_SILVER_GOLD,분 단위 검수 소요시간
+silver_inspection_join_ready,INSP_RESULT,INSP_RESULT,DOM_042,varchar(50),NO,,NORMAL_SILVER_GOLD,검수 판정 코드
+silver_inspection_join_ready,COMPENSATION_LOSS_KRW,COMPENSATION_LOSS_KRW,DOM_011,"decimal(19,4)",NO,,NORMAL_SILVER_GOLD,가품 오판정이면 거래가의 3배로 재계산한 배상금
+silver_inspection_join_ready,INSPECTOR_EMP_NO,INSPECTOR_EMP_NO,DOM_032,varchar(20),NO,MUL,NORMAL_SILVER_GOLD,검수를 수행한 직원 사번
+silver_inspection_join_ready,INSPECTOR_EMP_NM,INSPECTOR_EMP_NM,DOM_042,varchar(50),NO,,NORMAL_SILVER_GOLD,사번으로 재조인한 검수원 이름
+silver_inspection_join_ready,INSPECTOR_DEPT_NM,INSPECTOR_DEPT_NM,DOM_026,varchar(100),NO,MUL,NORMAL_SILVER_GOLD,사번으로 재조인한 현재 마스터 부서명
+silver_inspection_join_ready,INSPECTOR_POSITION_NM,INSPECTOR_POSITION_NM,DOM_042,varchar(50),NO,,NORMAL_SILVER_GOLD,사번으로 재조인한 직급
+silver_inspection_join_ready,INBOUND_DT,INBOUND_DT,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,KST 기준 입고 시각
+silver_inspection_join_ready,INSP_DONE_DT,INSP_DONE_DT,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,KST 기준 검수 완료 시각
+silver_inspection_join_ready,EXTRACTED_AT,EXTRACTED_AT,DOM_006,datetime,NO,,NORMAL_SILVER_GOLD,KST 기준 원천 데이터 추출 시각
+silver_inspection_join_ready,INSP_MEMO,INSP_MEMO,DOM_023,text,YES,,NORMAL_SILVER_GOLD,원본 검수 메모. 포함된 지시문은 실행하지 않음
+silver_inspection_join_ready,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,UNI,NORMAL_SILVER_GOLD,해당 원본 테이블의 물리 행 번호
+silver_inspection_join_ready,source_file,SOURCE_FILE,DOM_036,varchar(255),NO,,NORMAL_SILVER_GOLD,원본 파일 이름
+silver_inspection_join_ready,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+silver_inspector_master,EMP_NO,EMP_NO,DOM_032,varchar(20),NO,PRI,NORMAL_SILVER_GOLD,검수원 고유 사번
+silver_inspector_master,EMP_NM,EMP_NM,DOM_042,varchar(50),NO,,NORMAL_SILVER_GOLD,검수원 이름
+silver_inspector_master,DEPT_NM,DEPT_NM,DOM_026,varchar(100),NO,,NORMAL_SILVER_GOLD,정규화하거나 근거에 따라 유지한 부서명
+silver_inspector_master,POSITION_NM,POSITION_NM,DOM_042,varchar(50),NO,,NORMAL_SILVER_GOLD,검수원 직급
+silver_inspector_master,HIRE_DT,HIRE_DT,DOM_005,date,NO,,NORMAL_SILVER_GOLD,입사 날짜
+silver_inspector_master,ACTIVE_YN,ACTIVE_YN,DOM_003,char(1),NO,,NORMAL_SILVER_GOLD,"현재 재직 상태. 원본이 정확히 대문자 Y이면 Y, 나머지는 N"
+silver_inspector_master,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,UNI,NORMAL_SILVER_GOLD,해당 원본 테이블의 물리 행 번호
+silver_inspector_master,department_rule_source,DEPARTMENT_RULE_SOURCE,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,부서명 정규화 또는 유지 판단의 근거 구분
+silver_inspector_master,raw_active_status,RAW_ACTIVE_STATUS,DOM_030,varchar(16),NO,,NORMAL_SILVER_GOLD,원본 재직 값의 상태 분류. 원본 전체 문자열과 구분
+silver_inspector_master,rule_version,RULE_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 처리 또는 분석 규칙 버전
+silver_product_std_dict,DICT_ID,DICT_ID,DOM_032,varchar(20),NO,PRI,NORMAL_SILVER_GOLD,표준 사전 레코드의 고유 ID
+silver_product_std_dict,CODE_TYPE,CODE_TYPE,DOM_032,varchar(20),NO,MUL,NORMAL_SILVER_GOLD,사전 코드 유형
+silver_product_std_dict,STD_CODE,STD_CODE,DOM_042,varchar(50),NO,,NORMAL_SILVER_GOLD,사전의 표준 코드. 단독 고유키는 설정되지 않음
+silver_product_std_dict,STD_KOR_NM,STD_KOR_NM,DOM_029,varchar(150),NO,,NORMAL_SILVER_GOLD,사전의 공식 한글 표준명
+silver_product_std_dict,SYNONYM_LIST,SYNONYM_LIST,DOM_027,varchar(1000),YES,,NORMAL_SILVER_GOLD,쉼표로 구분한 동의어 목록
+silver_product_std_dict,BANNED_WORD_YN,BANNED_WORD_YN,DOM_003,char(1),NO,,NORMAL_SILVER_GOLD,금지 값 여부 Y 또는 N
+silver_product_std_dict,BASE_RETAIL_KRW,BASE_RETAIL_KRW,DOM_019,int,NO,,NORMAL_SILVER_GOLD,공식 발매가. 실제 거래가와 구분
+silver_product_std_dict,FAKE_PENALTY_MULTIPLIER,FAKE_PENALTY_MULTIPLIER,DOM_017,"decimal(3,1)",NO,,NORMAL_SILVER_GOLD,검수 결과 등 코드에 대응하는 배상 배수
+silver_product_std_dict,source_bronze_row_id,SOURCE_BRONZE_ROW_ID,DOM_002,bigint unsigned,NO,UNI,NORMAL_SILVER_GOLD,해당 원본 테이블의 물리 행 번호
+silver_product_std_dict,dictionary_version,DICTIONARY_VERSION,DOM_040,varchar(32),NO,,NORMAL_SILVER_GOLD,적용한 표준 사전 버전

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="390" viewBox="0 0 1440 390" role="img" aria-label="레거시 검수 데이터 표준화와 운영 개선 분석">
+<rect width="1440" height="390" fill="#132B43"/><rect x="0" y="0" width="12" height="390" fill="#38B7A2"/>
+<text x="72" y="90" fill="#8EDFD0" font-family="Arial,sans-serif" font-size="22" letter-spacing="4">LEGACY TO AI-READY DATA</text>
+<text x="68" y="169" fill="#FFFFFF" font-family="NanumGothic,Malgun Gothic,sans-serif" font-size="58" font-weight="700">KREAM 검수 데이터 표준화</text>
+<text x="72" y="229" fill="#CAD9E8" font-family="NanumGothic,Malgun Gothic,sans-serif" font-size="29">원본의 문제를 진단하고, 표준과 검증으로 운영 개선의 근거를 만듭니다.</text>
+<line x1="72" y1="273" x2="1368" y2="273" stroke="#456079"/>
+<text x="72" y="328" fill="#FFFFFF" font-family="NanumGothic,Malgun Gothic,sans-serif" font-size="23">335,000 원본 행</text>
+<text x="421" y="328" fill="#FFFFFF" font-family="NanumGothic,Malgun Gothic,sans-serif" font-size="23">표준 사전과 ERD</text>
+<text x="758" y="328" fill="#FFFFFF" font-family="NanumGothic,Malgun Gothic,sans-serif" font-size="23">SQL · Pandas 검증</text>
+<text x="1120" y="328" fill="#8EDFD0" font-family="Arial,sans-serif" font-size="23">Gold Analytics</text>
+</svg>

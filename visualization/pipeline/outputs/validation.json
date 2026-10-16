@@ -1,0 +1,92 @@
+{
+  "source_zip": "KREAM_Final_Data_Full_20261015.zip",
+  "source_files": [
+    {
+      "table": "gold_product_risk_summary_v1",
+      "rows": 20,
+      "columns": 12,
+      "sha256": "6d06dbaf061ae193a6555243e9a324c130dfbefcfa0fa5344254f62453518c0e"
+    },
+    {
+      "table": "gold_department_risk_summary_v1",
+      "rows": 8,
+      "columns": 12,
+      "sha256": "c25ef3e5cb401cc65194f5285befb9a8c8690691c975c15d34ca65821c10b819"
+    },
+    {
+      "table": "gold_risk_cross_summary_v1",
+      "rows": 604,
+      "columns": 14,
+      "sha256": "1f1b6969f736f9bebe4577aea302200ef5cfcd540a5a4eed2fcdd87e544cb951"
+    },
+    {
+      "table": "gold_inspection_result_daily_v1",
+      "rows": 1729,
+      "columns": 10,
+      "sha256": "e00d001a7e67201dbf8a7c83d00c1c345eb48f7c75ffdaf039e7decd3eb69813"
+    },
+    {
+      "table": "gold_inspection_workload_daily_v1",
+      "rows": 1729,
+      "columns": 8,
+      "sha256": "e7bb96bdd34648403f945ecc0cc143b9cd35dafd868e3d629a440fba31237695"
+    },
+    {
+      "table": "gold_inspection_workload_hourly_v1",
+      "rows": 167859,
+      "columns": 11,
+      "sha256": "061b322edbda6bbcf1847984cc8162b4cbe5d9fe1fe9a75e7a63f90effe66443"
+    },
+    {
+      "table": "gold_prediction_input_daily_v1",
+      "rows": 28,
+      "columns": 6,
+      "sha256": "9638b57b328ec82ac4ce803b41023bf4996b3a21d52de4002f4a50904c762234"
+    },
+    {
+      "table": "gold_prediction_actual_daily_v1",
+      "rows": 7,
+      "columns": 4,
+      "sha256": "47c7e265129cfadee7713af3e669a64d866f0f6eadd6bcf844d99df7a915d041"
+    },
+    {
+      "table": "gold_workload_forecast_v1",
+      "rows": 14,
+      "columns": 9,
+      "sha256": "50b8f582772833293af03eced7c51561a55215aee4915aea34c75052228acb9a"
+    },
+    {
+      "table": "gold_workload_forecast_evaluation_v1",
+      "rows": 14,
+      "columns": 12,
+      "sha256": "95811484b6675ac07d42f839a84aa797bdc32ca1fe686d7da2462edf5c6d4ac6"
+    },
+    {
+      "table": "gold_workload_forecast_summary_v1",
+      "rows": 2,
+      "columns": 11,
+      "sha256": "7c223a78ebb239820f11656671aa4be77fc9a64a2078cb5b2fa8995dd1e43c48"
+    },
+    {
+      "table": "gold_staffing_scenario_v1",
+      "rows": 42,
+      "columns": 10,
+      "sha256": "f9ab8c0bd94e1ccf4a13291db5f8c38a43f50031c71bfd01233f631d24229bb2"
+    }
+  ],
+  "checks": [
+    "선택 CSV 12개 기준 행 수·컬럼 수 확인",
+    "분류 합계 335000",
+    "상품 집계 정상 271787·가품 오판정 19414·배상금 합계 확인",
+    "연속 기간 최초 검수 262833·관측 1704일·월별 56개 기간 확인",
+    "평가 실제값 2012건·30443분 확인",
+    "WAPE 독립 재계산",
+    "인력 시나리오 42행 확인"
+  ],
+  "status": "PASS",
+  "limits": [
+    "최종 집계 CSV에서 시각화. 최초 Bronze 전체와의 재대조 아님.",
+    "그림의 원 단위 금액을 Decimal로 검증한 후 억 원 표시에서만 float 변환.",
+    "별도 환경 전체 재현 검증은 아직 진행 중."
+  ]
+}

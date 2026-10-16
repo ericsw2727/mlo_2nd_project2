@@ -1,0 +1,12 @@
+{
+  "source_zip": "KREAM_Final_Data_Full_20261015.zip",
+  "source_zip_sha256": "7090c12f55612646d85ff5511fbf96145ee5acc6609837b41c5564ce98227541",
+  "supplier_counts": {
+    "SILVER": 280800,
+    "EXCLUDED": 32600,
+    "QUARANTINE": 21600
+  },
+  "supplier_count_source": "이 대화에 사용자가 공유한 상대팀 답변 Q2. 명세서에서 산출한 값이 아님.",
+  "reproduction_status": "최종 파일 검증 완료. 별도 DB의 전체 재현 검증은 진행 중.",
+  "scope": "발표용 시각화에 필요한 Gold 원본 CSV 12개와 내보내기 목록 1개. 전체 최종 데이터 28개의 대체본이 아님."
+}

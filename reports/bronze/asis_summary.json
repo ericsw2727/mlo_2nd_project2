@@ -1,0 +1,9 @@
+{
+  "source_files": 5,
+  "physical_received_rows": 674232,
+  "profiled_columns": 49,
+  "conflicting_revision_groups": 2400,
+  "conflicting_revision_rows": 4800,
+  "identical_duplicate_revision_groups": 10000,
+  "interpretation": "원천 검수와 조인 통합본은 동일 업무의 별도 표현이다. 물리 행 합계를 고유 검수 건수로 해석하지 않는다. 충돌은 정규화한 ID와 원본 개정 값을 기준으로 모든 업무 컬럼을 비교한 진단이다. 최종 분류는 SQL 개정 정규화 및 유효성 규칙과 대조한다."
+}

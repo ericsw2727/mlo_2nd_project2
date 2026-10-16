@@ -1,0 +1,15 @@
+﻿table_name,column_name,domain_rule,allowed_values,source
+silver_category_parent_lookup,CAT_LEVEL,ALLOWED_CODES,TOP_LEVEL | BRAND_LINE,명세·합의된 정제 정책과 실제 CHECK 제약조건
+silver_inspector_master,ACTIVE_YN,ALLOWED_CODES,Y | N,명세·합의된 정제 정책과 실제 CHECK 제약조건
+silver_product_std_dict,BANNED_WORD_YN,ALLOWED_CODES,Y | N,명세·합의된 정제 정책과 실제 CHECK 제약조건
+silver_product_std_dict,CODE_TYPE,ALLOWED_CODES,ITEM_MODEL | BANNED_WORD | INSP_RESULT | DEPT_STD | BANNED_DEPT,명세·합의된 정제 정책과 실제 CHECK 제약조건
+silver_inspection,INSP_RESULT,ALLOWED_CODES,PASS | FAKE_REJECT | CLAIM_FAKE_PASS | BOX_DMG_HOLD,명세·합의된 정제 정책과 실제 CHECK 제약조건
+silver_inspection_join_ready,INSP_RESULT,ALLOWED_CODES,PASS | FAKE_REJECT | CLAIM_FAKE_PASS | BOX_DMG_HOLD,명세·합의된 정제 정책과 실제 CHECK 제약조건
+silver_category_parent_lookup,CAT_ID,IDENTIFIER_FORMAT,CAT_[0-9]{5},확정된 ID 정규화 및 표준 형식
+silver_inspection,INSP_ID,IDENTIFIER_FORMAT,INSP_[0-9]{6},확정된 ID 정규화 및 표준 형식
+silver_inspection,INSPECTOR_EMP_NO,IDENTIFIER_FORMAT,KRM[0-9]{6},확정된 ID 정규화 및 표준 형식
+silver_inspection,PARENT_CAT_ID,IDENTIFIER_FORMAT,CAT_[0-9]{5},확정된 ID 정규화 및 표준 형식
+silver_inspection_join_ready,INSP_ID,IDENTIFIER_FORMAT,INSP_[0-9]{6},확정된 ID 정규화 및 표준 형식
+silver_inspection_join_ready,INSPECTOR_EMP_NO,IDENTIFIER_FORMAT,KRM[0-9]{6},확정된 ID 정규화 및 표준 형식
+silver_inspection_join_ready,PARENT_CAT_ID,IDENTIFIER_FORMAT,CAT_[0-9]{5},확정된 ID 정규화 및 표준 형식
+silver_inspector_master,EMP_NO,IDENTIFIER_FORMAT,KRM[0-9]{6},확정된 ID 정규화 및 표준 형식

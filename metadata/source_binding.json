@@ -1,0 +1,12 @@
+{
+  "file": "KREAM_Final_Data_Full_20261015.zip",
+  "sha256": "7090c12f55612646d85ff5511fbf96145ee5acc6609837b41c5564ce98227541",
+  "manifest": "data/kream_full_export_manifest_v1.csv",
+  "format": "MySQL OUTFILE UTF-8, headerless",
+  "normal_data_tables": 18,
+  "source_business_rows": 335000,
+  "silver_rows": 271787,
+  "excluded_rows": 29359,
+  "quarantine_rows": 33854,
+  "prediction_cutoff_kst": "2026-08-31 23:59:59"
+}

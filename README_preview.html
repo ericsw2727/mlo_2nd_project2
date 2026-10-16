@@ -1,0 +1,1011 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>KREAM 팀 프로젝트 README</title><style>body{margin:0;background:#edf1f5;color:#203249;font-family:"NanumGothic","Malgun Gothic",sans-serif;font-size:16px;line-height:1.85}main{max-width:1120px;margin:auto;padding:46px 56px 80px;background:white}h1{font-size:32px;line-height:1.45;color:#16324b}h2{font-size:26px;margin-top:58px;padding-bottom:12px;border-bottom:2px solid #dce5ed;color:#1d465e}h3{font-size:21px;margin-top:34px}table{border-collapse:collapse;width:100%;font-size:14px;margin:24px 0}th{background:#eaf1f5;color:#214d65;text-align:left}th,td{border:1px solid #d8e1e8;padding:11px 13px;overflow-wrap:anywhere}tr:nth-child(even){background:#f8fafb}img{max-width:100%;height:auto}a{color:#117668;text-decoration:none}a:hover{text-decoration:underline}code{font:13px/1.8 Consolas,monospace;background:#eef2f6;padding:2px 5px;border-radius:3px;overflow-wrap:anywhere}pre{background:#132b43;color:#eaf4f6;padding:22px;white-space:pre-wrap;border-radius:7px}pre code{background:transparent;color:inherit;padding:0}blockquote{border-left:4px solid #159583;background:#eef8f5;padding:12px 20px;margin:24px 0}li{margin:6px 0}@media(max-width:800px){main{padding:24px}table{font-size:12px}}</style><main><p align="center">
+  <img src="assets/project_banner.svg" alt="KREAM 레거시 검수 데이터 표준화와 운영 개선 분석" width="100%">
+</p>
+<h1>KREAM · 레거시 검수 데이터 표준화와 운영 개선 분석</h1>
+<p><strong>오염된 검수 기록을 표준화하고, 검증 가능한 데이터 모델과 운영 개선의 근거로 연결한 AI Ready Data 팀 프로젝트입니다.</strong></p>
+<p>상대팀에서 제공받은 KREAM 스타일의 합성 검수 데이터를 대상으로 <strong>AS-IS 진단 → 표준 사전 → TO-BE 모델 → MySQL 정제·적재 → SQL·Pandas 검증 → Gold 분석</strong>을 수행했습니다. 실제 기업의 운영 실적이나 공식 품질 지표를 분석한 자료는 아닙니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">원본 검수</th>
+<th style="text-align:right">최종 정상 검수</th>
+<th>원본 행 대사</th>
+<th>독립 검증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>335,000행</strong></td>
+<td style="text-align:right"><strong>271,787건</strong></td>
+<td>정상·격리·제외 합계 일치</td>
+<td><strong>Pandas 482개 검사에서 실패 0개</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>검증 기준일: <strong>2026.10.15</strong>. 482개는 실행한 규칙의 범위입니다. SQL 품질 스냅샷의 14개 통과·1개 미검증·1개 기준 차이 기록은 별도로 공개합니다.</p>
+</blockquote>
+<h2>목차</h2>
+<ol>
+<li><a href="#01-overview">프로젝트 배경과 목표</a></li>
+<li><a href="#02-data">데이터와 분석 범위</a></li>
+<li><a href="#03-pipeline">전체 처리 구조</a></li>
+<li><a href="#04-profiling">AS-IS 품질 진단</a></li>
+<li><a href="#05-standard">표준 사전과 정제 정책</a></li>
+<li><a href="#06-model">TO-BE 모델과 데이터 이력</a></li>
+<li><a href="#07-validation">정제 결과와 검증</a></li>
+<li><a href="#08-analysis">운영 개선 분석</a></li>
+<li><a href="#09-gold">Gold 모델과 작업량 예측</a></li>
+<li><a href="#10-reproduce">재현성과 실행 방법</a></li>
+<li><a href="#11-stack">사용 기술과 역할</a></li>
+<li><a href="#12-deliverables">산출물·저장소 구성</a></li>
+<li><a href="#13-decisions">설계 판단과 개선 과제</a></li>
+</ol>
+<p><a id="01-overview"></a></p>
+<h2>1. 프로젝트 배경과 목표</h2>
+<p>리셀 플랫폼의 검수 기록에는 상품명 별칭, ID 표기 차이, 혼합된 날짜·금액 단위, 잘못 연결된 직원 정보, 중복과 개정 충돌이 함께 들어 있습니다. 이런 기록을 그대로 합산하면 상품별 위험, 부서별 작업량, 배상금 모두 잘못 계산될 수 있습니다.</p>
+<p>이 프로젝트는 서로 교환한 레거시 데이터와 명세서를 바탕으로 다음 문제를 해결하는 것을 목표로 했습니다.</p>
+<table>
+<thead>
+<tr>
+<th>과제</th>
+<th>수행 내용</th>
+<th>산출물</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>현행 상태 진단</td>
+<td>원본 CSV의 결측·중복·형식·참조·개정 충돌 수치화</td>
+<td>AS-IS 프로파일링 보고서</td>
+</tr>
+<tr>
+<td>표준 정의</td>
+<td>단어·용어·도메인·코드·명명 규칙 정의</td>
+<td>AI 데이터 표준 사전</td>
+</tr>
+<tr>
+<td>모델 설계</td>
+<td>마스터·검수 현재 상태·감사 이력·분석 모델 분리</td>
+<td>개념·논리·물리 ERD와 TO-BE 명세</td>
+</tr>
+<tr>
+<td>변환과 검증</td>
+<td>명세서에 따른 정제·적재, 원본 추적과 정합성 검사</td>
+<td>변환 SQL, 검증 CSV·보고서</td>
+</tr>
+<tr>
+<td>분석 활용</td>
+<td>품질 위험·재검수 부담·품목 배정·작업량 확인</td>
+<td>Gold 테이블과 시각화</td>
+</tr>
+</tbody>
+</table>
+<p>AI Ready의 초점은 <strong>이름·형식·단위·코드가 일관되고, 출처와 처리 근거를 추적할 수 있는 데이터</strong>를 만드는 데 두었습니다. 특정 AI 모델의 성능 향상을 검증한 프로젝트로 표현하지 않습니다.</p>
+<p><a id="02-data"></a></p>
+<h2>2. 데이터와 분석 범위</h2>
+<h3>공급받은 원본</h3>
+<table>
+<thead>
+<tr>
+<th>파일</th>
+<th>역할</th>
+<th style="text-align:right">물리 행 수</th>
+<th style="text-align:right">업무 컬럼 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kream_product_std_dict.csv</code></td>
+<td>상품·판정·부서 코드, 동의어와 금지 값 기준</td>
+<td style="text-align:right">32</td>
+<td style="text-align:right">8</td>
+</tr>
+<tr>
+<td><code>kream_category_parent_lookup.csv</code></td>
+<td>카테고리 기준 정보</td>
+<td style="text-align:right">1,050</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td><code>kream_inspector_master.csv</code></td>
+<td>검수원 사번·현재 소속·직급·재직여부</td>
+<td style="text-align:right">3,150</td>
+<td style="text-align:right">6</td>
+</tr>
+<tr>
+<td><code>kream_inspection_300000.csv</code></td>
+<td>원천 검수와 개정 기록</td>
+<td style="text-align:right">335,000</td>
+<td style="text-align:right">13</td>
+</tr>
+<tr>
+<td><code>kream_inspection_join_ready.csv</code></td>
+<td>마스터 정보와 배상금이 붙은 조인 통합본</td>
+<td style="text-align:right">335,000</td>
+<td style="text-align:right">18</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>5개 파일</strong></td>
+<td style="text-align:right"><strong>674,232</strong></td>
+<td style="text-align:right"><strong>49</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>674,232는 파일별 물리 행 수의 합입니다.</strong> 원천 검수와 조인 통합본은 같은 업무의 별도 표현이므로 670,000개의 서로 다른 검수로 합산하지 않습니다. 파일명에 <code>300000</code>이 있지만 원천의 실제 수신량은 중복·개정 등을 포함한 335,000행입니다.</p>
+<h3>분석에서 구분한 단위</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>단위와 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원본 물리 행</td>
+<td>파일에 실제 수신한 한 행. 원본 행 번호로 추적</td>
+</tr>
+<tr>
+<td>검수 현재 상태</td>
+<td><code>INSP_ID</code>별 마지막 유효 개정 한 건</td>
+</tr>
+<tr>
+<td>유효 작업 이력</td>
+<td>중복·오류를 제외한 최초·재검수 각각의 작업 기록</td>
+</tr>
+<tr>
+<td>상품</td>
+<td>모델 코드 기준의 상품 종류. 개별 실물의 고유 식별자와 다름</td>
+</tr>
+<tr>
+<td>부서</td>
+<td>정상 검수원 마스터의 현재 소속. 검사 당시 부서 이력과 구분</td>
+</tr>
+</tbody>
+</table>
+<p><a id="03-pipeline"></a></p>
+<h2>3. 전체 처리 구조</h2>
+<p><img src="assets/conceptual_erd.svg" alt="원본 보존, 품질 판정, 정상·격리·제외 분류와 Gold 활용 구조" /></p>
+<p>MySQL에 Bronze·Silver·Gold 레이어를 테이블로 구현했습니다. 오류 데이터와 제외 이력도 별도 테이블에 보관합니다.</p>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>역할</th>
+<th>핵심 처리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bronze</td>
+<td>공급 원본 보존</td>
+<td>업무 값을 문자열로 적재하고 원본 파일·행 번호 유지</td>
+</tr>
+<tr>
+<td>AS-IS 검사</td>
+<td>규칙별 진단과 후보 값 생성</td>
+<td>ID·날짜·수치·상품명·마스터 참조·개정 충돌 검사</td>
+</tr>
+<tr>
+<td>Silver</td>
+<td>정상 마스터와 최종 유효 검수</td>
+<td>표준화, 근거 있는 복구, 최고 유효 개정 선택, 재조인</td>
+</tr>
+<tr>
+<td>Quarantine</td>
+<td>오류 기록 격리</td>
+<td>원본·후보 값·오류 플래그·격리 사유 보존</td>
+</tr>
+<tr>
+<td>Excluded</td>
+<td>동일 중복과 이전 유효 개정 보관</td>
+<td>현재 상태에서는 제외하고 이력과 감사에 활용</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>분석·예측에 맞는 집계</td>
+<td>최종 상태의 위험 분석과 유효 이력의 작업량 분석 구분</td>
+</tr>
+</tbody>
+</table>
+<p>실행 중 조사·보완 과정을 거친 SQL 원본은 <code>sql/archive/</code>에 보관했고, 새 스키마에서 재실행하도록 정리한 파일은 <code>sql/repro/</code>로 구분했습니다.</p>
+<p><a id="04-profiling"></a></p>
+<h2>4. AS-IS 품질 진단</h2>
+<p>원본 CSV를 Pandas로 직접 읽고, 기존 SQL 진단과 대조했습니다. 원문을 읽을 때 빈 문자열과 문자 그대로의 <code>NULL</code>을 자동 결측으로 바꾸지 않았습니다.</p>
+<table>
+<thead>
+<tr>
+<th>발견한 문제</th>
+<th style="text-align:right">원본 진단 수치</th>
+<th>분석에 미치는 영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동일 검수·동일 개정의 내용 충돌</td>
+<td style="text-align:right">2,400개 그룹 / 4,800행</td>
+<td>어느 한쪽을 최신 정상으로 임의 선택할 수 없음</td>
+</tr>
+<tr>
+<td>검수 완료가 입고보다 빠름</td>
+<td style="text-align:right">3,165행</td>
+<td>검수 선후 관계와 소요 흐름 왜곡</td>
+</tr>
+<tr>
+<td>추출 시각이 완료보다 빠름</td>
+<td style="text-align:right">2,891행</td>
+<td>처리 시점과 예측 입력 시점의 모순</td>
+</tr>
+<tr>
+<td>거래금액 결측</td>
+<td style="text-align:right">591행</td>
+<td>거래금액·배상금 계산 불가</td>
+</tr>
+<tr>
+<td>거래금액 음수</td>
+<td style="text-align:right">609행</td>
+<td>정상 금액 범위 위반</td>
+</tr>
+<tr>
+<td>검수 소요시간 <code>-999</code></td>
+<td style="text-align:right">1,200행</td>
+<td>정상 시간처럼 집계하면 작업량 왜곡</td>
+</tr>
+<tr>
+<td>검수 ID 표기 정규화 대상</td>
+<td style="text-align:right">6,000행</td>
+<td>같은 ID가 다른 값으로 인식될 수 있음</td>
+</tr>
+<tr>
+<td>검수원 사번 표기 정규화 대상</td>
+<td style="text-align:right">6,000행</td>
+<td>마스터 연결 누락 가능</td>
+</tr>
+<tr>
+<td>표준 상품명과 원문 불일치</td>
+<td style="text-align:right">17,100행</td>
+<td>같은 상품의 집계가 분리될 수 있음</td>
+</tr>
+<tr>
+<td>재직여부가 정확한 <code>Y</code>, <code>N</code> 이외의 값</td>
+<td style="text-align:right">320행</td>
+<td>허용 코드 혼용</td>
+</tr>
+</tbody>
+</table>
+<p>문제 유형은 같은 행에 중첩될 수 있습니다. <strong>위 건수를 더해 전체 오염 행 수로 해석하지 않습니다.</strong> 상품명 불일치에는 사전과 코드로 복구 가능한 후보도 포함됩니다.</p>
+<p>원천 검수의 네 판정 코드는 이미 표준 값이었습니다. 사전의 허용 별칭과 원본에서 실제 발생한 변환 건수를 구분해, 관측하지 않은 판정 변환을 정제 실적으로 세지 않았습니다.</p>
+<ul>
+<li><a href="reports/bronze/asis_column_profile.csv">컬럼별 원본 프로파일</a></li>
+<li><a href="reports/bronze/asis_business_diagnosis.csv">원본 품질 문제별 상세 진단</a></li>
+<li><a href="reports/bronze/sql_pandas_comparison.csv">SQL과 Pandas 진단 비교</a></li>
+<li><a href="reports/asis_profiling_report.html">AS-IS 프로파일링 보고서</a></li>
+</ul>
+<p><a id="05-standard"></a></p>
+<h2>5. 표준 사전과 정제 정책</h2>
+<h3>AI 데이터 표준 사전</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th style="text-align:right">수량</th>
+<th>정의한 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표준 단어</td>
+<td style="text-align:right">149개</td>
+<td>이름을 구성하는 기본 단어와 약어</td>
+</tr>
+<tr>
+<td>표준 용어</td>
+<td style="text-align:right">189개</td>
+<td>업무 의미를 가진 표준 용어</td>
+</tr>
+<tr>
+<td>타입 도메인</td>
+<td style="text-align:right">43개</td>
+<td>자료형·길이·수치 범위 등</td>
+</tr>
+<tr>
+<td>공식 코드</td>
+<td style="text-align:right">32행</td>
+<td>상품·판정·부서·금지 값의 기준</td>
+</tr>
+<tr>
+<td>전체 컬럼 매핑</td>
+<td style="text-align:right">393개</td>
+<td>문서화 대상의 실제 컬럼과 표준 정의 연결</td>
+</tr>
+</tbody>
+</table>
+<p>공식 코드 32행과 전체 표준 사전을 구분합니다. 393개 매핑에는 감사·추적·검증 컬럼도 포함되며 원본의 서로 다른 업무 컬럼 수를 뜻하지 않습니다.</p>
+<p>명명 규칙은 등록 단어 조합, 밑줄 구분, 식별자·단위·비율·시각의 의미를 기준으로 정리했습니다. 기존 물리명을 임의로 일괄 변경하지 않고 논리 표준명과 대응시켜 SQL과 결과의 연결을 유지했습니다.</p>
+<ul>
+<li><a href="dictionaries/standard_words.csv">단어</a> · <a href="dictionaries/standard_terms.csv">용어</a> · <a href="dictionaries/standard_domains.csv">타입 도메인</a></li>
+<li><a href="dictionaries/business_domains.csv">업무 허용값</a> · <a href="dictionaries/standard_codes.csv">공식 코드</a> · <a href="dictionaries/column_standard_mapping.csv">컬럼 매핑</a></li>
+</ul>
+<h3>핵심 업무 규칙</h3>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>적용한 처리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>명세와 확정 규칙에 따른 공백·전각 등 표기 정규화</td>
+</tr>
+<tr>
+<td>상품명</td>
+<td>유효 상품 코드·사전 표준명·동의어를 근거로 복구</td>
+</tr>
+<tr>
+<td>사번 조인</td>
+<td>이름 대신 사번으로 정상 검수원 마스터와 연결</td>
+</tr>
+<tr>
+<td>카테고리</td>
+<td>정상 카테고리 마스터와 확인된 상품 매핑 근거 사용</td>
+</tr>
+<tr>
+<td>날짜·시간</td>
+<td>시간대 누락은 KST, UTC 표기는 KST로 변환</td>
+</tr>
+<tr>
+<td>시간 순서</td>
+<td>입고 ≤ 검수 완료 ≤ 추출을 확인하고 역전 행 격리</td>
+</tr>
+<tr>
+<td>금액</td>
+<td>정의된 단위 해석, USD는 1,350원 고정 환율, 소수 보존</td>
+</tr>
+<tr>
+<td>소요시간</td>
+<td>초를 분으로 통일, 결측·음수·<code>-999</code> 등 오류 격리</td>
+</tr>
+<tr>
+<td>재직여부</td>
+<td>원본이 정확한 대문자 <code>Y</code>일 때만 재직, 나머지는 <code>N</code></td>
+</tr>
+<tr>
+<td>동일 개정 충돌</td>
+<td>충돌한 양쪽 행 모두 격리</td>
+</tr>
+<tr>
+<td>최신 개정 오류</td>
+<td>오류 행을 격리하고 최고 유효 개정 선택</td>
+</tr>
+<tr>
+<td>가품 오판정 배상금</td>
+<td><code>CLAIM_FAKE_PASS</code>이면 거래가 × 3, 그 외 0</td>
+</tr>
+<tr>
+<td>메모</td>
+<td>원문 보존. 메모 속 지시문을 정제 규칙으로 사용하지 않음</td>
+</tr>
+<tr>
+<td>규정에 없는 비정상 값</td>
+<td>임의 정상 복구 없이 격리</td>
+</tr>
+</tbody>
+</table>
+<p><strong>정확한 대문자 <code>Y</code>만 재직이라는 정책에서는 <code>y</code>, <code>true</code>, 공백이 붙은 값도 <code>N</code>입니다.</strong> 현재 퇴사 상태라는 이유만으로 과거 정상 검수까지 일괄 격리하지 않습니다.</p>
+<p><code>join_ready</code>의 사전 계산값을 그대로 신뢰하지 않고, 정상 검수와 마스터를 다시 연결해 이름·부서·직급·카테고리명·배상금을 구성했습니다.</p>
+<p>→ <a href="docs/PROCESSING_RULES.md">컬럼별 규칙과 오염 처리 상세</a></p>
+<p><a id="06-model"></a></p>
+<h2>6. TO-BE 모델과 데이터 이력</h2>
+<p><img src="assets/physical_erd.svg" alt="실제 기본키·고유키·외래키를 반영한 핵심 물리 ERD" /></p>
+<h3>핵심 테이블의 역할</h3>
+<table>
+<thead>
+<tr>
+<th>테이블</th>
+<th>역할</th>
+<th>주요 키·관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>silver_product_std_dict</code></td>
+<td>공식 코드와 표준명 기준</td>
+<td>사전 ID, 코드 유형별 조회</td>
+</tr>
+<tr>
+<td><code>silver_inspector_master</code></td>
+<td>정상 검수원 마스터</td>
+<td><code>EMP_NO</code></td>
+</tr>
+<tr>
+<td><code>silver_category_parent_lookup</code></td>
+<td>정상 카테고리 마스터</td>
+<td><code>CAT_ID</code></td>
+</tr>
+<tr>
+<td><code>silver_inspection</code></td>
+<td>검수별 마지막 유효 상태</td>
+<td>PK <code>(INSP_ID, REV_NO)</code>, UNIQUE <code>INSP_ID</code>, 직원·카테고리 FK</td>
+</tr>
+<tr>
+<td><code>silver_inspection_join_ready</code></td>
+<td>분석용 결합 데이터</td>
+<td>검수·개정 키로 정상 검수 참조</td>
+</tr>
+<tr>
+<td><code>quarantine_*</code></td>
+<td>오류 원본과 판정 근거</td>
+<td>원본 행 번호와 오류 사유</td>
+</tr>
+<tr>
+<td><code>excluded_*</code></td>
+<td>중복·이전 개정 이력</td>
+<td>원본 행 번호와 제외 사유</td>
+</tr>
+<tr>
+<td><code>silver_inspection_correction_log</code></td>
+<td>컬럼 단위 수정 내역</td>
+<td>원본 추적과 변경 대상 컬럼</td>
+</tr>
+<tr>
+<td><code>asis_inspection_join_row_pair_v1</code></td>
+<td>원천·조인본의 대응 관계</td>
+<td>두 원본 행의 연결</td>
+</tr>
+</tbody>
+</table>
+<p>기준 정보를 마스터로 분리해 사번·카테고리 코드로 참조하고, 조회·분석 편의를 위한 결합 테이블은 정규 마스터에서 다시 생성했습니다.</p>
+<ul>
+<li>현재 위험 분석은 검수별 마지막 유효 상태를 사용합니다.</li>
+<li>작업량 분석은 정상 이전 개정도 실제 작업으로 포함합니다.</li>
+<li>동일 내용 중복과 오류 기록은 작업량에 포함하지 않습니다.</li>
+<li>직원의 현재 소속과 검사 당시 소속은 구분합니다.</li>
+<li>원천의 <code>PARENT_CAT_ID</code>를 해당 실물 상품의 자체 카테고리 ID라고 임의 해석하지 않습니다.</li>
+</ul>
+<p>문서화 대상은 <strong>28개 테이블·393개 컬럼</strong>이며, 정상 Silver·Gold 검증 대상은 <strong>18개 테이블·188개 컬럼</strong>입니다. 두 수치는 범위가 다릅니다.</p>
+<p>→ <a href="docs/MODEL.md">개념·논리·물리 모델과 실제 제약조건</a> · <a href="reports/to_be_model.html">전체 TO-BE 모델 보고서</a></p>
+<p><a id="07-validation"></a></p>
+<h2>7. 정제 결과와 검증</h2>
+<h3>원본 행 대사</h3>
+<p><img src="assets/11_disposition.png" alt="정상·격리·제외 분류 결과" /></p>
+<table>
+<thead>
+<tr>
+<th>분류</th>
+<th style="text-align:right">행 수</th>
+<th style="text-align:right">원본 대비</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Silver</td>
+<td style="text-align:right">271,787</td>
+<td style="text-align:right">81.13%</td>
+<td>최고 유효 개정</td>
+</tr>
+<tr>
+<td>Quarantine</td>
+<td style="text-align:right">33,854</td>
+<td style="text-align:right">10.11%</td>
+<td>오류 기록 격리</td>
+</tr>
+<tr>
+<td>Excluded</td>
+<td style="text-align:right">29,359</td>
+<td style="text-align:right">8.76%</td>
+<td>동일 중복 9,598 + 이전 유효 개정 19,761</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td style="text-align:right"><strong>335,000</strong></td>
+<td style="text-align:right"><strong>100%</strong></td>
+<td><strong>원본 수신량과 일치</strong></td>
+</tr>
+</tbody>
+</table>
+<p>제외·보관된 29,359행을 전부 오류 삭제라고 설명하지 않습니다. 원본 완전 중복 진단과 최종 분류는 검사 순서와 오류 중첩 때문에 다른 수치가 될 수 있습니다.</p>
+<h3>서로 다른 세 가지 검증 범위</h3>
+<table>
+<thead>
+<tr>
+<th>범위</th>
+<th>결과</th>
+<th>확인한 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQL 품질 스냅샷</td>
+<td>14개 PASS, 1개 NOT_CHECKED, 1개 RECORDED_DIFFERENCE</td>
+<td>저장된 업무 품질 검사 상태</td>
+</tr>
+<tr>
+<td>Pandas 독립 검증</td>
+<td>482개 검사, 실패 0개</td>
+<td>자료형·필수값·키·참조·허용 코드·계산 관계 등</td>
+</tr>
+<tr>
+<td>원본 직접 추적</td>
+<td>13개 검사 위반 0, SQL 진단 8개 지표 차이 0</td>
+<td>원본 값·행 분류·충돌 격리·변환 결과 대조</td>
+</tr>
+</tbody>
+</table>
+<p><strong>482개 검사에서 실패 0개인 것과 모든 업무 규칙을 검증한 것은 다릅니다.</strong> 점검 구간 검증 상태와 상대팀 기준 차이는 별도 항목으로 보존합니다.</p>
+<h3>상대팀 제시 기준과의 차이</h3>
+<table>
+<thead>
+<tr>
+<th>분류</th>
+<th style="text-align:right">상대팀 답변 기준</th>
+<th style="text-align:right">현재 결과</th>
+<th style="text-align:right">현재 − 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Silver</td>
+<td style="text-align:right">280,800</td>
+<td style="text-align:right">271,787</td>
+<td style="text-align:right">-9,013</td>
+</tr>
+<tr>
+<td>Excluded</td>
+<td style="text-align:right">32,600</td>
+<td style="text-align:right">29,359</td>
+<td style="text-align:right">-3,241</td>
+</tr>
+<tr>
+<td>Quarantine</td>
+<td style="text-align:right">21,600</td>
+<td style="text-align:right">33,854</td>
+<td style="text-align:right">+12,254</td>
+</tr>
+<tr>
+<td>합계</td>
+<td style="text-align:right">335,000</td>
+<td style="text-align:right">335,000</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<p>기준 건수의 출처는 상대팀 Q2 답변입니다. 목표 수치와 맞추기 위해 분류를 변경하지 않고 차이의 원인 분석을 개선 항목으로 남겼습니다.</p>
+<p>→ <a href="docs/VERIFICATION.md">검증 범위·수치·근거</a> · <a href="reports/pandas_standard_checks.csv">Pandas 검사 원자료</a></p>
+<p><a id="08-analysis"></a></p>
+<h2>8. 운영 개선 분석</h2>
+<p>발표에서는 <strong>경영진의 운영 개선 요청을 받은 데이터 컨설팅팀</strong>이라는 상황을 가정했습니다. 실제 기업의 의뢰 사실이나 개선 효과가 입증된 것으로 표현하지 않습니다.</p>
+<h3>먼저 구분한 분석 범위</h3>
+<table>
+<thead>
+<tr>
+<th>분석</th>
+<th>기간·대상</th>
+<th style="text-align:right">분모</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일반 검수 위험·시간·상품 구성</td>
+<td>2022.01.01~2026.08.31, 최종 Silver 중 <code>REV_NO=1</code></td>
+<td style="text-align:right">243,454건</td>
+</tr>
+<tr>
+<td>재검수 위험</td>
+<td>2026.10월, 최종 Silver 중 <code>REV_NO≥2</code></td>
+<td style="text-align:right">21,656건</td>
+</tr>
+<tr>
+<td>최종 상태의 최초·재검수 비중</td>
+<td>전체 최종 Silver</td>
+<td style="text-align:right">271,787건</td>
+</tr>
+<tr>
+<td>실제 유효 작업량의 최초·재검수 비중</td>
+<td>유효 이전 개정 포함</td>
+<td style="text-align:right">291,548건</td>
+</tr>
+<tr>
+<td>등록 인원과 직급</td>
+<td>현재 정상 검수원 마스터, 재직·비재직 포함</td>
+<td style="text-align:right">2,960명</td>
+</tr>
+</tbody>
+</table>
+<p>부서 분석은 모두 <strong>현재 정규 마스터 소속 기준</strong>입니다. 서로 다른 기간과 분모의 수치를 같은 집단의 비율처럼 연결하지 않습니다.</p>
+<h3>과제 1. 외주팀의 품질 위험과 짧은 검수시간 집중</h3>
+<p><img src="assets/01_general_department_risk.png" alt="일반 검수의 부서별 산식 배상액과 가품 오판정 확인 건수" /></p>
+<p>일반 검수 범위에서 외주야간검수팀은 <strong>가품 오판정 코드 633건</strong>, <strong>산식 기준 배상액 59.20억원</strong>으로 관측됐습니다. 같은 범위의 10분 미만 검수 비중은 외주팀 93.65%, 다른 부서 합산 28.78%였습니다.</p>
+<p>이는 점검 우선순위를 검토할 근거입니다. 짧은 검수시간이 오류의 원인이라거나, 개인 검수 능력이 낮다고 확정하지 않습니다. 독립적인 정답 라벨과 과거 배치·근무 정보가 추가로 필요합니다.</p>
+<p><strong>제안:</strong> 필수 체크리스트, 위험도별 추가 확인, 표본 감사의 시범 적용.</p>
+<h3>과제 2. 스니커즈팀의 재검수 부담</h3>
+<p><img src="assets/04_reinspection_department_risk.png" alt="재검수의 부서별 산식 배상액과 최초 오판정 확인 건수" /></p>
+<table>
+<thead>
+<tr>
+<th>부서</th>
+<th style="text-align:right">재검수 기록</th>
+<th style="text-align:right">가품 오판정 확인</th>
+<th style="text-align:right">재검수 내 비율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>스니커즈검수1팀</td>
+<td style="text-align:right">4,804</td>
+<td style="text-align:right">3,753</td>
+<td style="text-align:right">78.12%</td>
+</tr>
+<tr>
+<td>스니커즈검수2팀</td>
+<td style="text-align:right">3,733</td>
+<td style="text-align:right">2,903</td>
+<td style="text-align:right">77.77%</td>
+</tr>
+</tbody>
+</table>
+<p>다른 부서도 비슷한 수준의 비율을 보이므로 발견 건수와 배상액만으로 팀의 능력을 순위화하지 않았습니다. 검수 물량과 등록 인원, 표본이 선택된 방식을 함께 봐야 합니다.</p>
+<p>특히 <strong>재검수에서 확인된 최초 오판정과 재검수 자체의 오류는 다릅니다.</strong> 재검수 표본의 비율을 모든 상품의 가품 확률로 일반화하지 않습니다.</p>
+<p><strong>제안:</strong> 최초 판정 연결, 실제 재검수 담당자 분리 기록, 반복 사유에 따른 교육과 독립 재검수 절차.</p>
+<h3>과제 3. 품목 전문화와 배정 구조</h3>
+<p><img src="assets/09_product_department_share.png" alt="일반 검수의 부서별 상품 구성비" /></p>
+<p>일반 검수 범위에서 8개 팀 모두 정상 관측 상품 <strong>19종</strong>을 다루고, 팀별 상품 구성비도 유사하게 나타났습니다. 클레임재검수팀에도 일반 검수 기록이 있습니다.</p>
+<p>현재 자료에서 품목별 배정 역할과 독립 재검수 구조가 뚜렷하게 드러나지 않는다는 관측입니다. 여러 상품을 담당한다는 이유만으로 개인 전문성이 부족하다고 판단하지 않습니다.</p>
+<p><strong>제안:</strong> 신발·의류·가방·시계·전자기기 전문 셀과 독립 클레임 기능을 시범 운영하고 품질·대기시간을 비교.</p>
+<p>→ <a href="docs/ANALYSIS.md">10개 시각화 전체와 계산 정의</a> · <a href="reports/team_analysis/verification.json">발표 수치 재계산 결과</a></p>
+<p><a id="09-gold"></a></p>
+<h2>9. Gold 모델과 작업량 예측</h2>
+<h3>현재 구현한 Gold 테이블</h3>
+<table>
+<thead>
+<tr>
+<th>테이블</th>
+<th>분석 단위·역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gold_inspection_result_daily_v1</code></td>
+<td>날짜별 최종 판정·거래가·배상금</td>
+</tr>
+<tr>
+<td><code>gold_inspection_workload_daily_v1</code></td>
+<td>날짜·검수 종류별 유효 작업량</td>
+</tr>
+<tr>
+<td><code>gold_inspection_workload_hourly_v1</code></td>
+<td>날짜·시간대·현재 부서·검수 종류별 작업량</td>
+</tr>
+<tr>
+<td><code>gold_product_risk_summary_v1</code></td>
+<td>상품별 판정·배상 위험</td>
+</tr>
+<tr>
+<td><code>gold_department_risk_summary_v1</code></td>
+<td>현재 부서별 판정·배상 위험</td>
+</tr>
+<tr>
+<td><code>gold_risk_cross_summary_v1</code></td>
+<td>상품·부서 등 교차 위험 집계</td>
+</tr>
+<tr>
+<td><code>gold_prediction_input_record_v1</code></td>
+<td>기준 시각 안의 예측 입력 기록</td>
+</tr>
+<tr>
+<td><code>gold_prediction_input_daily_v1</code></td>
+<td>예측 입력의 일별 집계</td>
+</tr>
+<tr>
+<td><code>gold_prediction_actual_daily_v1</code></td>
+<td>예측 평가 구간의 실제 작업량</td>
+</tr>
+<tr>
+<td><code>gold_workload_forecast_v1</code></td>
+<td>날짜·방법별 건수와 시간 예측</td>
+</tr>
+<tr>
+<td><code>gold_workload_forecast_evaluation_v1</code></td>
+<td>예측값·실제값·오차</td>
+</tr>
+<tr>
+<td><code>gold_workload_forecast_summary_v1</code></td>
+<td>방법별 오차 요약</td>
+</tr>
+<tr>
+<td><code>gold_staffing_scenario_v1</code></td>
+<td>가용시간 가정별 필요 작업 인원 시나리오</td>
+</tr>
+</tbody>
+</table>
+<p>발표에서 제안한 역량 적합 배정·독립 재검수 비율 등의 확장 지표는 실제 담당자·당시 소속·역량·근무표를 확보한 뒤 산출할 항목으로 구분합니다.</p>
+<h3>최종 상태와 작업량 구분</h3>
+<p>최종 상태는 271,787건이지만, 정상 이전 개정까지 포함한 유효 작업 이력은 <strong>291,548건</strong>입니다.</p>
+<ul>
+<li>최초 검수: <strong>269,892건</strong></li>
+<li>재검수: <strong>21,656건</strong></li>
+</ul>
+<p>하나의 검수가 두 번 처리됐다면 현재 상태는 한 건이어도 작업은 두 번입니다. 작업량을 예측할 때 최종 상태만 세어 재검수 시간을 누락하지 않도록 했습니다.</p>
+<h3>예측 입력과 평가</h3>
+<ul>
+<li>기준 기간: <strong>2026.08.04~08.31</strong>, 28일</li>
+<li>입력: <strong>8,173건 / 126,839분</strong></li>
+<li>평가 기간: <strong>2026.09.01~09.07</strong></li>
+<li>실제: <strong>2,012건 / 30,443분</strong></li>
+<li>기준 시각: <strong>2026.08.31 23:59:59 KST</strong></li>
+</ul>
+<p>완료 시각과 추출 시각을 함께 제한해 예측 시점 이후의 기록이 입력에 섞이지 않도록 했습니다. 2026.09월은 경계 월, 10월은 일괄 재검수 구간으로 구분했습니다.</p>
+<p><img src="assets/13_forecast_error.png" alt="두 예측 방법의 실제값 대비 오차" /></p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th style="text-align:right">건수 WAPE</th>
+<th style="text-align:right">소요시간 WAPE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>최근 28일 평균</td>
+<td style="text-align:right">4.2690%</td>
+<td style="text-align:right">7.1242%</td>
+</tr>
+<tr>
+<td>같은 요일 평균</td>
+<td style="text-align:right">4.1128%</td>
+<td style="text-align:right">7.6594%</td>
+</tr>
+</tbody>
+</table>
+<p><code>WAPE = 절대 예측 오차 합 ÷ 실제값 합 × 100</code>입니다. 이 평가 구간에서는 건수와 시간의 오차가 낮은 방법이 달랐습니다.</p>
+<p>인력 시나리오는 한 명의 가용시간을 240·360·480분으로 가정한 계산입니다. 실제 근무표·결근·기존 여유시간이 없으므로 인력 부족이나 추가 채용 인원으로 바로 해석하지 않습니다.</p>
+<p><a id="10-reproduce"></a></p>
+<h2>10. 재현성과 실행 방법</h2>
+<h3>기존 결과와 재실행 결과 비교</h3>
+<p>최종 원본 ZIP과 재실행 ZIP에는 각각 CSV 29개가 있습니다.</p>
+<ul>
+<li><strong>업무 CSV 27개는 바이트 단위로 일치</strong>했습니다.</li>
+<li>품질 결과 파일은 검사 시각이 달랐습니다.</li>
+<li>내보내기 목록은 파일 이름과 기록 시각이 달랐습니다.</li>
+<li>업무 결과의 차이와 실행 메타데이터 차이를 구분했습니다.</li>
+</ul>
+<p>→ <a href="evidence/export_comparison.json">파일별 해시·변경 컬럼 비교</a></p>
+<h3>Python 검증 실행</h3>
+<p>Python 3.11 이상을 기준으로 하며, 원본·최종 ZIP은 별도로 준비합니다. 경로는 실제 파일 위치로 바꿉니다.</p>
+<pre><code class="language-bash">python -m pip install -r requirements.txt
+python src/profile_bronze.py --raw-dir data/raw --output reports/bronze
+python src/profile_standard_gap.py --raw-dir data/raw
+python src/audit_bronze.py --raw-dir data/raw --final-zip data/exports/KREAM_Repro_Final_Data_Full_20261015.zip
+python src/verify_final.py --source data/exports/KREAM_Repro_Final_Data_Full_20261015.zip
+python src/verify_team_analysis.py --source data/exports/KREAM_Repro_Final_Data_Full_20261015.zip
+python src/verify_forecast.py --source data/exports/KREAM_Repro_Final_Data_Full_20261015.zip
+python src/build_documents.py
+python src/build_team_docs.py
+</code></pre>
+<p>두 최종본 비교:</p>
+<pre><code class="language-bash">python src/verify_export_comparison.py --original data/exports/KREAM_Final_Data_Full_20261015.zip --repro data/exports/KREAM_Repro_Final_Data_Full_20261015.zip
+</code></pre>
+<p>최종 CSV는 헤더 없는 MySQL OUTFILE 형식이며 SQL NULL은 <code>\N</code>입니다. 제공 코드는 컬럼 메타데이터로 읽어 첫 행을 헤더로 잃거나 문자 <code>NULL</code>을 자동 변환하지 않도록 구성했습니다.</p>
+<h3>MySQL 전체 재실행</h3>
+<p><code>sql/repro/</code>는 별도 스키마 <code>kream_project_repro</code>를 사용합니다. 입력 경로와 <code>secure_file_priv</code>, 기존 객체·출력 파일 상태를 먼저 확인한 뒤 <code>sql/execution_order.txt</code> 순서로 실행합니다.</p>
+<table>
+<thead>
+<tr>
+<th>구간</th>
+<th>주요 작업</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00~07</td>
+<td>환경·원본 테이블 생성·적재·건수 확인</td>
+</tr>
+<tr>
+<td>08~25</td>
+<td>기초 품질·날짜·ID·상품·수치 진단</td>
+</tr>
+<tr>
+<td>26~38</td>
+<td>검사 결과 저장과 참조·마스터 검사</td>
+</tr>
+<tr>
+<td>39~45</td>
+<td>정상 사전·검수원·카테고리 생성</td>
+</tr>
+<tr>
+<td>46~53</td>
+<td>검수 통합 검사와 최종 규칙 확인</td>
+</tr>
+<tr>
+<td>54 → 54A~54E</td>
+<td>분류 차이 진단과 근거 있는 복구</td>
+</tr>
+<tr>
+<td>55~65</td>
+<td>정상·격리·제외·재조인·추적·품질 스냅샷</td>
+</tr>
+<tr>
+<td>66~75</td>
+<td>Gold 분석·작업량·예측·평가</td>
+</tr>
+<tr>
+<td>76~79, 81</td>
+<td>구조 문서화·출력 목록·전체 내보내기</td>
+</tr>
+</tbody>
+</table>
+<p>12번 조건부 복구 이력과 80번 초기 내보내기는 기본 재현 흐름에서 분리했습니다. CREATE·LOAD가 성공한 파일을 무조건 다시 실행하지 않습니다.</p>
+<p>→ <a href="docs/REPRODUCE.md">환경·경로·실행 순서와 재시작 기준</a></p>
+<p><a id="11-stack"></a></p>
+<h2>11. 사용 기술과 역할</h2>
+<table>
+<thead>
+<tr>
+<th>기술·도구</th>
+<th>실제 사용 역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL·SQL</td>
+<td>레이어 테이블·정제·마스터 재조인·개정 분류·제약조건·Gold·예측·검증</td>
+</tr>
+<tr>
+<td>Python·Pandas</td>
+<td>원본 프로파일링, SQL 결과 독립 검산, 원본 추적, 분석 원자료 집계</td>
+</tr>
+<tr>
+<td>Matplotlib</td>
+<td>검증 결과와 작업량·위험 분석의 시각화</td>
+</tr>
+<tr>
+<td>MySQL Workbench</td>
+<td>단계별 SQL 실행과 결과 확인</td>
+</tr>
+<tr>
+<td>CSV·JSON·HTML·SVG</td>
+<td>데이터 교환, 메타데이터, 보고서, ERD와 근거 보관</td>
+</tr>
+</tbody>
+</table>
+<p>문서의 기술명은 실제 코드·출력 근거가 있는 범위로 기재했습니다. 시각화는 제공 PNG의 생성 메타데이터와 기존 실행 코드에서 Matplotlib을 확인했습니다.</p>
+<p><a id="12-deliverables"></a></p>
+<h2>12. 산출물과 저장소 구성</h2>
+<table>
+<thead>
+<tr>
+<th>필수 산출물</th>
+<th>연결 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AS-IS 데이터 프로파일링 리포트</td>
+<td><a href="reports/asis_profiling_report.html">원본 진단</a>, <a href="reports/bronze/asis_column_profile.csv">컬럼 프로파일</a></td>
+</tr>
+<tr>
+<td>AI 데이터 표준 사전</td>
+<td><a href="reports/standard_dictionary.html">표준 사전 보고서</a>, <code>dictionaries/</code></td>
+</tr>
+<tr>
+<td>AI Ready TO-BE 모델링 명세</td>
+<td><a href="reports/to_be_model.html">모델 보고서</a>, <a href="docs/MODEL.md">모델 상세</a>, ERD</td>
+</tr>
+<tr>
+<td>변환 SQL·정합성 검증 데이터</td>
+<td><code>sql/repro/</code>, <a href="reports/validation_report.html">검증 보고서</a>, <code>reports/</code></td>
+</tr>
+<tr>
+<td>운영 분석·발표 시각화</td>
+<td><a href="docs/ANALYSIS.md">분석 상세</a>, <code>assets/</code>, <code>reports/team_analysis/</code></td>
+</tr>
+<tr>
+<td>재현 근거</td>
+<td><a href="docs/REPRODUCE.md">실행 안내</a>, <a href="evidence/export_comparison.json">두 최종본 비교</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>assets/</code>: README와 분석에 사용하는 이미지·ERD</li>
+<li><code>dictionaries/</code>: 단어·용어·도메인·코드·컬럼 매핑</li>
+<li><code>docs/</code>: 처리 규칙·모델·분석·실행·검증 상세</li>
+<li><code>metadata/</code>: 실제 테이블·컬럼·제약조건·규칙 메타데이터</li>
+<li><code>reports/</code>: 프로파일링·표준 준수·원본 추적·분석 원자료</li>
+<li><code>sql/repro/</code>: 재현 실행용 SQL</li>
+<li><code>sql/archive/</code>: 작업 당시 원본 SQL 보관</li>
+<li><code>src/</code>: 프로파일링·검증·분석 재계산 코드</li>
+<li><code>visualization/pipeline/</code>: 기존 Gold 시각화 코드와 그래프</li>
+<li><code>evidence/</code>: README 주장·첨부 자료·최종본 대조 근거</li>
+</ul>
+<p>HTML 보고서는 파일을 내려받아 브라우저에서 열면 볼 수 있습니다. GitHub에서는 Markdown 문서·CSV·SVG·PNG를 바로 확인할 수 있습니다. 원본 데이터와 대용량 최종 ZIP은 이 문서 묶음에 중복 수록하지 않았습니다.</p>
+<p><a id="13-decisions"></a></p>
+<h2>13. 설계 판단과 개선 과제</h2>
+<table>
+<thead>
+<tr>
+<th>판단</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원본 보존과 격리·제외 분리</td>
+<td>정상 결과를 만드는 과정과 원본 행의 행방을 추적하기 위해</td>
+</tr>
+<tr>
+<td>최고 유효 개정 선택</td>
+<td>단순 추출 시각이나 가장 큰 개정만으로 오류를 정상 채택하지 않기 위해</td>
+</tr>
+<tr>
+<td>사번 기반 재조인</td>
+<td>동명이인과 잘못 붙은 부서 정보를 그대로 사용하지 않기 위해</td>
+</tr>
+<tr>
+<td>배상금 재계산</td>
+<td>조인 통합본의 오타를 분석에 전파하지 않기 위해</td>
+</tr>
+<tr>
+<td>현재 상태와 작업 이력 분리</td>
+<td>재검수 작업량을 누락하거나 같은 검수를 여러 현재 상태로 세지 않기 위해</td>
+</tr>
+<tr>
+<td>기간·분모를 그래프마다 명시</td>
+<td>일반 검수·재검수·현재 인원 지표를 혼동하지 않기 위해</td>
+</tr>
+<tr>
+<td>수치 차이와 미검증 상태 공개</td>
+<td>검증한 내용과 아직 설명이 필요한 부분을 구분하기 위해</td>
+</tr>
+</tbody>
+</table>
+<h3>작업 중 해결한 문제</h3>
+<table>
+<thead>
+<tr>
+<th>문제</th>
+<th>대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>반복 조회와 함수 계산이 무거운 진단 쿼리</td>
+<td>검사 결과를 스냅샷으로 저장하고 원본 행 번호·키 인덱스로 연결. 처리시간 향상 수치는 별도 벤치마크 없이 주장하지 않음</td>
+</tr>
+<tr>
+<td>같은 생성·삽입 구간 재실행 오류</td>
+<td>생성·적재와 조회를 구분하고 조건부 복구·중복 삽입 이력을 기본 재현 경로에서 분리</td>
+</tr>
+<tr>
+<td>화면 제한으로 일부 행만 내보낸 CSV</td>
+<td>실제 행 수와 출력 목록 대사, 전체 LIMIT와 OUTFILE을 적용한 최종본으로 확인</td>
+</tr>
+<tr>
+<td>CSV의 문자열 NULL과 SQL NULL 혼동</td>
+<td>원본 읽기 옵션과 OUTFILE 전용 파서로 의미 보존</td>
+</tr>
+<tr>
+<td>SQL 원문 일부 보관 누락</td>
+<td>실제 정의와 확보한 자료로 복원하고 원본·복원·재현용 파일 구분</td>
+</tr>
+<tr>
+<td>발표 수치의 서로 다른 분모</td>
+<td>일반 검수·재검수·현재 상태·유효 작업 이력·등록 인원 범위를 별도 정의</td>
+</tr>
+</tbody>
+</table>
+<p>후속 과제는 다음과 같습니다.</p>
+<ol>
+<li>상대팀 제시 건수와 현재 분류 차이를 규칙별로 더 세분화해 설명</li>
+<li>점검 구간 조건과 현재 검증 기록을 대조해 미검증 항목 보완</li>
+<li>검사 당시 소속·실제 최초 및 재검수 담당자·근무표·역량 이력 확보</li>
+<li>품목 전문 셀·독립 재검수·체크리스트 개선안을 시범 운영하고 품질·대기시간 비교</li>
+<li>이후 기간의 실제 작업량으로 예측 방법을 반복 평가</li>
+</ol>
+<p>발표의 산식 배상액은 데이터 규칙에 따른 위험 규모입니다. 실제 지급액·예방액·절감액으로 표현하지 않습니다. 등록 인원도 실제 근무 인원이 아닙니다.</p>
+<hr />
+<p>수치의 기간·분모·원자료와 재검산 기록은 <a href="docs/VERIFICATION.md">검증 근거 문서</a> 및 <a href="evidence/README_SOURCE_AUDIT.md">README 근거 점검표</a>에서 확인할 수 있습니다.</p>
+</main></html>

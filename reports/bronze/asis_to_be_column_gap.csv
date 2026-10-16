@@ -1,0 +1,50 @@
+﻿source_file,column_name,rows,target_type,target_nullable,missing_representation_rows,nonnull_checked_rows,target_type_format_difference_rows,business_domain_difference_rows,target_format,business_domain,interpretation
+kream_product_std_dict.csv,DICT_ID,32,varchar(20),NO,0,32,0,0,문자 길이 20 이하,DICT_[0-9]{3},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_product_std_dict.csv,CODE_TYPE,32,varchar(20),NO,0,32,0,0,문자 길이 20 이하,ITEM_MODEL | BANNED_WORD | INSP_RESULT | DEPT_STD | BANNED_DEPT,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_product_std_dict.csv,STD_CODE,32,varchar(50),NO,0,32,0,0,문자 길이 50 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_product_std_dict.csv,STD_KOR_NM,32,varchar(150),NO,0,32,0,0,문자 길이 150 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_product_std_dict.csv,SYNONYM_LIST,32,varchar(1000),YES,0,32,0,0,문자 길이 1000 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_product_std_dict.csv,BANNED_WORD_YN,32,char(1),NO,0,32,0,0,문자 길이 1 이하,Y | N,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_product_std_dict.csv,BASE_RETAIL_KRW,32,int,NO,0,32,0,0,정수,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_product_std_dict.csv,FAKE_PENALTY_MULTIPLIER,32,"decimal(3,1)",NO,0,32,0,0,"단위 접미사·구분자 없는 decimal(3,1)",,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_category_parent_lookup.csv,CAT_ID,1050,varchar(20),NO,0,1050,0,54,문자 길이 20 이하,CAT_[0-9]{5},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_category_parent_lookup.csv,CAT_NM,1050,varchar(100),NO,0,1050,0,0,문자 길이 100 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_category_parent_lookup.csv,CAT_LEVEL,1050,varchar(20),NO,0,1050,0,71,문자 길이 20 이하,TOP_LEVEL | BRAND_LINE,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_category_parent_lookup.csv,REG_DT,1050,datetime,NO,0,1050,32,0,%Y-%m-%d %H:%M:%S,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspector_master.csv,EMP_NO,3150,varchar(20),NO,0,3150,0,205,문자 길이 20 이하,KRM[0-9]{6},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspector_master.csv,EMP_NM,3150,varchar(50),NO,0,3150,0,0,문자 길이 50 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspector_master.csv,DEPT_NM,3150,varchar(100),NO,0,3150,0,0,문자 길이 100 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspector_master.csv,POSITION_NM,3150,varchar(50),NO,0,3150,0,0,문자 길이 50 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspector_master.csv,HIRE_DT,3150,date,NO,0,3150,3150,0,%Y-%m-%d,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspector_master.csv,ACTIVE_YN,3150,char(1),NO,5,3145,188,315,문자 길이 1 이하,Y | N,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,INSP_ID,335000,varchar(20),NO,0,335000,0,6000,문자 길이 20 이하,INSP_[0-9]{6},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,REV_NO,335000,int,NO,0,335000,0,0,정수 및 개정 1 이상,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,ITEM_STD_CODE,335000,varchar(50),NO,0,335000,0,0,문자 길이 50 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,ITEM_NM,335000,varchar(150),NO,0,335000,0,0,문자 길이 150 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,PARENT_CAT_ID,335000,varchar(20),YES,1000,334000,0,1000,문자 길이 20 이하,CAT_[0-9]{5},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,TRADE_PRICE_KRW,335000,"decimal(18,4)",NO,591,334409,7500,0,"단위 접미사·구분자 없는 decimal(18,4)",,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,INSP_DURATION_MIN,335000,"decimal(12,8)",NO,0,335000,7500,0,"단위 접미사·구분자 없는 decimal(12,8)",,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,INSP_RESULT,335000,varchar(50),NO,0,335000,0,0,문자 길이 50 이하,PASS | FAKE_REJECT | CLAIM_FAKE_PASS | BOX_DMG_HOLD,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,INSPECTOR_EMP_NO,335000,varchar(20),NO,1200,333800,0,6348,문자 길이 20 이하,KRM[0-9]{6},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,INBOUND_DT,335000,datetime,NO,0,335000,7500,0,%Y-%m-%d %H:%M:%S,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,INSP_DONE_DT,335000,datetime,NO,0,335000,7500,0,%Y-%m-%d %H:%M:%S,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,EXTRACTED_AT,335000,datetime,NO,0,335000,0,0,%Y-%m-%d %H:%M:%S,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_300000.csv,INSP_MEMO,335000,text,YES,0,335000,0,0,문자열 보존,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSP_ID,335000,varchar(20),NO,0,335000,0,6000,문자 길이 20 이하,INSP_[0-9]{6},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,REV_NO,335000,int,NO,0,335000,0,0,정수 및 개정 1 이상,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,ITEM_STD_CODE,335000,varchar(50),NO,0,335000,0,0,문자 길이 50 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,ITEM_NM,335000,varchar(150),NO,0,335000,0,0,문자 길이 150 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,PARENT_CAT_ID,335000,varchar(20),YES,1000,334000,0,1000,문자 길이 20 이하,CAT_[0-9]{5},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,PARENT_CAT_NM,335000,varchar(100),NO,1000,334000,0,0,문자 길이 100 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,TRADE_PRICE_KRW,335000,"decimal(18,4)",NO,591,334409,7500,0,"단위 접미사·구분자 없는 decimal(18,4)",,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSP_DURATION_MIN,335000,"decimal(12,8)",NO,0,335000,7500,0,"단위 접미사·구분자 없는 decimal(12,8)",,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSP_RESULT,335000,varchar(50),NO,0,335000,0,0,문자 길이 50 이하,PASS | FAKE_REJECT | CLAIM_FAKE_PASS | BOX_DMG_HOLD,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,COMPENSATION_LOSS_KRW,335000,"decimal(19,4)",NO,0,335000,0,0,"단위 접미사·구분자 없는 decimal(19,4)",,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSPECTOR_EMP_NO,335000,varchar(20),NO,1200,333800,0,6348,문자 길이 20 이하,KRM[0-9]{6},변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSPECTOR_EMP_NM,335000,varchar(50),NO,0,335000,0,0,문자 길이 50 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSPECTOR_DEPT_NM,335000,varchar(100),NO,0,335000,0,0,문자 길이 100 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSPECTOR_POSITION_NM,335000,varchar(50),NO,0,335000,0,0,문자 길이 50 이하,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INBOUND_DT,335000,datetime,NO,0,335000,7500,0,%Y-%m-%d %H:%M:%S,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSP_DONE_DT,335000,datetime,NO,0,335000,7500,0,%Y-%m-%d %H:%M:%S,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,EXTRACTED_AT,335000,datetime,NO,0,335000,0,0,%Y-%m-%d %H:%M:%S,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음
+kream_inspection_join_ready.csv,INSP_MEMO,335000,text,YES,0,335000,0,0,문자열 보존,,변환 전 원문과 최종 표준의 차이. 복구 가능한 표기와 단위 변환을 포함하며 이 수치를 격리 건수로 해석하지 않음

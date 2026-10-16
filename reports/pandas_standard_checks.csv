@@ -1,0 +1,483 @@
+﻿table_name,column_name,rule_id,checked_rows,failed_rows,compliance_pct,status,definition
+gold_department_risk_summary_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_department_risk_summary_v1,department_name,REQUIRED,8,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_department_risk_summary_v1,department_name,PHYSICAL_DOMAIN,8,0,100.0,PASS,varchar(100) 형식·길이·범위. NULL은 별도 검사
+gold_department_risk_summary_v1,inspection_rows,REQUIRED,8,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_department_risk_summary_v1,inspection_rows,PHYSICAL_DOMAIN,8,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_department_risk_summary_v1,fake_pass_claim_rows,REQUIRED,8,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_department_risk_summary_v1,fake_pass_claim_rows,PHYSICAL_DOMAIN,8,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_department_risk_summary_v1,total_trade_price_krw,REQUIRED,8,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_department_risk_summary_v1,total_trade_price_krw,PHYSICAL_DOMAIN,8,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_department_risk_summary_v1,compensation_loss_krw,REQUIRED,8,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_department_risk_summary_v1,compensation_loss_krw,PHYSICAL_DOMAIN,8,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_department_risk_summary_v1,claim_rate_pct,PHYSICAL_DOMAIN,8,0,100.0,PASS,"decimal(9,4) 형식·길이·범위. NULL은 별도 검사"
+gold_department_risk_summary_v1,loss_to_trade_pct,PHYSICAL_DOMAIN,8,0,100.0,PASS,"decimal(9,4) 형식·길이·범위. NULL은 별도 검사"
+gold_department_risk_summary_v1,observation_status,REQUIRED,8,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_department_risk_summary_v1,observation_status,PHYSICAL_DOMAIN,8,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_department_risk_summary_v1,first_done_kst,PHYSICAL_DOMAIN,8,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_department_risk_summary_v1,last_done_kst,PHYSICAL_DOMAIN,8,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_department_risk_summary_v1,department_basis,REQUIRED,8,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_department_risk_summary_v1,department_basis,PHYSICAL_DOMAIN,8,0,100.0,PASS,varchar(40) 형식·길이·범위. NULL은 별도 검사
+gold_department_risk_summary_v1,rule_version,REQUIRED,8,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_department_risk_summary_v1,rule_version,PHYSICAL_DOMAIN,8,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_department_risk_summary_v1,department_name,PRIMARY KEY:PRIMARY,8,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_inspection_result_daily_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_inspection_result_daily_v1,done_date_kst,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,done_date_kst,PHYSICAL_DOMAIN,1729,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_inspection_result_daily_v1,analysis_period,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,analysis_period,PHYSICAL_DOMAIN,1729,0,100.0,PASS,varchar(40) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_result_daily_v1,inspection_rows,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,inspection_rows,PHYSICAL_DOMAIN,1729,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_result_daily_v1,pass_rows,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,pass_rows,PHYSICAL_DOMAIN,1729,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_result_daily_v1,fake_reject_rows,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,fake_reject_rows,PHYSICAL_DOMAIN,1729,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_result_daily_v1,box_damage_hold_rows,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,box_damage_hold_rows,PHYSICAL_DOMAIN,1729,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_result_daily_v1,fake_pass_claim_rows,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,fake_pass_claim_rows,PHYSICAL_DOMAIN,1729,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_result_daily_v1,total_trade_price_krw,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,total_trade_price_krw,PHYSICAL_DOMAIN,1729,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_inspection_result_daily_v1,compensation_loss_krw,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,compensation_loss_krw,PHYSICAL_DOMAIN,1729,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_inspection_result_daily_v1,rule_version,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_result_daily_v1,rule_version,PHYSICAL_DOMAIN,1729,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_result_daily_v1,done_date_kst,PRIMARY KEY:PRIMARY,1729,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_inspection_workload_daily_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_inspection_workload_daily_v1,done_date_kst,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_daily_v1,done_date_kst,PHYSICAL_DOMAIN,1729,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_daily_v1,event_type,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_daily_v1,event_type,PHYSICAL_DOMAIN,1729,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_daily_v1,analysis_period,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_daily_v1,analysis_period,PHYSICAL_DOMAIN,1729,0,100.0,PASS,varchar(40) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_daily_v1,inspection_event_rows,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_daily_v1,inspection_event_rows,PHYSICAL_DOMAIN,1729,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_daily_v1,observed_inspector_ids,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_daily_v1,observed_inspector_ids,PHYSICAL_DOMAIN,1729,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_daily_v1,total_work_minutes,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_daily_v1,total_work_minutes,PHYSICAL_DOMAIN,1729,0,100.0,PASS,"decimal(20,8) 형식·길이·범위. NULL은 별도 검사"
+gold_inspection_workload_daily_v1,avg_work_minutes,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_daily_v1,avg_work_minutes,PHYSICAL_DOMAIN,1729,0,100.0,PASS,"decimal(12,4) 형식·길이·범위. NULL은 별도 검사"
+gold_inspection_workload_daily_v1,rule_version,REQUIRED,1729,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_daily_v1,rule_version,PHYSICAL_DOMAIN,1729,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_daily_v1,"done_date_kst,event_type",PRIMARY KEY:PRIMARY,1729,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_inspection_workload_hourly_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_inspection_workload_hourly_v1,done_date_kst,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,done_date_kst,PHYSICAL_DOMAIN,167859,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,done_hour_kst,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,done_hour_kst,PHYSICAL_DOMAIN,167859,0,100.0,PASS,tinyint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,department_name,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,department_name,PHYSICAL_DOMAIN,167859,0,100.0,PASS,varchar(100) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,event_type,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,event_type,PHYSICAL_DOMAIN,167859,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,analysis_period,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,analysis_period,PHYSICAL_DOMAIN,167859,0,100.0,PASS,varchar(40) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,inspection_event_rows,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,inspection_event_rows,PHYSICAL_DOMAIN,167859,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,observed_inspector_ids,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,observed_inspector_ids,PHYSICAL_DOMAIN,167859,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,total_work_minutes,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,total_work_minutes,PHYSICAL_DOMAIN,167859,0,100.0,PASS,"decimal(20,8) 형식·길이·범위. NULL은 별도 검사"
+gold_inspection_workload_hourly_v1,avg_work_minutes,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,avg_work_minutes,PHYSICAL_DOMAIN,167859,0,100.0,PASS,"decimal(12,4) 형식·길이·범위. NULL은 별도 검사"
+gold_inspection_workload_hourly_v1,department_basis,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,department_basis,PHYSICAL_DOMAIN,167859,0,100.0,PASS,varchar(40) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,rule_version,REQUIRED,167859,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_inspection_workload_hourly_v1,rule_version,PHYSICAL_DOMAIN,167859,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_inspection_workload_hourly_v1,"done_date_kst,done_hour_kst,department_name,event_type",PRIMARY KEY:PRIMARY,167859,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_prediction_actual_daily_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_prediction_actual_daily_v1,inspection_date,REQUIRED,7,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_actual_daily_v1,inspection_date,PHYSICAL_DOMAIN,7,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_prediction_actual_daily_v1,actual_inspection_rows,REQUIRED,7,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_actual_daily_v1,actual_inspection_rows,PHYSICAL_DOMAIN,7,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_prediction_actual_daily_v1,actual_duration_min,REQUIRED,7,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_actual_daily_v1,actual_duration_min,PHYSICAL_DOMAIN,7,0,100.0,PASS,"decimal(20,8) 형식·길이·범위. NULL은 별도 검사"
+gold_prediction_actual_daily_v1,rule_version,REQUIRED,7,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_actual_daily_v1,rule_version,PHYSICAL_DOMAIN,7,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_prediction_actual_daily_v1,inspection_date,PRIMARY KEY:PRIMARY,7,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_prediction_input_daily_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_prediction_input_daily_v1,inspection_date,REQUIRED,28,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_daily_v1,inspection_date,PHYSICAL_DOMAIN,28,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_daily_v1,inspection_rows,REQUIRED,28,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_daily_v1,inspection_rows,PHYSICAL_DOMAIN,28,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_daily_v1,total_duration_min,REQUIRED,28,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_daily_v1,total_duration_min,PHYSICAL_DOMAIN,28,0,100.0,PASS,"decimal(20,8) 형식·길이·범위. NULL은 별도 검사"
+gold_prediction_input_daily_v1,avg_duration_min,REQUIRED,28,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_daily_v1,avg_duration_min,PHYSICAL_DOMAIN,28,0,100.0,PASS,"decimal(12,4) 형식·길이·범위. NULL은 별도 검사"
+gold_prediction_input_daily_v1,prediction_cutoff_kst,REQUIRED,28,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_daily_v1,prediction_cutoff_kst,PHYSICAL_DOMAIN,28,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_daily_v1,rule_version,REQUIRED,28,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_daily_v1,rule_version,PHYSICAL_DOMAIN,28,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_daily_v1,inspection_date,PRIMARY KEY:PRIMARY,28,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_prediction_input_record_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_prediction_input_record_v1,source_bronze_row_id,REQUIRED,8173,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_record_v1,source_bronze_row_id,PHYSICAL_DOMAIN,8173,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_record_v1,insp_done_dt_kst,REQUIRED,8173,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_record_v1,insp_done_dt_kst,PHYSICAL_DOMAIN,8173,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_record_v1,extracted_at_kst,REQUIRED,8173,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_record_v1,extracted_at_kst,PHYSICAL_DOMAIN,8173,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_record_v1,duration_min,REQUIRED,8173,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_record_v1,duration_min,PHYSICAL_DOMAIN,8173,0,100.0,PASS,"decimal(12,8) 형식·길이·범위. NULL은 별도 검사"
+gold_prediction_input_record_v1,prediction_cutoff_kst,REQUIRED,8173,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_record_v1,prediction_cutoff_kst,PHYSICAL_DOMAIN,8173,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_record_v1,rule_version,REQUIRED,8173,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_prediction_input_record_v1,rule_version,PHYSICAL_DOMAIN,8173,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_prediction_input_record_v1,source_bronze_row_id,PRIMARY KEY:PRIMARY,8173,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_product_risk_summary_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_product_risk_summary_v1,item_std_code,REQUIRED,20,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_product_risk_summary_v1,item_std_code,PHYSICAL_DOMAIN,20,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+gold_product_risk_summary_v1,standard_item_name,REQUIRED,20,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_product_risk_summary_v1,standard_item_name,PHYSICAL_DOMAIN,20,0,100.0,PASS,varchar(150) 형식·길이·범위. NULL은 별도 검사
+gold_product_risk_summary_v1,inspection_rows,REQUIRED,20,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_product_risk_summary_v1,inspection_rows,PHYSICAL_DOMAIN,20,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_product_risk_summary_v1,fake_pass_claim_rows,REQUIRED,20,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_product_risk_summary_v1,fake_pass_claim_rows,PHYSICAL_DOMAIN,20,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_product_risk_summary_v1,total_trade_price_krw,REQUIRED,20,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_product_risk_summary_v1,total_trade_price_krw,PHYSICAL_DOMAIN,20,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_product_risk_summary_v1,compensation_loss_krw,REQUIRED,20,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_product_risk_summary_v1,compensation_loss_krw,PHYSICAL_DOMAIN,20,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_product_risk_summary_v1,claim_rate_pct,PHYSICAL_DOMAIN,19,0,100.0,PASS,"decimal(9,4) 형식·길이·범위. NULL은 별도 검사"
+gold_product_risk_summary_v1,loss_to_trade_pct,PHYSICAL_DOMAIN,19,0,100.0,PASS,"decimal(9,4) 형식·길이·범위. NULL은 별도 검사"
+gold_product_risk_summary_v1,observation_status,REQUIRED,20,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_product_risk_summary_v1,observation_status,PHYSICAL_DOMAIN,20,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_product_risk_summary_v1,first_done_kst,PHYSICAL_DOMAIN,19,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_product_risk_summary_v1,last_done_kst,PHYSICAL_DOMAIN,19,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_product_risk_summary_v1,rule_version,REQUIRED,20,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_product_risk_summary_v1,rule_version,PHYSICAL_DOMAIN,20,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_product_risk_summary_v1,item_std_code,PRIMARY KEY:PRIMARY,20,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_risk_cross_summary_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_risk_cross_summary_v1,item_std_code,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,item_std_code,PHYSICAL_DOMAIN,604,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,standard_item_name,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,standard_item_name,PHYSICAL_DOMAIN,604,0,100.0,PASS,varchar(150) 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,department_name,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,department_name,PHYSICAL_DOMAIN,604,0,100.0,PASS,varchar(100) 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,final_revision_type,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,final_revision_type,PHYSICAL_DOMAIN,604,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,analysis_period,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,analysis_period,PHYSICAL_DOMAIN,604,0,100.0,PASS,varchar(40) 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,inspection_rows,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,inspection_rows,PHYSICAL_DOMAIN,604,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,fake_pass_claim_rows,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,fake_pass_claim_rows,PHYSICAL_DOMAIN,604,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,total_trade_price_krw,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,total_trade_price_krw,PHYSICAL_DOMAIN,604,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_risk_cross_summary_v1,compensation_loss_krw,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,compensation_loss_krw,PHYSICAL_DOMAIN,604,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_risk_cross_summary_v1,claim_rate_pct,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,claim_rate_pct,PHYSICAL_DOMAIN,604,0,100.0,PASS,"decimal(9,4) 형식·길이·범위. NULL은 별도 검사"
+gold_risk_cross_summary_v1,loss_to_trade_pct,PHYSICAL_DOMAIN,604,0,100.0,PASS,"decimal(9,4) 형식·길이·범위. NULL은 별도 검사"
+gold_risk_cross_summary_v1,first_done_kst,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,first_done_kst,PHYSICAL_DOMAIN,604,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,last_done_kst,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,last_done_kst,PHYSICAL_DOMAIN,604,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,rule_version,REQUIRED,604,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_risk_cross_summary_v1,rule_version,PHYSICAL_DOMAIN,604,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_risk_cross_summary_v1,"item_std_code,department_name,final_revision_type,analysis_period",PRIMARY KEY:PRIMARY,604,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_staffing_scenario_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_staffing_scenario_v1,forecast_method,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,forecast_method,PHYSICAL_DOMAIN,42,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,forecast_date,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,forecast_date,PHYSICAL_DOMAIN,42,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,scenario_name,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,scenario_name,PHYSICAL_DOMAIN,42,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,available_minutes_per_person,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,available_minutes_per_person,PHYSICAL_DOMAIN,42,0,100.0,PASS,int unsigned 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,predicted_duration_min,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,predicted_duration_min,PHYSICAL_DOMAIN,42,0,100.0,PASS,"decimal(20,4) 형식·길이·범위. NULL은 별도 검사"
+gold_staffing_scenario_v1,estimated_required_people,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,estimated_required_people,PHYSICAL_DOMAIN,42,0,100.0,PASS,int unsigned 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,prediction_cutoff_kst,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,prediction_cutoff_kst,PHYSICAL_DOMAIN,42,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,workload_scope,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,workload_scope,PHYSICAL_DOMAIN,42,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,assumption_basis,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,assumption_basis,PHYSICAL_DOMAIN,42,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,rule_version,REQUIRED,42,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_staffing_scenario_v1,rule_version,PHYSICAL_DOMAIN,42,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_staffing_scenario_v1,"forecast_method,forecast_date,scenario_name",PRIMARY KEY:PRIMARY,42,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_workload_forecast_evaluation_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_workload_forecast_evaluation_v1,forecast_method,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,forecast_method,PHYSICAL_DOMAIN,14,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_evaluation_v1,forecast_date,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,forecast_date,PHYSICAL_DOMAIN,14,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_evaluation_v1,predicted_inspection_rows,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,predicted_inspection_rows,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(16,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_evaluation_v1,actual_inspection_rows,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,actual_inspection_rows,PHYSICAL_DOMAIN,14,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_evaluation_v1,inspection_error,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,inspection_error,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(16,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_evaluation_v1,inspection_abs_error,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,inspection_abs_error,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(16,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_evaluation_v1,predicted_duration_min,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,predicted_duration_min,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(20,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_evaluation_v1,actual_duration_min,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,actual_duration_min,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(20,8) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_evaluation_v1,duration_error_min,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,duration_error_min,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(20,8) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_evaluation_v1,duration_abs_error_min,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,duration_abs_error_min,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(20,8) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_evaluation_v1,prediction_cutoff_kst,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,prediction_cutoff_kst,PHYSICAL_DOMAIN,14,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_evaluation_v1,rule_version,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_evaluation_v1,rule_version,PHYSICAL_DOMAIN,14,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_evaluation_v1,"forecast_method,forecast_date",PRIMARY KEY:PRIMARY,14,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_workload_forecast_summary_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_workload_forecast_summary_v1,forecast_method,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,forecast_method,PHYSICAL_DOMAIN,2,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_summary_v1,evaluated_days,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,evaluated_days,PHYSICAL_DOMAIN,2,0,100.0,PASS,int unsigned 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_summary_v1,actual_week_rows,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,actual_week_rows,PHYSICAL_DOMAIN,2,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_summary_v1,predicted_week_rows,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,predicted_week_rows,PHYSICAL_DOMAIN,2,0,100.0,PASS,"decimal(20,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_summary_v1,inspection_mae,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,inspection_mae,PHYSICAL_DOMAIN,2,0,100.0,PASS,"decimal(20,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_summary_v1,inspection_wape_pct,PHYSICAL_DOMAIN,2,0,100.0,PASS,"decimal(20,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_summary_v1,actual_week_duration_min,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,actual_week_duration_min,PHYSICAL_DOMAIN,2,0,100.0,PASS,"decimal(24,8) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_summary_v1,predicted_week_duration_min,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,predicted_week_duration_min,PHYSICAL_DOMAIN,2,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_summary_v1,duration_mae_min,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,duration_mae_min,PHYSICAL_DOMAIN,2,0,100.0,PASS,"decimal(24,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_summary_v1,duration_wape_pct,PHYSICAL_DOMAIN,2,0,100.0,PASS,"decimal(20,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_summary_v1,rule_version,REQUIRED,2,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_summary_v1,rule_version,PHYSICAL_DOMAIN,2,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_summary_v1,forecast_method,PRIMARY KEY:PRIMARY,2,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+gold_workload_forecast_v1,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+gold_workload_forecast_v1,forecast_method,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,forecast_method,PHYSICAL_DOMAIN,14,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_v1,forecast_date,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,forecast_date,PHYSICAL_DOMAIN,14,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_v1,predicted_inspection_rows,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,predicted_inspection_rows,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(16,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_v1,predicted_duration_min,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,predicted_duration_min,PHYSICAL_DOMAIN,14,0,100.0,PASS,"decimal(20,4) 형식·길이·범위. NULL은 별도 검사"
+gold_workload_forecast_v1,training_days,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,training_days,PHYSICAL_DOMAIN,14,0,100.0,PASS,int unsigned 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_v1,training_start_date,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,training_start_date,PHYSICAL_DOMAIN,14,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_v1,training_end_date,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,training_end_date,PHYSICAL_DOMAIN,14,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_v1,prediction_cutoff_kst,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,prediction_cutoff_kst,PHYSICAL_DOMAIN,14,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_v1,rule_version,REQUIRED,14,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+gold_workload_forecast_v1,rule_version,PHYSICAL_DOMAIN,14,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+gold_workload_forecast_v1,"forecast_method,forecast_date",PRIMARY KEY:PRIMARY,14,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_category_parent_lookup,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+silver_category_parent_lookup,CAT_ID,REQUIRED,970,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_category_parent_lookup,CAT_ID,PHYSICAL_DOMAIN,970,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_category_parent_lookup,CAT_NM,REQUIRED,970,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_category_parent_lookup,CAT_NM,PHYSICAL_DOMAIN,970,0,100.0,PASS,varchar(100) 형식·길이·범위. NULL은 별도 검사
+silver_category_parent_lookup,CAT_LEVEL,REQUIRED,970,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_category_parent_lookup,CAT_LEVEL,PHYSICAL_DOMAIN,970,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_category_parent_lookup,REG_DT,REQUIRED,970,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_category_parent_lookup,REG_DT,PHYSICAL_DOMAIN,970,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+silver_category_parent_lookup,source_bronze_row_id,REQUIRED,970,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_category_parent_lookup,source_bronze_row_id,PHYSICAL_DOMAIN,970,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+silver_category_parent_lookup,rule_version,REQUIRED,970,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_category_parent_lookup,rule_version,PHYSICAL_DOMAIN,970,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+silver_category_parent_lookup,CAT_ID,PRIMARY KEY:PRIMARY,970,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_category_parent_lookup,source_bronze_row_id,UNIQUE:uq_silver_category_source,970,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_inspection,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+silver_inspection,INSP_ID,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,INSP_ID,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_inspection,REV_NO,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,REV_NO,PHYSICAL_DOMAIN,271787,0,100.0,PASS,int 형식·길이·범위. NULL은 별도 검사
+silver_inspection,ITEM_STD_CODE,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,ITEM_STD_CODE,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_inspection,ITEM_NM,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,ITEM_NM,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(150) 형식·길이·범위. NULL은 별도 검사
+silver_inspection,PARENT_CAT_ID,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_inspection,TRADE_PRICE_KRW,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,TRADE_PRICE_KRW,PHYSICAL_DOMAIN,271787,0,100.0,PASS,"decimal(18,4) 형식·길이·범위. NULL은 별도 검사"
+silver_inspection,INSP_DURATION_MIN,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,INSP_DURATION_MIN,PHYSICAL_DOMAIN,271787,0,100.0,PASS,"decimal(12,8) 형식·길이·범위. NULL은 별도 검사"
+silver_inspection,INSP_RESULT,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,INSP_RESULT,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_inspection,INSPECTOR_EMP_NO,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,INSPECTOR_EMP_NO,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_inspection,INBOUND_DT,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,INBOUND_DT,PHYSICAL_DOMAIN,271787,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+silver_inspection,INSP_DONE_DT,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,INSP_DONE_DT,PHYSICAL_DOMAIN,271787,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+silver_inspection,EXTRACTED_AT,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,EXTRACTED_AT,PHYSICAL_DOMAIN,271787,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+silver_inspection,INSP_MEMO,PHYSICAL_DOMAIN,271787,0,100.0,PASS,text 형식·길이·범위. NULL은 별도 검사
+silver_inspection,source_bronze_row_id,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,source_bronze_row_id,PHYSICAL_DOMAIN,271787,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+silver_inspection,source_file,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,source_file,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(255) 형식·길이·범위. NULL은 별도 검사
+silver_inspection,rule_version,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection,rule_version,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+silver_inspection,"INSP_ID,REV_NO",PRIMARY KEY:PRIMARY,271787,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_inspection,INSP_ID,UNIQUE:uq_silver_inspection_id,271787,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_inspection,source_bronze_row_id,UNIQUE:uq_silver_inspection_source,271787,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_inspection_join_ready,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+silver_inspection_join_ready,INSP_ID,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INSP_ID,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,REV_NO,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,REV_NO,PHYSICAL_DOMAIN,271787,0,100.0,PASS,int 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,ITEM_STD_CODE,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,ITEM_STD_CODE,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,ITEM_NM,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,ITEM_NM,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(150) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,PARENT_CAT_ID,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,PARENT_CAT_NM,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,PARENT_CAT_NM,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(100) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,TRADE_PRICE_KRW,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,TRADE_PRICE_KRW,PHYSICAL_DOMAIN,271787,0,100.0,PASS,"decimal(18,4) 형식·길이·범위. NULL은 별도 검사"
+silver_inspection_join_ready,INSP_DURATION_MIN,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INSP_DURATION_MIN,PHYSICAL_DOMAIN,271787,0,100.0,PASS,"decimal(12,8) 형식·길이·범위. NULL은 별도 검사"
+silver_inspection_join_ready,INSP_RESULT,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INSP_RESULT,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,COMPENSATION_LOSS_KRW,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,COMPENSATION_LOSS_KRW,PHYSICAL_DOMAIN,271787,0,100.0,PASS,"decimal(19,4) 형식·길이·범위. NULL은 별도 검사"
+silver_inspection_join_ready,INSPECTOR_EMP_NO,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INSPECTOR_EMP_NO,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,INSPECTOR_EMP_NM,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INSPECTOR_EMP_NM,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,INSPECTOR_DEPT_NM,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INSPECTOR_DEPT_NM,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(100) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,INSPECTOR_POSITION_NM,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INSPECTOR_POSITION_NM,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,INBOUND_DT,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INBOUND_DT,PHYSICAL_DOMAIN,271787,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,INSP_DONE_DT,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,INSP_DONE_DT,PHYSICAL_DOMAIN,271787,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,EXTRACTED_AT,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,EXTRACTED_AT,PHYSICAL_DOMAIN,271787,0,100.0,PASS,datetime 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,INSP_MEMO,PHYSICAL_DOMAIN,271787,0,100.0,PASS,text 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,source_bronze_row_id,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,source_bronze_row_id,PHYSICAL_DOMAIN,271787,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,source_file,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,source_file,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(255) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,rule_version,REQUIRED,271787,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspection_join_ready,rule_version,PHYSICAL_DOMAIN,271787,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+silver_inspection_join_ready,"INSP_ID,REV_NO",PRIMARY KEY:PRIMARY,271787,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_inspection_join_ready,INSP_ID,UNIQUE:uq_silver_join_inspection_id,271787,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_inspection_join_ready,source_bronze_row_id,UNIQUE:uq_silver_join_source,271787,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_inspector_master,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+silver_inspector_master,EMP_NO,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,EMP_NO,PHYSICAL_DOMAIN,2960,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,EMP_NM,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,EMP_NM,PHYSICAL_DOMAIN,2960,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,DEPT_NM,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,DEPT_NM,PHYSICAL_DOMAIN,2960,0,100.0,PASS,varchar(100) 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,POSITION_NM,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,POSITION_NM,PHYSICAL_DOMAIN,2960,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,HIRE_DT,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,HIRE_DT,PHYSICAL_DOMAIN,2960,0,100.0,PASS,date 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,ACTIVE_YN,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,ACTIVE_YN,PHYSICAL_DOMAIN,2960,0,100.0,PASS,char(1) 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,source_bronze_row_id,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,source_bronze_row_id,PHYSICAL_DOMAIN,2960,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,department_rule_source,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,department_rule_source,PHYSICAL_DOMAIN,2960,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,raw_active_status,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,raw_active_status,PHYSICAL_DOMAIN,2960,0,100.0,PASS,varchar(16) 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,rule_version,REQUIRED,2960,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_inspector_master,rule_version,PHYSICAL_DOMAIN,2960,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+silver_inspector_master,EMP_NO,PRIMARY KEY:PRIMARY,2960,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_inspector_master,source_bronze_row_id,UNIQUE:uq_silver_inspector_source,2960,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_product_std_dict,*,ROW_COUNT,1,0,100.0,PASS,최종 추출 목록의 실제 행 수 대조
+silver_product_std_dict,DICT_ID,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,DICT_ID,PHYSICAL_DOMAIN,32,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,CODE_TYPE,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,CODE_TYPE,PHYSICAL_DOMAIN,32,0,100.0,PASS,varchar(20) 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,STD_CODE,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,STD_CODE,PHYSICAL_DOMAIN,32,0,100.0,PASS,varchar(50) 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,STD_KOR_NM,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,STD_KOR_NM,PHYSICAL_DOMAIN,32,0,100.0,PASS,varchar(150) 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,SYNONYM_LIST,PHYSICAL_DOMAIN,32,0,100.0,PASS,varchar(1000) 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,BANNED_WORD_YN,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,BANNED_WORD_YN,PHYSICAL_DOMAIN,32,0,100.0,PASS,char(1) 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,BASE_RETAIL_KRW,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,BASE_RETAIL_KRW,PHYSICAL_DOMAIN,32,0,100.0,PASS,int 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,FAKE_PENALTY_MULTIPLIER,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,FAKE_PENALTY_MULTIPLIER,PHYSICAL_DOMAIN,32,0,100.0,PASS,"decimal(3,1) 형식·길이·범위. NULL은 별도 검사"
+silver_product_std_dict,source_bronze_row_id,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,source_bronze_row_id,PHYSICAL_DOMAIN,32,0,100.0,PASS,bigint unsigned 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,dictionary_version,REQUIRED,32,0,100.0,PASS,SQL NULL 허용 여부. 빈 문자열은 별도 집계
+silver_product_std_dict,dictionary_version,PHYSICAL_DOMAIN,32,0,100.0,PASS,varchar(32) 형식·길이·범위. NULL은 별도 검사
+silver_product_std_dict,DICT_ID,PRIMARY KEY:PRIMARY,32,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_product_std_dict,source_bronze_row_id,UNIQUE:uq_dictionary_source,32,0,100.0,PASS,키가 같은 두 번째 이후 행 수. UNIQUE의 NULL은 MySQL 규칙 적용
+silver_category_parent_lookup,CAT_LEVEL,ALLOWED_CODES,970,0,100.0,PASS,TOP_LEVEL | BRAND_LINE
+silver_inspector_master,ACTIVE_YN,ALLOWED_CODES,2960,0,100.0,PASS,Y | N
+silver_product_std_dict,BANNED_WORD_YN,ALLOWED_CODES,32,0,100.0,PASS,Y | N
+silver_product_std_dict,CODE_TYPE,ALLOWED_CODES,32,0,100.0,PASS,ITEM_MODEL | BANNED_WORD | INSP_RESULT | DEPT_STD | BANNED_DEPT
+silver_inspection,INSP_RESULT,ALLOWED_CODES,271787,0,100.0,PASS,PASS | FAKE_REJECT | CLAIM_FAKE_PASS | BOX_DMG_HOLD
+silver_inspection_join_ready,INSP_RESULT,ALLOWED_CODES,271787,0,100.0,PASS,PASS | FAKE_REJECT | CLAIM_FAKE_PASS | BOX_DMG_HOLD
+gold_department_risk_summary_v1,inspection_rows,NONNEGATIVE,8,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_department_risk_summary_v1,fake_pass_claim_rows,NONNEGATIVE,8,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_department_risk_summary_v1,claim_rate_pct,CLAIM_RATE_RANGE,8,0,100.0,PASS,청구 건수 비율 0부터 100. 손실률은 100을 넘을 수 있음
+gold_inspection_result_daily_v1,inspection_rows,NONNEGATIVE,1729,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_result_daily_v1,pass_rows,NONNEGATIVE,1729,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_result_daily_v1,fake_reject_rows,NONNEGATIVE,1729,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_result_daily_v1,box_damage_hold_rows,NONNEGATIVE,1729,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_result_daily_v1,fake_pass_claim_rows,NONNEGATIVE,1729,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_workload_daily_v1,inspection_event_rows,NONNEGATIVE,1729,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_workload_daily_v1,total_work_minutes,NONNEGATIVE,1729,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_workload_daily_v1,avg_work_minutes,NONNEGATIVE,1729,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_workload_hourly_v1,inspection_event_rows,NONNEGATIVE,167859,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_workload_hourly_v1,total_work_minutes,NONNEGATIVE,167859,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_inspection_workload_hourly_v1,avg_work_minutes,NONNEGATIVE,167859,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_prediction_actual_daily_v1,actual_inspection_rows,NONNEGATIVE,7,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_prediction_actual_daily_v1,actual_duration_min,NONNEGATIVE,7,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_prediction_input_daily_v1,inspection_rows,NONNEGATIVE,28,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_prediction_input_daily_v1,total_duration_min,NONNEGATIVE,28,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_prediction_input_daily_v1,avg_duration_min,NONNEGATIVE,28,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_prediction_input_record_v1,duration_min,NONNEGATIVE,8173,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_product_risk_summary_v1,inspection_rows,NONNEGATIVE,20,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_product_risk_summary_v1,fake_pass_claim_rows,NONNEGATIVE,20,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_product_risk_summary_v1,claim_rate_pct,CLAIM_RATE_RANGE,19,0,100.0,PASS,청구 건수 비율 0부터 100. 손실률은 100을 넘을 수 있음
+gold_risk_cross_summary_v1,inspection_rows,NONNEGATIVE,604,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_risk_cross_summary_v1,fake_pass_claim_rows,NONNEGATIVE,604,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_risk_cross_summary_v1,claim_rate_pct,CLAIM_RATE_RANGE,604,0,100.0,PASS,청구 건수 비율 0부터 100. 손실률은 100을 넘을 수 있음
+gold_staffing_scenario_v1,available_minutes_per_person,NONNEGATIVE,42,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_staffing_scenario_v1,predicted_duration_min,NONNEGATIVE,42,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_staffing_scenario_v1,estimated_required_people,NONNEGATIVE,42,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_evaluation_v1,predicted_inspection_rows,NONNEGATIVE,14,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_evaluation_v1,actual_inspection_rows,NONNEGATIVE,14,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_evaluation_v1,predicted_duration_min,NONNEGATIVE,14,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_evaluation_v1,actual_duration_min,NONNEGATIVE,14,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_summary_v1,actual_week_rows,NONNEGATIVE,2,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_summary_v1,predicted_week_rows,NONNEGATIVE,2,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_summary_v1,actual_week_duration_min,NONNEGATIVE,2,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_summary_v1,predicted_week_duration_min,NONNEGATIVE,2,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_v1,predicted_inspection_rows,NONNEGATIVE,14,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+gold_workload_forecast_v1,predicted_duration_min,NONNEGATIVE,14,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+silver_category_parent_lookup,CAT_ID,IDENTIFIER_FORMAT,970,0,100.0,PASS,CAT_[0-9]{5}
+silver_inspection,INSP_ID,IDENTIFIER_FORMAT,271787,0,100.0,PASS,INSP_[0-9]{6}
+silver_inspection,INSPECTOR_EMP_NO,IDENTIFIER_FORMAT,271787,0,100.0,PASS,KRM[0-9]{6}
+silver_inspection,PARENT_CAT_ID,IDENTIFIER_FORMAT,271787,0,100.0,PASS,CAT_[0-9]{5}
+silver_inspection,TRADE_PRICE_KRW,NONNEGATIVE,271787,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+silver_inspection,INSP_DURATION_MIN,NONNEGATIVE,271787,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+silver_inspection_join_ready,INSP_ID,IDENTIFIER_FORMAT,271787,0,100.0,PASS,INSP_[0-9]{6}
+silver_inspection_join_ready,INSPECTOR_EMP_NO,IDENTIFIER_FORMAT,271787,0,100.0,PASS,KRM[0-9]{6}
+silver_inspection_join_ready,PARENT_CAT_ID,IDENTIFIER_FORMAT,271787,0,100.0,PASS,CAT_[0-9]{5}
+silver_inspection_join_ready,TRADE_PRICE_KRW,NONNEGATIVE,271787,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+silver_inspection_join_ready,INSP_DURATION_MIN,NONNEGATIVE,271787,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+silver_inspection_join_ready,COMPENSATION_LOSS_KRW,NONNEGATIVE,271787,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+silver_inspector_master,EMP_NO,IDENTIFIER_FORMAT,2960,0,100.0,PASS,KRM[0-9]{6}
+silver_product_std_dict,BASE_RETAIL_KRW,NONNEGATIVE,32,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+silver_product_std_dict,FAKE_PENALTY_MULTIPLIER,NONNEGATIVE,32,0,100.0,PASS,행 수·금액·소요시간·배수는 0 이상
+silver_inspection,INSPECTOR_EMP_NO,REFERENCE,271787,0,100.0,PASS,정상 마스터 키 참조
+silver_inspection,PARENT_CAT_ID,REFERENCE,271787,0,100.0,PASS,정상 마스터 키 참조
+silver_inspection,ITEM_STD_CODE,PRODUCT_DICTIONARY,271787,0,100.0,PASS,ITEM_MODEL 유형의 표준 코드 대조
+silver_product_std_dict,"CODE_TYPE,STD_CODE",SCOPED_CODE_UNIQUENESS,32,0,100.0,PASS,유형별 코드 유일성. 물리 UNIQUE 제약과 구분
+silver_inspection,ITEM_NM,STANDARD_PRODUCT_NAME,271787,0,100.0,PASS,유효 상품 코드의 표준명과 일치
+silver_inspection,"INBOUND_DT,INSP_DONE_DT,EXTRACTED_AT",TIME_ORDER,271787,0,100.0,PASS,KST 입고 <= 완료 <= 추출
+silver_inspection,REV_NO,REVISION_RANGE,271787,0,100.0,PASS,개정 번호는 1 이상
+silver_inspection_join_ready,"INSP_ID,REV_NO,ITEM_STD_CODE,ITEM_NM,PARENT_CAT_ID,TRADE_PRICE_KRW,INSP_DURATION_MIN,INSP_RESULT,INSPECTOR_EMP_NO,INBOUND_DT,INSP_DONE_DT,EXTRACTED_AT,INSP_MEMO",REJOIN_FACT,271787,0,100.0,PASS,공유 업무 컬럼 전체가 정상 검수와 일치
+silver_inspection_join_ready,INSPECTOR_EMP_NM,REJOIN_MASTER,271787,0,100.0,PASS,사번 또는 카테고리 키로 정규 마스터 재조인
+silver_inspection_join_ready,INSPECTOR_DEPT_NM,REJOIN_MASTER,271787,0,100.0,PASS,사번 또는 카테고리 키로 정규 마스터 재조인
+silver_inspection_join_ready,INSPECTOR_POSITION_NM,REJOIN_MASTER,271787,0,100.0,PASS,사번 또는 카테고리 키로 정규 마스터 재조인
+silver_inspection_join_ready,PARENT_CAT_NM,REJOIN_MASTER,271787,0,100.0,PASS,사번 또는 카테고리 키로 정규 마스터 재조인
+silver_inspection_join_ready,COMPENSATION_LOSS_KRW,COMPENSATION,271787,0,100.0,PASS,"CLAIM_FAKE_PASS이면 거래가 × 3, 그 외 0. Decimal로 검증"
+gold_staffing_scenario_v1,"forecast_method,forecast_date",PHYSICAL_FK:fk_staffing_forecast_v1,42,0,100.0,PASS,"gold_workload_forecast_v1(forecast_method,forecast_date)"
+silver_inspection,PARENT_CAT_ID,PHYSICAL_FK:fk_silver_inspection_category,271787,0,100.0,PASS,silver_category_parent_lookup(CAT_ID)
+silver_inspection,INSPECTOR_EMP_NO,PHYSICAL_FK:fk_silver_inspection_employee,271787,0,100.0,PASS,silver_inspector_master(EMP_NO)
+silver_inspection_join_ready,"INSP_ID,REV_NO",PHYSICAL_FK:fk_silver_join_inspection,271787,0,100.0,PASS,"silver_inspection(INSP_ID,REV_NO)"
+gold_prediction_input_record_v1,"insp_done_dt_kst,extracted_at_kst",CUTOFF_LEAKAGE,8173,0,100.0,PASS,검수 완료와 추출 시각 모두 예측 기준 시각 이내
+gold_inspection_workload_hourly_v1,done_hour_kst,HOUR_RANGE,167859,0,100.0,PASS,시간대 0부터 23

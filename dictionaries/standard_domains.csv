@@ -1,0 +1,44 @@
+﻿domain_id,mysql_type,format_rule,unit,null_policy,allowed_values
+DOM_001,bigint,정수 및 MySQL 타입별 범위 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_002,bigint unsigned,정수 및 MySQL 타입별 범위 준수 및 음수 금지,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_003,char(1),문자 길이 1 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_004,char(64),문자 길이 64 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_005,date,실제 달력의 유효한 날짜 YYYY-MM-DD,KST,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_006,datetime,"실제 달력의 유효한 시각 YYYY-MM-DD HH:MM:SS, KST",KST,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_007,"decimal(12,4)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_008,"decimal(12,8)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_009,"decimal(16,4)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_010,"decimal(18,4)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_011,"decimal(19,4)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_012,"decimal(20,4)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_013,"decimal(20,8)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_014,"decimal(24,4)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_015,"decimal(24,8)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_016,"decimal(29,4)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_017,"decimal(3,1)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_018,"decimal(9,4)",정수부·소수부 자릿수는 선언된 정밀도와 배율 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_019,int,정수 및 MySQL 타입별 범위 준수,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_020,int unsigned,정수 및 MySQL 타입별 범위 준수 및 음수 금지,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_021,longtext,MySQL longtext 타입 준수,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_022,mediumtext,MySQL mediumtext 타입 준수,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_023,text,MySQL text 타입 준수,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_024,tinyint unsigned,정수 및 MySQL 타입별 범위 준수 및 음수 금지,컬럼 업무 단위 참조,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_025,varchar(1),문자 길이 1 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_026,varchar(100),문자 길이 100 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_027,varchar(1000),문자 길이 1000 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_028,varchar(11),문자 길이 11 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_029,varchar(150),문자 길이 150 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_030,varchar(16),문자 길이 16 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_031,varchar(17),문자 길이 17 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_032,varchar(20),문자 길이 20 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_033,varchar(23),문자 길이 23 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_034,varchar(24),문자 길이 24 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_035,varchar(25),문자 길이 25 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_036,varchar(255),문자 길이 255 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_037,varchar(28),문자 길이 28 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_038,varchar(30),문자 길이 30 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_039,varchar(31),문자 길이 31 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_040,varchar(32),문자 길이 32 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_041,varchar(40),문자 길이 40 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_042,varchar(50),문자 길이 50 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용
+DOM_043,varchar(64),문자 길이 64 이하,문자,컬럼의 is_nullable에 따름,업무 코드가 있는 컬럼은 business_domains.csv를 추가 적용

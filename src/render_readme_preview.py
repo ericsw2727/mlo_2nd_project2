@@ -1,0 +1,8 @@
+"""README를 오프라인 HTML로 미리 보기 위한 보조 코드. markdown-it-py가 필요하다."""
+from pathlib import Path
+from markdown_it import MarkdownIt
+ROOT=Path(__file__).resolve().parents[1]
+html=MarkdownIt('commonmark',{'html':True}).enable('table').render((ROOT/'README.md').read_text())
+css='''body{margin:0;background:#edf1f5;color:#203249;font-family:"NanumGothic","Malgun Gothic",sans-serif;font-size:16px;line-height:1.85}main{max-width:1120px;margin:auto;padding:46px 56px 80px;background:white}h1{font-size:32px;line-height:1.45;color:#16324b}h2{font-size:26px;margin-top:58px;padding-bottom:12px;border-bottom:2px solid #dce5ed;color:#1d465e}h3{font-size:21px;margin-top:34px}table{border-collapse:collapse;width:100%;font-size:14px;margin:24px 0}th{background:#eaf1f5;color:#214d65;text-align:left}th,td{border:1px solid #d8e1e8;padding:11px 13px;overflow-wrap:anywhere}tr:nth-child(even){background:#f8fafb}img{max-width:100%;height:auto}a{color:#117668;text-decoration:none}a:hover{text-decoration:underline}code{font:13px/1.8 Consolas,monospace;background:#eef2f6;padding:2px 5px;border-radius:3px;overflow-wrap:anywhere}pre{background:#132b43;color:#eaf4f6;padding:22px;white-space:pre-wrap;border-radius:7px}pre code{background:transparent;color:inherit;padding:0}blockquote{border-left:4px solid #159583;background:#eef8f5;padding:12px 20px;margin:24px 0}li{margin:6px 0}@media(max-width:800px){main{padding:24px}table{font-size:12px}}'''
+(ROOT/'README_preview.html').write_text('<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>KREAM 팀 프로젝트 README</title><style>'+css+'</style><main>'+html+'</main></html>')
+print('HTML preview generated')

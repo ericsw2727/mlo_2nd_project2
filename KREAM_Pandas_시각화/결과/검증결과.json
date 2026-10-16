@@ -1,0 +1,234 @@
+{
+  "executed_at_kst": "2026-10-16T12:04:32.635465+09:00",
+  "checks": [
+    {
+      "name": "최종 검수 행 수",
+      "actual": 271787,
+      "expected": 271787,
+      "passed": true
+    },
+    {
+      "name": "최종 검수 ID 유일성",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "최초 검수 분석 모수",
+      "actual": 243454,
+      "expected": 243454,
+      "passed": true
+    },
+    {
+      "name": "2차 재검수 모수",
+      "actual": 21656,
+      "expected": 21656,
+      "passed": true
+    },
+    {
+      "name": "현재 개정 종류",
+      "actual": [
+        1,
+        2
+      ],
+      "expected": [
+        1,
+        2
+      ],
+      "passed": true
+    },
+    {
+      "name": "외주팀 배상위험 억원",
+      "actual": 59.2,
+      "expected": 59.2,
+      "passed": true
+    },
+    {
+      "name": "외주팀 오판정률",
+      "actual": 2.28,
+      "expected": 2.28,
+      "passed": true
+    },
+    {
+      "name": "외주팀 10분 미만",
+      "actual": 93.65,
+      "expected": 93.65,
+      "passed": true
+    },
+    {
+      "name": "타 부서 10분 미만",
+      "actual": 28.78,
+      "expected": 28.78,
+      "passed": true
+    },
+    {
+      "name": "검수원 마스터 인원",
+      "actual": 2960,
+      "expected": 2960,
+      "passed": true
+    },
+    {
+      "name": "검수원 사번 유일성",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "인원 집계 일치",
+      "actual": 2960,
+      "expected": 2960,
+      "passed": true
+    },
+    {
+      "name": "상품별 대상 합계",
+      "actual": 243454,
+      "expected": 243454,
+      "passed": true
+    },
+    {
+      "name": "팀 내 상품 구성비",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "상품별 오판정률 행렬",
+      "actual": [
+        19,
+        8
+      ],
+      "expected": [
+        19,
+        8
+      ],
+      "passed": true
+    },
+    {
+      "name": "유효 작업 이력 건수",
+      "actual": 291548,
+      "expected": 291548,
+      "passed": true
+    },
+    {
+      "name": "유효 최초 작업",
+      "actual": 269892,
+      "expected": 269892,
+      "passed": true
+    },
+    {
+      "name": "유효 재검수 작업",
+      "actual": 21656,
+      "expected": 21656,
+      "passed": true
+    },
+    {
+      "name": "검수 건수 전체 셀 독립 대조",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "오판정률 전체 셀 독립 대조",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 stat_table",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 dept_boxplot_df",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 chart_loss",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 final_ratio",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 item_composition",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 heatmap_matrix",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 dept_emp_pivot",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 dept_emp_ratio",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 count_matrix",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "통합본·개별본 결과 일치 ratio_matrix",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "데이터 사본 무결성 clean_kream_inspection_joined.csv",
+      "actual": "837e1e700ef8c7525051e5a748ee6c4bd990f820bbdc83e54ae4a7846424fc89",
+      "expected": "837e1e700ef8c7525051e5a748ee6c4bd990f820bbdc83e54ae4a7846424fc89",
+      "passed": true
+    },
+    {
+      "name": "데이터 사본 무결성 inspector_master.csv",
+      "actual": "cacfa2f0fe3bd54599122555cd164064775f3c3885a358ba2894bed556af8307",
+      "expected": "cacfa2f0fe3bd54599122555cd164064775f3c3885a358ba2894bed556af8307",
+      "passed": true
+    },
+    {
+      "name": "데이터 사본 무결성 valid_workload_counts.csv",
+      "actual": "503d7ab16aa45d23dd0e5f935edc281ccca1668f81714c8c29063b7192048dcb",
+      "expected": "503d7ab16aa45d23dd0e5f935edc281ccca1668f81714c8c29063b7192048dcb",
+      "passed": true
+    },
+    {
+      "name": "원천 보존 silver_inspection_join_ready",
+      "actual": "4fbcd3008b67edd8de837bad3cae7fd9ff98d21766ad9d916d7307a1444f56b2",
+      "expected": "4fbcd3008b67edd8de837bad3cae7fd9ff98d21766ad9d916d7307a1444f56b2",
+      "passed": true
+    },
+    {
+      "name": "원천 보존 silver_inspector_master",
+      "actual": "31cd5c7684a46e1d4852b77561ce7d6b26029228b2408c99d0d638ab19848c07",
+      "expected": "31cd5c7684a46e1d4852b77561ce7d6b26029228b2408c99d0d638ab19848c07",
+      "passed": true
+    },
+    {
+      "name": "원천 보존 gold_inspection_workload_hourly_v1",
+      "actual": "061b322edbda6bbcf1847984cc8162b4cbe5d9fe1fe9a75e7a63f90effe66443",
+      "expected": "061b322edbda6bbcf1847984cc8162b4cbe5d9fe1fe9a75e7a63f90effe66443",
+      "passed": true
+    }
+  ],
+  "failed": 0
+}

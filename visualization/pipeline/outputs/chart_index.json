@@ -1,0 +1,65 @@
+[
+  {
+    "id": "01_disposition",
+    "title": "정상·제외·격리 분류",
+    "takeaway": "전체 원본 335,000행을 빠짐없이 분류했다.",
+    "scope": "최종 검수 상태. 제외가 모두 오염을 뜻하지 않음.",
+    "source": "export_manifest"
+  },
+  {
+    "id": "02_product_loss",
+    "title": "상품별 배상금 상위 10개",
+    "takeaway": "상품 가격을 함께 고려해 배상금 위험을 해석한다.",
+    "scope": "현재 최종 상태 전체. 정상 관측 없는 상품을 위험 0으로 해석하지 않음.",
+    "source": "gold_product_risk_summary_v1"
+  },
+  {
+    "id": "03_revision_cohorts",
+    "title": "최초 개정·재검수 집단 비교",
+    "takeaway": "약 1.00%와 78.02%를 같은 집단의 성과처럼 비교하지 않는다.",
+    "scope": "연속 기간 최초 개정 최종 상태와 10월 재검수 최종 상태의 관측 비교.",
+    "source": "gold_risk_cross_summary_v1"
+  },
+  {
+    "id": "04_hour_department",
+    "title": "시간대·부서별 작업량",
+    "takeaway": "완료 작업량 분포를 기준으로 운영 검토 지점을 찾는다.",
+    "scope": "연속 기간 최초 검수만 포함. 시간별 합계를 전체 관측 1,704일로 나눔.",
+    "source": "gold_inspection_workload_hourly_v1"
+  },
+  {
+    "id": "05_monthly_workload",
+    "title": "월별 최초 검수 작업량",
+    "takeaway": "관측 기간을 분리해 작업량 흐름을 해석한다.",
+    "scope": "2022-01~2026-08의 56개월 전체. 부분 기간과 재검수 제외.",
+    "source": "gold_inspection_workload_daily_v1"
+  },
+  {
+    "id": "06_forecast_actual",
+    "title": "실제값과 예측값",
+    "takeaway": "예측을 실제값과 분리해 저장하고 같은 날짜로 비교했다.",
+    "scope": "정상 최초 검수의 완료 작업량. 미래 주문 유입 예측과 구분.",
+    "source": "gold_workload_forecast_evaluation_v1"
+  },
+  {
+    "id": "07_forecast_error",
+    "title": "두 예측 방법의 오차",
+    "takeaway": "단순한 방법도 검증하고 지표별 차이를 확인한다.",
+    "scope": "2026-09-01~09-07 한 주 평가. WAPE를 정확도로 표현하지 않음.",
+    "source": "gold_workload_forecast_summary_v1"
+  },
+  {
+    "id": "08_staffing_scenarios",
+    "title": "인력 배치 시나리오",
+    "takeaway": "실제 가용 시간이 없으므로 가정을 명시해 운영 검토에 연결한다.",
+    "scope": "정상 최초 검수만 포함. 현재 재직 인원과 실제 출근 인원을 대조하지 않음.",
+    "source": "gold_staffing_scenario_v1"
+  },
+  {
+    "id": "09_supplier_comparison",
+    "title": "상대팀 기준과의 차이",
+    "takeaway": "총수 보존과 분류 기준 차이를 구분해 개선 항목으로 남긴다.",
+    "scope": "이 대화에 사용자가 공유한 상대팀 답변 Q2. 명세서에서 산출한 값이 아님.",
+    "source": "상대팀 Q2 답변 / export_manifest"
+  }
+]

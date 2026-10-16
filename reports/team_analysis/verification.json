@@ -1,0 +1,438 @@
+{
+  "executed_at_kst": "2026-10-15T16:35:14.950349+09:00",
+  "source_sha256": "7090c12f55612646d85ff5511fbf96145ee5acc6609837b41c5564ce98227541",
+  "checks": [
+    {
+      "check": "GENERAL_COHORT_ROWS",
+      "actual": "243454",
+      "expected": "243454",
+      "passed": true
+    },
+    {
+      "check": "REINSPECTION_COHORT_ROWS",
+      "actual": "21656",
+      "expected": "21656",
+      "passed": true
+    },
+    {
+      "check": "FIG01_CLAIMS_외주야간검수팀",
+      "actual": "633",
+      "expected": "633",
+      "passed": true
+    },
+    {
+      "check": "FIG01_AMOUNT_외주야간검수팀",
+      "actual": "59.20",
+      "expected": "59.20",
+      "passed": true
+    },
+    {
+      "check": "FIG01_CLAIMS_스니커즈검수1팀",
+      "actual": "445",
+      "expected": "445",
+      "passed": true
+    },
+    {
+      "check": "FIG01_AMOUNT_스니커즈검수1팀",
+      "actual": "36.11",
+      "expected": "36.11",
+      "passed": true
+    },
+    {
+      "check": "FIG01_CLAIMS_명품백감정팀",
+      "actual": "327",
+      "expected": "327",
+      "passed": true
+    },
+    {
+      "check": "FIG01_AMOUNT_명품백감정팀",
+      "actual": "27.40",
+      "expected": "27.40",
+      "passed": true
+    },
+    {
+      "check": "FIG01_CLAIMS_스니커즈검수2팀",
+      "actual": "313",
+      "expected": "313",
+      "passed": true
+    },
+    {
+      "check": "FIG01_AMOUNT_스니커즈검수2팀",
+      "actual": "22.99",
+      "expected": "22.99",
+      "passed": true
+    },
+    {
+      "check": "FIG01_CLAIMS_클레임재검수팀",
+      "actual": "212",
+      "expected": "212",
+      "passed": true
+    },
+    {
+      "check": "FIG01_AMOUNT_클레임재검수팀",
+      "actual": "17.10",
+      "expected": "17.10",
+      "passed": true
+    },
+    {
+      "check": "FIG01_CLAIMS_스트릿의류검수팀",
+      "actual": "217",
+      "expected": "217",
+      "passed": true
+    },
+    {
+      "check": "FIG01_AMOUNT_스트릿의류검수팀",
+      "actual": "17.02",
+      "expected": "17.02",
+      "passed": true
+    },
+    {
+      "check": "FIG01_CLAIMS_럭셔리워치감정팀",
+      "actual": "167",
+      "expected": "167",
+      "passed": true
+    },
+    {
+      "check": "FIG01_AMOUNT_럭셔리워치감정팀",
+      "actual": "12.51",
+      "expected": "12.51",
+      "passed": true
+    },
+    {
+      "check": "FIG01_CLAIMS_테크레고검수팀",
+      "actual": "132",
+      "expected": "132",
+      "passed": true
+    },
+    {
+      "check": "FIG01_AMOUNT_테크레고검수팀",
+      "actual": "10.55",
+      "expected": "10.55",
+      "passed": true
+    },
+    {
+      "check": "FIG04_ROWS_스니커즈검수1팀",
+      "actual": "4804",
+      "expected": "4804",
+      "passed": true
+    },
+    {
+      "check": "FIG04_CLAIMS_스니커즈검수1팀",
+      "actual": "3753",
+      "expected": "3753",
+      "passed": true
+    },
+    {
+      "check": "FIG04_AMOUNT_스니커즈검수1팀",
+      "actual": "298.88",
+      "expected": "298.88",
+      "passed": true
+    },
+    {
+      "check": "FIG04_ROWS_스니커즈검수2팀",
+      "actual": "3733",
+      "expected": "3733",
+      "passed": true
+    },
+    {
+      "check": "FIG04_CLAIMS_스니커즈검수2팀",
+      "actual": "2903",
+      "expected": "2903",
+      "passed": true
+    },
+    {
+      "check": "FIG04_AMOUNT_스니커즈검수2팀",
+      "actual": "223.50",
+      "expected": "223.50",
+      "passed": true
+    },
+    {
+      "check": "FIG04_ROWS_명품백감정팀",
+      "actual": "3012",
+      "expected": "3012",
+      "passed": true
+    },
+    {
+      "check": "FIG04_CLAIMS_명품백감정팀",
+      "actual": "2353",
+      "expected": "2353",
+      "passed": true
+    },
+    {
+      "check": "FIG04_AMOUNT_명품백감정팀",
+      "actual": "188.31",
+      "expected": "188.31",
+      "passed": true
+    },
+    {
+      "check": "FIG04_ROWS_외주야간검수팀",
+      "actual": "2448",
+      "expected": "2448",
+      "passed": true
+    },
+    {
+      "check": "FIG04_CLAIMS_외주야간검수팀",
+      "actual": "1928",
+      "expected": "1928",
+      "passed": true
+    },
+    {
+      "check": "FIG04_AMOUNT_외주야간검수팀",
+      "actual": "152.69",
+      "expected": "152.69",
+      "passed": true
+    },
+    {
+      "check": "FIG04_ROWS_스트릿의류검수팀",
+      "actual": "2655",
+      "expected": "2655",
+      "passed": true
+    },
+    {
+      "check": "FIG04_CLAIMS_스트릿의류검수팀",
+      "actual": "2063",
+      "expected": "2063",
+      "passed": true
+    },
+    {
+      "check": "FIG04_AMOUNT_스트릿의류검수팀",
+      "actual": "146.93",
+      "expected": "146.93",
+      "passed": true
+    },
+    {
+      "check": "FIG04_ROWS_럭셔리워치감정팀",
+      "actual": "1766",
+      "expected": "1766",
+      "passed": true
+    },
+    {
+      "check": "FIG04_CLAIMS_럭셔리워치감정팀",
+      "actual": "1378",
+      "expected": "1378",
+      "passed": true
+    },
+    {
+      "check": "FIG04_AMOUNT_럭셔리워치감정팀",
+      "actual": "126.06",
+      "expected": "126.06",
+      "passed": true
+    },
+    {
+      "check": "FIG04_ROWS_테크레고검수팀",
+      "actual": "1637",
+      "expected": "1637",
+      "passed": true
+    },
+    {
+      "check": "FIG04_CLAIMS_테크레고검수팀",
+      "actual": "1263",
+      "expected": "1263",
+      "passed": true
+    },
+    {
+      "check": "FIG04_AMOUNT_테크레고검수팀",
+      "actual": "98.26",
+      "expected": "98.26",
+      "passed": true
+    },
+    {
+      "check": "FIG04_ROWS_클레임재검수팀",
+      "actual": "1601",
+      "expected": "1601",
+      "passed": true
+    },
+    {
+      "check": "FIG04_CLAIMS_클레임재검수팀",
+      "actual": "1255",
+      "expected": "1255",
+      "passed": true
+    },
+    {
+      "check": "FIG04_AMOUNT_클레임재검수팀",
+      "actual": "99.95",
+      "expected": "99.95",
+      "passed": true
+    },
+    {
+      "check": "SNK1_REINSPECTION_RATE",
+      "actual": "78.12",
+      "expected": "78.12",
+      "passed": true
+    },
+    {
+      "check": "SNK2_REINSPECTION_RATE",
+      "actual": "77.77",
+      "expected": "77.77",
+      "passed": true
+    },
+    {
+      "check": "OUTSOURCE_UNDER10_PCT",
+      "actual": "93.65",
+      "expected": "93.65",
+      "passed": true
+    },
+    {
+      "check": "OTHER_UNDER10_PCT",
+      "actual": "28.78",
+      "expected": "28.78",
+      "passed": true
+    },
+    {
+      "check": "ALL_TEAMS_19_OBSERVED_MODELS",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "check": "PRODUCT_COUNTS_MATCH_GENERAL",
+      "actual": "243454",
+      "expected": "243454",
+      "passed": true
+    },
+    {
+      "check": "HEATMAP_COUNTS_SECOND_CALCULATION",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "check": "HEATMAP_CLAIMS_SECOND_CALCULATION",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "check": "CURRENT_MASTER_ROWS",
+      "actual": "2960",
+      "expected": "2960",
+      "passed": true
+    },
+    {
+      "check": "FIG06_HEADCOUNT_스니커즈검수1팀",
+      "actual": "641",
+      "expected": "641",
+      "passed": true
+    },
+    {
+      "check": "FIG06_HEADCOUNT_스니커즈검수2팀",
+      "actual": "491",
+      "expected": "491",
+      "passed": true
+    },
+    {
+      "check": "FIG06_HEADCOUNT_명품백감정팀",
+      "actual": "411",
+      "expected": "411",
+      "passed": true
+    },
+    {
+      "check": "FIG06_HEADCOUNT_스트릿의류검수팀",
+      "actual": "387",
+      "expected": "387",
+      "passed": true
+    },
+    {
+      "check": "FIG06_HEADCOUNT_외주야간검수팀",
+      "actual": "387",
+      "expected": "387",
+      "passed": true
+    },
+    {
+      "check": "FIG06_HEADCOUNT_럭셔리워치감정팀",
+      "actual": "232",
+      "expected": "232",
+      "passed": true
+    },
+    {
+      "check": "FIG06_HEADCOUNT_테크레고검수팀",
+      "actual": "221",
+      "expected": "221",
+      "passed": true
+    },
+    {
+      "check": "FIG06_HEADCOUNT_클레임재검수팀",
+      "actual": "190",
+      "expected": "190",
+      "passed": true
+    },
+    {
+      "check": "VALID_WORK_EVENT_ROWS",
+      "actual": "291548",
+      "expected": "291548",
+      "passed": true
+    },
+    {
+      "check": "FIRST_WORK_ROWS",
+      "actual": "269892",
+      "expected": "269892",
+      "passed": true
+    },
+    {
+      "check": "REINSPECTION_WORK_ROWS",
+      "actual": "21656",
+      "expected": "21656",
+      "passed": true
+    },
+    {
+      "check": "ROW_ACCOUNTING",
+      "actual": "335000",
+      "expected": "335000",
+      "passed": true
+    },
+    {
+      "check": "EXCLUDED_DUPLICATE",
+      "actual": "9598",
+      "expected": "9598",
+      "passed": true
+    },
+    {
+      "check": "EXCLUDED_SUPERSEDED",
+      "actual": "19761",
+      "expected": "19761",
+      "passed": true
+    },
+    {
+      "check": "SQL_QUALITY_PASS",
+      "actual": "14",
+      "expected": "14",
+      "passed": true
+    },
+    {
+      "check": "SQL_NOT_CHECKED",
+      "actual": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "check": "SQL_RECORDED_DIFFERENCE",
+      "actual": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "failed_checks": 0,
+  "scope": {
+    "general": "최종 Silver, REV_NO=1, 2022-01-01 이상 2026-09-01 미만, 현재 마스터 소속",
+    "reinspection": "최종 Silver, REV_NO>=2, 2026-10-01 이상 2026-11-01 미만, 현재 마스터 소속",
+    "latest_mix": "전체 최종 Silver 271787건의 개정 구분",
+    "workload_mix": "유효 최초·재검수 작업 이력 291548건",
+    "staff": "현재 정상 검수원 마스터 2960명. Y와 N 모두 포함"
+  },
+  "general_rows": 243454,
+  "general_claims": 2446,
+  "reinspection_rows": 21656,
+  "reinspection_claims": 16896,
+  "outsource_under10_pct": 93.65302228462397,
+  "other_under10_pct": 28.78100121941607,
+  "staff": {
+    "스니커즈검수1팀": 641,
+    "스니커즈검수2팀": 491,
+    "명품백감정팀": 411,
+    "스트릿의류검수팀": 387,
+    "외주야간검수팀": 387,
+    "럭셔리워치감정팀": 232,
+    "테크레고검수팀": 221,
+    "클레임재검수팀": 190
+  }
+}

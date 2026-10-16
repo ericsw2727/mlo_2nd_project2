@@ -1,0 +1,91 @@
+{
+  "source_files": [
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\KREAM_Final_Data_Full_20261015\\KREAM_Final_Data_Full_20261015\\kream_full_silver_inspection_join_ready.csv",
+      "table": "silver_inspection_join_ready",
+      "rows": 271787,
+      "sha256_before": "4fbcd3008b67edd8de837bad3cae7fd9ff98d21766ad9d916d7307a1444f56b2",
+      "sha256_after": "4fbcd3008b67edd8de837bad3cae7fd9ff98d21766ad9d916d7307a1444f56b2"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\KREAM_Final_Data_Full_20261015\\KREAM_Final_Data_Full_20261015\\kream_full_silver_inspector_master.csv",
+      "table": "silver_inspector_master",
+      "rows": 2960,
+      "sha256_before": "31cd5c7684a46e1d4852b77561ce7d6b26029228b2408c99d0d638ab19848c07",
+      "sha256_after": "31cd5c7684a46e1d4852b77561ce7d6b26029228b2408c99d0d638ab19848c07"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\KREAM_Final_Data_Full_20261015\\KREAM_Final_Data_Full_20261015\\kream_full_gold_inspection_workload_hourly_v1.csv",
+      "table": "gold_inspection_workload_hourly_v1",
+      "rows": 167859,
+      "sha256_before": "061b322edbda6bbcf1847984cc8162b4cbe5d9fe1fe9a75e7a63f90effe66443",
+      "sha256_after": "061b322edbda6bbcf1847984cc8162b4cbe5d9fe1fe9a75e7a63f90effe66443"
+    }
+  ],
+  "original_codes": [
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\00_KREAM_전체_과제_및_부록_Pandas_통합본.py",
+      "sha256": "ae459a7556bf3887f67531211e073fba88af13e23ce8309888732c6ca5fe57bb"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\01_과제1_외주팀_품질위험_1-2.py",
+      "sha256": "d6b4c07fa86d8ec5ad4d62f257b9de988c72d58c1ded957005ced9bb94649466"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\02_과제1_외주팀_품질위험_2-2.py",
+      "sha256": "ed6c5a1cddb1df925608ac231bf8786350a084f6d7b2122872df874326107e25"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\03_과제2_스니커즈팀_재검수부담_1-2.py",
+      "sha256": "bc0b3a525c677db662e78af443a351569dafec791f44530bcad760399bdd4f6f"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\04_과제2_스니커즈팀_재검수부담_2-2.py",
+      "sha256": "2d44dac6be1fe02ffd085336825deb5f7169f63c6091e5ddc79e1cada0aeb128"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\05_과제3_품목_전문화.py",
+      "sha256": "bdb0292ffc6faf68514d265037bc3997dd7146d88e379b04654e9f04c37128dc"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\06_부록1_상품별_오판정률.py",
+      "sha256": "2bcb7f328f609a510122fbb5e6d5c1f1dba2183712291ce1b7fc3868e8524462"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\07_부록2_팀별_인원과_직급.py",
+      "sha256": "4ac4f169f834c703be2a8fc445705c224aaf12fd195d0dbbe4030400f4faf4ec"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\08_부록3_팀별_직급_구성비.py",
+      "sha256": "10df85fea941a5d020650d1051a18404d849526a7f56acd76e2e947e20f9ccb7"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\09_부록4_상품별_검수_대상_건수.py",
+      "sha256": "9bcce5e18505e31dc8253334fbca2a3b54208332dfea4c13b818aa952fdff6c5"
+    },
+    {
+      "path": "C:\\Users\\Playdata\\Desktop\\Pandas 코드 (발표 內 통계 그래프 분석)\\10_부록5_상품_구성비.py",
+      "sha256": "14fcdee8a78a3dd42cb9771b35f98de1c52d610d294bcbb78f962a00434aac6f"
+    }
+  ],
+  "changes": [
+    "모든 실행 사본: CSV 경로를 새 폴더의 데이터 로더로 연결. 분석 수식 유지.",
+    "04: 누적 작업량만 유효 작업 이력 Gold 집계로 연결. 최신 상태 계산 유지.",
+    "07·08: 검수 이력 중복 제거 대신 정상 검수원 마스터 사용(Y·N 포함).",
+    "00: 위 변경을 동일 적용한 통합 실행 사본. 별도 원본 보관본은 생성하지 않음."
+  ],
+  "extracted_files": [
+    {
+      "name": "clean_kream_inspection_joined.csv",
+      "sha256": "837e1e700ef8c7525051e5a748ee6c4bd990f820bbdc83e54ae4a7846424fc89"
+    },
+    {
+      "name": "inspector_master.csv",
+      "sha256": "cacfa2f0fe3bd54599122555cd164064775f3c3885a358ba2894bed556af8307"
+    },
+    {
+      "name": "valid_workload_counts.csv",
+      "sha256": "503d7ab16aa45d23dd0e5f935edc281ccca1668f81714c8c29063b7192048dcb"
+    }
+  ]
+}

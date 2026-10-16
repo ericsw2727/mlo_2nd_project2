@@ -1,0 +1,33 @@
+﻿DICT_ID,CODE_TYPE,STD_CODE,STD_KOR_NM,SYNONYM_LIST,BANNED_WORD_YN,BASE_RETAIL_KRW,FAKE_PENALTY_MULTIPLIER,source_bronze_row_id,dictionary_version
+DICT_001,ITEM_MODEL,AJ1_CHICAGO,조던 1 레트로 하이 시카고,"조던1시카고,시카고1,AJ1 Chicago,Jordan 1 Retro High Chicago,에어조던1시카고,커리1시카고(오타),르브론1시카고(오타),강백호1시카고",N,209000,3.0,1,20261014_v1
+DICT_002,ITEM_MODEL,AJ1_TRAVIS_MOCHA,조던 1 x 트래비스 스캇 리버스 모카,"스캇모카,리버스모카,스캇조던1,Travis Scott Reverse Mocha,Jordan 1 Travis Mocha,테일러스위프트모카(오타),브루노마스모카(오타),칸예모카",N,189000,3.0,2,20261014_v1
+DICT_003,ITEM_MODEL,DUNK_LOW_BW,나이키 덩크 로우 레트로 블랙 화이트,"범고래,범고래덩크,나이키범고래,Nike Dunk Low Black White,Panda Dunk,호랑이덩크(오타),독수리덩크(오타),참치덩크(오타),북극곰덩크",N,129000,3.0,3,20261014_v1
+DICT_004,ITEM_MODEL,AF1_PEACEMINUSONE,나이키 에어포스 1 파라노이즈,"파라노이즈,지드래곤포스,피스마이너스원,Air Force 1 Para-noise,GD포스,태양파라노이즈(오타),대성포스(오타),박진영파라노이즈",N,219000,3.0,4,20261014_v1
+DICT_005,ITEM_MODEL,NB_992_GREY,뉴발란스 992 메이드 인 USA 그레이,"뉴발992그레이,스티브잡스신발,992그레이,New Balance 992 Grey,NB992GL,일론머스크신발(오타),젠슨황992(오타),빌게이츠신발",N,259000,3.0,5,20261014_v1
+DICT_006,ITEM_MODEL,YEEZY_350_ZEBRA,아디다스 이지부스트 350 V2 지브라,"이지350지브라,이지부스트지브라,Adidas Yeezy Boost 350 Zebra,Yeezy Zebra,이지부스트기린(오타),이지부스트치타(오타),타조350",N,289000,3.0,6,20261014_v1
+DICT_007,ITEM_MODEL,CHANEL_CL_MED,샤넬 클래식 미디움 플랩백 캐비어,"샤넬클래식미디움,샤넬캐비어백,클래식미듐,Chanel Classic Medium Flap Bag,샤넬연어알백(오타),샤넬날치알플랩백(오타)",N,14500000,3.0,7,20261014_v1
+DICT_008,ITEM_MODEL,HERMES_BIRKIN_30,에르메스 버킨백 30 토고 에토프,"에르메스버킨30,버킨백에토프,Hermes Birkin 30 Etoupe",N,18500000,3.0,8,20261014_v1
+DICT_009,ITEM_MODEL,LV_NANO_SPEEDY,루이비통 나노 스피디 모노그램,"루이비통나노스피디,나노스피디,Louis Vuitton Nano Speedy",N,2650000,3.0,9,20261014_v1
+DICT_010,ITEM_MODEL,ROLEX_SUB_DATE,롤렉스 서브마리너 데이트 블랙,"서브마리너블랙,롤렉스섭마,흑콤섭마,Rolex Submariner Date Black",N,14200000,3.0,10,20261014_v1
+DICT_011,ITEM_MODEL,ROLEX_GMT_PEPSI,롤렉스 GMT 마스터 2 펩시 쥬빌리,"롤렉스펩시,GMT펩시,펩시쥬빌리,Rolex GMT-Master II Pepsi,롤렉스코카콜라(오타),롤렉스칠성사이다(오타),롤렉스환타",N,15600000,3.0,11,20261014_v1
+DICT_012,ITEM_MODEL,SUPREME_BOX_HOOD,슈프림 박스 로고 후드 스웨트셔츠,"슈프림박스로고,슈박후드,Supreme Box Logo Hoodie",N,260000,3.0,12,20261014_v1
+DICT_013,ITEM_MODEL,ARC_ALPHA_SV,아크테릭스 알파 SV 재킷 블랙,"아크테릭스알파SV,알파SV블랙,시조새바람막이,Arc'teryx Alpha SV Jacket,아크테릭스익룡바람막이(오타),둘리엄마재킷(오타),타조알파SV",N,1150000,3.0,13,20261014_v1
+DICT_014,ITEM_MODEL,STUSSY_8BALL_FLEECE,스투시 8볼 쉐르파 플리스 재킷,"스투시8볼,스투시당구공플리스,Stussy 8-Ball Sherpa Fleece,스투시 볼링공 플리스(오타),스투시 포켓볼 재킷(오타)",N,295000,3.0,14,20261014_v1
+DICT_015,ITEM_MODEL,APPLE_VISION_PRO,애플 비전 프로 512GB 국내정발,"비전프로512,애플VR고글,Apple Vision Pro 512GB",N,5290000,3.0,15,20261014_v1
+DICT_016,ITEM_MODEL,PS5_PRO_LIMITED,플레이스테이션 5 프로 30주년 에디션,"플스5프로30주년,PS5 30주년한정판,PlayStation 5 Pro 30th Anniversary",N,1380000,3.0,16,20261014_v1
+DICT_017,ITEM_MODEL,LEGO_SW_FALCON,레고 스타워즈 밀레니엄 팔콘 UCS 75192,"레고밀레니엄팔콘,스타워즈UCS팔콘,LEGO Star Wars Millennium Falcon 75192",N,1100000,3.0,17,20261014_v1
+DICT_018,ITEM_MODEL,SALOMON_XT6_WHT,살로몬 XT-6 화이트 루나 락,"살로몬XT6화이트,살로몬운동화,Salomon XT-6 White Lunar Rock",N,260000,3.0,18,20261014_v1
+DICT_019,ITEM_MODEL,ASICS_KAYANO_JJJJ,아식스 x 자운드 젤 카야노 14 실버,"자운드아식스,젤카야노14자운드,ASICS JJJJound Gel-Kayano 14",N,249000,3.0,19,20261014_v1
+DICT_020,ITEM_MODEL,DIOR_B23_HIGH,디올 B23 하이탑 스니커즈 오블리크,"디올오블리크스니커즈,디올B23하이,Dior B23 High-Top Oblique",N,1650000,3.0,20,20261014_v1
+DICT_021,BANNED_WORD,BAD_REPLICA,S급미러급가품(등록금지암어),"미러급,S급레플,레플리카,짝퉁특가",Y,0,3.0,21,20261014_v1
+DICT_022,BANNED_WORD,BAD_FACTORY,정로스공장직영(등록금지암어),"정로스,공장로스품,가품의심,비정품",Y,0,3.0,22,20261014_v1
+DICT_023,INSP_RESULT,PASS,정품 검수 합격(95점 이상),"합격,정품통과,정상출고,OK,PASSED",N,0,0.0,23,20261014_v1
+DICT_024,INSP_RESULT,FAKE_REJECT,가품 판정 검수 불합격(반송),"가품적발,짝퉁불합격,위조품반송,REJECTED_FAKE",N,0,0.0,24,20261014_v1
+DICT_025,INSP_RESULT,BOX_DMG_HOLD,박스 파손·구성품 누락 보류,"박스파손,속지찢어짐,택누락보류,ON_HOLD_BOX",N,0,0.0,25,20261014_v1
+DICT_026,INSP_RESULT,CLAIM_FAKE_PASS,가품 오판정 출고 사고(300% 배상),"가품오판정,클레임짝퉁판명,300%배상사고,PENALTY_300",N,0,3.0,26,20261014_v1
+DICT_027,BANNED_WORD,BAD_ANIMAL_FAKE,동물패러디사칭가품(호랑이/독수리/익룡),"호랑이덩크특가,독수리덩크레플,익룡바람막이짝퉁,불곰덩크",Y,0,3.0,27,20261014_v1
+DICT_028,BANNED_WORD,BAD_PERSON_FAKE,인물패러디사칭가품(커리/르브론/일론머스크),"커리1시카고레플,일론머스크신발특가,태양파라노이즈가품,강백호조던",Y,0,3.0,28,20261014_v1
+DICT_029,DEPT_STD,DEPT_SNK_1,스니커즈검수1팀,"운동화검수1팀,Sneakers Team 1,신발검수1파트,SNK1팀",N,0,0.0,29,20261014_v1
+DICT_030,DEPT_STD,DEPT_LUX_BAG,명품백감정팀,"명품가방팀,Luxury Bag Team,핸드백감정팀,LUXBAG팀",N,0,0.0,30,20261014_v1
+DICT_031,DEPT_STD,DEPT_NIGHT_OUT,외주야간검수팀,"야간외주팀,Night Shift Outsource,심야검수파트",N,0,0.0,31,20261014_v1
+DICT_032,BANNED_DEPT,BAD_DEPT_GHOST,폐지된임시검수팀(사용금지부서),"임시검수반,구_짝퉁단속반,해체된외주팀",Y,0,0.0,32,20261014_v1

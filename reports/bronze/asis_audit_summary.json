@@ -1,0 +1,356 @@
+{
+  "executed_at_kst": "2026-10-15T16:38:12.458848+09:00",
+  "pandas_version": "2.2.3",
+  "source_files": 5,
+  "inspection_rows": 335000,
+  "time_order_error_rows": 6056,
+  "time_error_overlap_rows": 0,
+  "nonstandard_active_rows": 320,
+  "fallback_to_revision1_rows": 0,
+  "conflict_groups": 2400,
+  "conflict_rows": 4800,
+  "source_checks": 13,
+  "source_failed_checks": 0,
+  "source_failed_evaluations": 0,
+  "sql_comparison_metrics": 8,
+  "sql_comparison_differences": 0,
+  "csv_null_to_sql_null_fields": 0,
+  "disposition_counts": {
+    "QUARANTINE": 33854,
+    "EXCLUDED": 29359,
+    "SILVER": 271787
+  },
+  "metrics": [
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "DATETIME",
+      "issue": "UNPARSEABLE_TIME",
+      "rows": 0,
+      "denominator": 335000,
+      "ratio_pct": 0.0,
+      "meaning": "어느 필수 시각이든 지원 형식이나 실제 달력 해석 실패"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "DATETIME",
+      "issue": "DONE_BEFORE_INBOUND",
+      "rows": 3165,
+      "denominator": 335000,
+      "ratio_pct": 0.944776,
+      "meaning": "검수 완료가 입고보다 빠름"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "DATETIME",
+      "issue": "EXTRACTED_BEFORE_DONE",
+      "rows": 2891,
+      "denominator": 335000,
+      "ratio_pct": 0.862985,
+      "meaning": "추출이 완료보다 빠름"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "DATETIME",
+      "issue": "TIME_ORDER_ERROR_UNIQUE",
+      "rows": 6056,
+      "denominator": 335000,
+      "ratio_pct": 1.807761,
+      "meaning": "필수 시각 해석 실패 또는 시간 역전의 고유 행 수"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "TRADE_PRICE_KRW",
+      "issue": "CONVERTED",
+      "rows": 333800,
+      "denominator": 335000,
+      "ratio_pct": 99.641791,
+      "meaning": "정의된 단위·형식에 따른 원본 해석 상태. CONVERTED는 변환 가능한 정상 후보"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "TRADE_PRICE_KRW",
+      "issue": "MISSING_PRICE",
+      "rows": 591,
+      "denominator": 335000,
+      "ratio_pct": 0.176418,
+      "meaning": "정의된 단위·형식에 따른 원본 해석 상태. CONVERTED는 변환 가능한 정상 후보"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "TRADE_PRICE_KRW",
+      "issue": "NEGATIVE_PRICE",
+      "rows": 609,
+      "denominator": 335000,
+      "ratio_pct": 0.181791,
+      "meaning": "정의된 단위·형식에 따른 원본 해석 상태. CONVERTED는 변환 가능한 정상 후보"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "INSP_DURATION_MIN",
+      "issue": "CONVERTED",
+      "rows": 333800,
+      "denominator": 335000,
+      "ratio_pct": 99.641791,
+      "meaning": "정의된 단위·형식에 따른 원본 해석 상태. CONVERTED는 변환 가능한 정상 후보"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "INSP_DURATION_MIN",
+      "issue": "SENTINEL_MINUS_999",
+      "rows": 1200,
+      "denominator": 335000,
+      "ratio_pct": 0.358209,
+      "meaning": "정의된 단위·형식에 따른 원본 해석 상태. CONVERTED는 변환 가능한 정상 후보"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "INSP_ID",
+      "issue": "NORMALIZATION_CHANGED",
+      "rows": 6000,
+      "denominator": 335000,
+      "ratio_pct": 1.791045,
+      "meaning": "명세와 확정 규칙에 따른 표기 정규화 후보"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "INSP_ID",
+      "issue": "INVALID_FORMAT_AFTER_NORMALIZATION",
+      "rows": 0,
+      "denominator": 335000,
+      "ratio_pct": 0.0,
+      "meaning": "정규화 후 형식 불일치. 결측과 마스터 참조 문제는 별도 판단"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "INSPECTOR_EMP_NO",
+      "issue": "NORMALIZATION_CHANGED",
+      "rows": 6000,
+      "denominator": 335000,
+      "ratio_pct": 1.791045,
+      "meaning": "명세와 확정 규칙에 따른 표기 정규화 후보"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "INSPECTOR_EMP_NO",
+      "issue": "INVALID_FORMAT_AFTER_NORMALIZATION",
+      "rows": 1548,
+      "denominator": 335000,
+      "ratio_pct": 0.46209,
+      "meaning": "정규화 후 형식 불일치. 결측과 마스터 참조 문제는 별도 판단"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "PARENT_CAT_ID",
+      "issue": "NORMALIZATION_CHANGED",
+      "rows": 0,
+      "denominator": 335000,
+      "ratio_pct": 0.0,
+      "meaning": "명세와 확정 규칙에 따른 표기 정규화 후보"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "PARENT_CAT_ID",
+      "issue": "INVALID_FORMAT_AFTER_NORMALIZATION",
+      "rows": 2000,
+      "denominator": 335000,
+      "ratio_pct": 0.597015,
+      "meaning": "정규화 후 형식 불일치. 결측과 마스터 참조 문제는 별도 판단"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "ITEM_NM",
+      "issue": "NOT_EXACT_STANDARD_NAME",
+      "rows": 17100,
+      "denominator": 335000,
+      "ratio_pct": 5.104478,
+      "meaning": "원본 상품 코드를 기준으로 공식 표준명과 정확히 일치하지 않는 행. 복구 가능 여부와 구분"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "INSP_RESULT",
+      "issue": "NONSTANDARD_RAW_RESULT",
+      "rows": 0,
+      "denominator": 335000,
+      "ratio_pct": 0.0,
+      "meaning": "원본 판정이 사전의 표준 코드와 정확히 일치하지 않음"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "INSPECTOR_EMP_NO",
+      "issue": "NO_VALID_SILVER_MASTER",
+      "rows": 5942,
+      "denominator": 335000,
+      "ratio_pct": 1.773731,
+      "meaning": "정규화 후보가 최종 정상 마스터에 없는 행. 결측·유령·격리 마스터 참조를 포함하며 복구 전 진단"
+    },
+    {
+      "source_file": "kream_inspection_300000.csv",
+      "column_name": "PARENT_CAT_ID",
+      "issue": "NO_VALID_SILVER_MASTER",
+      "rows": 12950,
+      "denominator": 335000,
+      "ratio_pct": 3.865672,
+      "meaning": "정규화 후보가 최종 정상 마스터에 없는 행. 결측·유령·격리 마스터 참조를 포함하며 복구 전 진단"
+    },
+    {
+      "source_file": "kream_inspector_master.csv",
+      "column_name": "kream_inspector_master.csv",
+      "issue": "NONSTANDARD_ACTIVE_CODE",
+      "rows": 320,
+      "denominator": 3150,
+      "ratio_pct": 10.15873,
+      "meaning": "원본이 정확히 Y 또는 N이 아닌 행. 확정 정책으로 N 처리"
+    }
+  ],
+  "checks": [
+    {
+      "check": "AUDIT_ORIGINAL_PAYLOAD",
+      "checked_rows": 821769,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "격리·제외의 원본 13개 필드와 공급 CSV 대조. CSV NULL의 SQL NULL 적재 표현은 별도 계수"
+    },
+    {
+      "check": "PRICE_FROM_SOURCE",
+      "checked_rows": 271787,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "원본 물리 행에서 확정한 금액·분 단위·KST 시각 변환과 정상 결과 대조"
+    },
+    {
+      "check": "DURATION_FROM_SOURCE",
+      "checked_rows": 271787,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "원본 물리 행에서 확정한 금액·분 단위·KST 시각 변환과 정상 결과 대조"
+    },
+    {
+      "check": "TIME_FROM_SOURCE",
+      "checked_rows": 815361,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "원본 물리 행에서 확정한 금액·분 단위·KST 시각 변환과 정상 결과 대조"
+    },
+    {
+      "check": "SOURCE_PARTITION",
+      "checked_rows": 335000,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "원본 335,000행이 정상·격리·제외 중 정확히 한 곳에 존재"
+    },
+    {
+      "check": "CONFLICT_ALL_QUARANTINED",
+      "checked_rows": 4800,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "동일 검수 ID·개정의 내용 충돌은 양쪽 모두 격리"
+    },
+    {
+      "check": "TIME_ERRORS_QUARANTINED",
+      "checked_rows": 6056,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "해석 불가·시간 역전 행 모두 격리"
+    },
+    {
+      "check": "ACTIVE_POLICY_FROM_RAW",
+      "checked_rows": 2960,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "원본이 정확히 대문자 Y이면 Y, 나머지는 N"
+    },
+    {
+      "check": "NUMERIC_ERRORS_QUARANTINED",
+      "checked_rows": 2400,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "금액 결측·음수·해석 실패 또는 소요시간 오류 행은 모두 격리"
+    },
+    {
+      "check": "LATEST_VALID_REVISION",
+      "checked_rows": 271787,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "격리 행을 제거한 뒤 검수 ID별 최고 유효 개정 채택"
+    },
+    {
+      "check": "RAW_SOURCE_PAIRING",
+      "checked_rows": 335000,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "원천·조인 통합본의 13개 공유 필드가 대응 행끼리 같고 원본 물리 행 번호가 일대일인지 확인"
+    },
+    {
+      "check": "MASTER_PARTITION_EMP_NO",
+      "checked_rows": 3150,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "원본 마스터의 모든 물리 행이 정상·격리·제외 중 정확히 한 곳에 존재"
+    },
+    {
+      "check": "MASTER_PARTITION_CAT_ID",
+      "checked_rows": 1050,
+      "failed_rows": 0,
+      "status": "PASS",
+      "definition": "원본 마스터의 모든 물리 행이 정상·격리·제외 중 정확히 한 곳에 존재"
+    }
+  ],
+  "sql_comparison": [
+    {
+      "metric": "PHYSICAL_INSPECTIONS",
+      "pandas_value": 335000,
+      "previous_sql_value": 335000,
+      "difference": 0,
+      "source": "이전 SQL 진단 작업 기록. 공급 CSV를 직접 읽어 동일 정의로 재확인"
+    },
+    {
+      "metric": "DISTINCT_INSPECTION_IDS",
+      "pandas_value": 300000,
+      "previous_sql_value": 300000,
+      "difference": 0,
+      "source": "이전 SQL 진단 작업 기록. 공급 CSV를 직접 읽어 동일 정의로 재확인"
+    },
+    {
+      "metric": "REVISION_2_ROWS",
+      "pandas_value": 22600,
+      "previous_sql_value": 22600,
+      "difference": 0,
+      "source": "이전 SQL 진단 작업 기록. 공급 CSV를 직접 읽어 동일 정의로 재확인"
+    },
+    {
+      "metric": "CONFLICT_GROUPS",
+      "pandas_value": 2400,
+      "previous_sql_value": 2400,
+      "difference": 0,
+      "source": "이전 SQL 진단 작업 기록. 공급 CSV를 직접 읽어 동일 정의로 재확인"
+    },
+    {
+      "metric": "CONFLICT_ROWS",
+      "pandas_value": 4800,
+      "previous_sql_value": 4800,
+      "difference": 0,
+      "source": "이전 SQL 진단 작업 기록. 공급 CSV를 직접 읽어 동일 정의로 재확인"
+    },
+    {
+      "metric": "EXACT_DUPLICATE_ROWS",
+      "pandas_value": 10000,
+      "previous_sql_value": 10000,
+      "difference": 0,
+      "source": "이전 SQL 진단 작업 기록. 공급 CSV를 직접 읽어 동일 정의로 재확인"
+    },
+    {
+      "metric": "DONE_BEFORE_INBOUND",
+      "pandas_value": 3165,
+      "previous_sql_value": 3165,
+      "difference": 0,
+      "source": "이전 SQL 진단 작업 기록. 공급 CSV를 직접 읽어 동일 정의로 재확인"
+    },
+    {
+      "metric": "EXTRACTED_BEFORE_DONE",
+      "pandas_value": 2891,
+      "previous_sql_value": 2891,
+      "difference": 0,
+      "source": "이전 SQL 진단 작업 기록. 공급 CSV를 직접 읽어 동일 정의로 재확인"
+    }
+  ]
+}
